@@ -1,0 +1,105 @@
+<template>
+    <div class="element">
+        <div class="text">
+            <h2>nasybullova</h2>
+            <h1>MAYANA</h1>
+            <h3>sculptor</h3>
+        </div>
+
+       <!-- <img src="../assets/images/ramka.png" alt="Vue Logo" height="423.61px" width="292">
+        -->
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "Author01"
+    }
+</script>
+
+<style scoped>
+
+    .text{
+        margin-left:-100px;
+        position: absolute;
+
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .element {
+        background-image: url("../assets/images/ramka.png");
+        width:292px;
+        height:423px;
+
+        margin-left:-146px;
+
+        z-index:1000;
+        background-color:#fff;
+        position: absolute;
+
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+
+    h2{
+        text-align: left;
+    font-family: AvantGardeGothicCTT;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+
+        color: #000000;
+        margin-bottom: 0;
+    }
+
+    h3{
+        margin-top: 0;
+        text-align: right;
+        font-family: AvantGardeGothicCTT;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+
+        color: #000000;
+
+    }
+
+    h1{
+        margin: 0;
+        font-family: AvantGardeGothicCTT;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 59px;
+
+        color: #000000;
+    }
+
+    @font-face {
+        font-family: "AvantGardeGothic";
+        src: url("../assets/fonts/AvantGardeGothicCTTBold.ttf") format("ttf");
+    }
+
+
+
+
+
+</style>
