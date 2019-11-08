@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ffd5927-8fe0-4382-a5f0-b6124de6f5c0" name="ArtAuction_Client-2 Создание заглушек страниц по аналогии с TorgUmesten  описание страницы" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/AvantGardeGothicCTTBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ramka.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Agree07.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Author01.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Author02.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Intro03.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Load00.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Registration06.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/About.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/body.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Intro03.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Intro03.vue" afterDir="false" />
     </list>
-    <list id="3d261e0a-01d8-4345-99ce-74beead5def0" name="Default Changelist" comment="" />
+    <list id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +30,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -57,6 +41,15 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="tasks.close.task.update.state.enabled" value="true" />
     <property name="tasks.open.task.update.state.enabled" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
+      <recent name="C:\Workspace\ArtAuction\client\src\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -93,17 +86,16 @@
   <component name="TaskManager">
     <task id="Default" summary="Default task">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" />
-      <changelist id="3d261e0a-01d8-4345-99ce-74beead5def0" name="Default Changelist" comment="" />
+      <changelist id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="" />
       <created>1573114138460</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573114891874</updated>
       <workItem from="1573114140731" duration="751000" />
     </task>
-    <task active="true" id="ArtAuction_Client-2" summary="Создание заглушек страниц по аналогии с TorgUmesten  описание страницы">
+    <task id="ArtAuction_Client-2" summary="Создание заглушек страниц по аналогии с TorgUmesten  описание страницы">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" original="true" />
       <branch name="ArtAuction_Client-2" repository="C:\Workspace\ArtAuction\client" />
-      <changelist id="6ffd5927-8fe0-4382-a5f0-b6124de6f5c0" name="ArtAuction_Client-2 Создание заглушек страниц по аналогии с TorgUmesten  описание страницы" comment="" />
       <created>1572121313000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/2</url>
@@ -114,6 +106,21 @@
       <updated>1573114891895</updated>
       <workItem from="1573114892032" duration="529000" />
     </task>
+    <task active="true" id="ArtAuction_Client-6" summary="Установка заглушки для Intro">
+      <changelist id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
+      <created>1573111171000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/6</url>
+      <option name="number" value="6" />
+      <option name="presentableId" value="ArtAuction_Client-6" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1573121957813</updated>
+      <workItem from="1573121958661" duration="631000" />
+      <workItem from="1573186317332" duration="16000" />
+      <workItem from="1573189870953" duration="1041000" />
+    </task>
+    <option name="createBranch" value="false" />
     <servers>
       <GitHub url="https://github.com">
         <option name="repoAuthor" value="AndrewAndreevich" />
@@ -129,7 +136,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
