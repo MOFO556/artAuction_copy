@@ -2,7 +2,7 @@
     <div class="outer">
         <div class="inner">
 
-            <img src="../assets/images/body.gif" height="640px" width="360px">
+            <img src="../assets/images/body.png" height="464px" width="360px">
 
             <div class="StartScreen04Row">
                 <div class="block">
@@ -11,7 +11,6 @@
                 </div>
                 <button class="startAuction block">Bet</button>
             </div>
-
         </div>
     </div>
 </template>
@@ -24,7 +23,9 @@
 
 <style scoped>
     .inner{
-        /*background: grey;*/
+        background: grey;
+        width: 360px;
+        height: 640px;
     }
 
     .outer
