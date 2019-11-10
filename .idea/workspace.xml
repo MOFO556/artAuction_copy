@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/Pricing.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2add6479-73fb-4801-950f-cd6a0a365c6e" name="ArtAuction_Client-9 Верстка экрана регистрации" comment="">
       <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration06.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration06.vue" afterDir="false" />
     </list>
     <list id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
     <list id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="" />
+    <list id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
+    </list>
     <list id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,12 +26,23 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/components/NumInter05.vue">
+      <ranges>
+        <range start1="15" end1="16" start2="15" end2="15" changelist="fea692b7-1279-4c51-b454-d29ab8ab2062" />
+        <range start1="17" end1="19" start2="16" end2="16" changelist="fea692b7-1279-4c51-b454-d29ab8ab2062" />
+        <range start1="83" end1="83" start2="80" end2="81" changelist="2add6479-73fb-4801-950f-cd6a0a365c6e" />
+        <range start1="86" end1="88" start2="84" end2="87" changelist="2add6479-73fb-4801-950f-cd6a0a365c6e" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1THPe1UlMVsJjp5FUQFQhN2krrR" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vuetifytest/vuetify-dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -78,6 +92,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.serve" />
+        <item itemvalue="npm.serve" />
       </list>
     </recent_temporary>
   </component>
@@ -91,10 +106,11 @@
       <created>1573114138460</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573305766537</updated>
+      <updated>1573369413162</updated>
       <workItem from="1573114140731" duration="751000" />
       <workItem from="1573191116807" duration="1647000" />
       <workItem from="1573305655996" duration="111000" />
+      <workItem from="1573366737828" duration="607000" />
     </task>
     <task id="ArtAuction_Client-2" summary="Создание заглушек страниц по аналогии с TorgUmesten  описание страницы">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" original="true" />
@@ -136,7 +152,7 @@
       <workItem from="1573305767052" duration="1348000" />
       <workItem from="1573352510849" duration="7969000" />
     </task>
-    <task active="true" id="ArtAuction_Client-8" summary="Верстка экрана ввода номера">
+    <task id="ArtAuction_Client-8" summary="Верстка экрана ввода номера">
       <changelist id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="" />
       <created>1573351984000</created>
       <option name="issue" value="true" />
@@ -145,8 +161,20 @@
       <option name="presentableId" value="ArtAuction_Client-8" />
       <option name="project" value="ArtAuction_Client" />
       <option name="type" value="BUG" />
-      <updated>1573362763496</updated>
-      <workItem from="1573362764248" duration="3329000" />
+      <updated>1573366736289</updated>
+      <workItem from="1573362764248" duration="3970000" />
+    </task>
+    <task active="true" id="ArtAuction_Client-9" summary="Верстка экрана регистрации">
+      <changelist id="2add6479-73fb-4801-950f-cd6a0a365c6e" name="ArtAuction_Client-9 Верстка экрана регистрации" comment="" />
+      <created>1573357574000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/9</url>
+      <option name="number" value="9" />
+      <option name="presentableId" value="ArtAuction_Client-9" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1573369413186</updated>
+      <workItem from="1573369413266" duration="1604000" />
     </task>
     <option name="createBranch" value="false" />
     <option name="commitChanges" value="false" />

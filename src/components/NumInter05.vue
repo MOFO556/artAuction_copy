@@ -13,10 +13,7 @@
                     <button class="startAuction block">GO</button>
                 </div>
                 <div class="phoneInputInfo" >Inter your phone number</div>
-
             </div>
-
-
         </div>
     </div>
 </template>
