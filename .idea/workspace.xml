@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/Nunitosansregular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/Nunitosanssemibold.ttf" afterDir="false" />
+    <list default="true" id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/Pricing.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Author01.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author01.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
     </list>
     <list id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
-    <list id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="" />
+    <list id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,27 +22,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="3" end1="5" start2="3" end2="7" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="6" end1="7" start2="8" end2="10" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="8" end1="8" start2="11" end2="12" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="24" end1="24" start2="28" end2="49" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="32" end1="33" start2="57" end2="58" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="40" end1="42" start2="65" end2="67" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="45" end1="45" start2="70" end2="74" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="49" end1="52" start2="78" end2="78" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="92" end1="93" start2="118" end2="119" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="94" end1="94" start2="120" end2="122" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="108" end1="109" start2="136" end2="137" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="117" end1="118" start2="145" end2="146" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="120" end1="121" start2="148" end2="162" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
-        <range start1="123" end1="123" start2="164" end2="165" changelist="069510d1-98be-4176-8f19-bacb5659a522" />
-        <range start1="125" end1="125" start2="167" end2="170" changelist="069510d1-98be-4176-8f19-bacb5659a522" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1THPe1UlMVsJjp5FUQFQhN2krrR" />
   <component name="ProjectLevelVcsManager">
@@ -64,7 +39,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Workspace\ArtAuction\client\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="tasks.timeTracking" />
-    <property name="tasks.close.task.update.state.enabled" value="false" />
+    <property name="tasks.close.task.update.state.enabled" value="true" />
     <property name="tasks.open.task.update.state.enabled" value="false" />
   </component>
   <component name="RecentsManager">
@@ -148,7 +123,7 @@
       <workItem from="1573186317332" duration="16000" />
       <workItem from="1573189870953" duration="1245000" />
     </task>
-    <task active="true" id="ArtAuction_Client-7" summary="Верстка стартового экрана">
+    <task id="ArtAuction_Client-7" summary="Верстка стартового экрана">
       <changelist id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="" />
       <created>1573294991000</created>
       <option name="issue" value="true" />
@@ -157,9 +132,21 @@
       <option name="presentableId" value="ArtAuction_Client-7" />
       <option name="project" value="ArtAuction_Client" />
       <option name="type" value="BUG" />
-      <updated>1573305766572</updated>
+      <updated>1573362763465</updated>
       <workItem from="1573305767052" duration="1348000" />
-      <workItem from="1573352510849" duration="7598000" />
+      <workItem from="1573352510849" duration="7969000" />
+    </task>
+    <task active="true" id="ArtAuction_Client-8" summary="Верстка экрана ввода номера">
+      <changelist id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="" />
+      <created>1573351984000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/8</url>
+      <option name="number" value="8" />
+      <option name="presentableId" value="ArtAuction_Client-8" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1573362763496</updated>
+      <workItem from="1573362764248" duration="3329000" />
     </task>
     <option name="createBranch" value="false" />
     <option name="commitChanges" value="false" />
