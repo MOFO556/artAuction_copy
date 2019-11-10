@@ -1,14 +1,19 @@
-<template>
-    <div class="element">
-        <div class="text">
-            <h2>nasybullova</h2>
-            <h1>MAYANA</h1>
-            <h3>sculptor</h3>
-        </div>
 
-       <!-- <img src="../assets/images/ramka.png" alt="Vue Logo" height="423.61px" width="292">
-        -->
+
+<template>
+    <div class="outer">
+        <div class="inner">
+            <div class="element">
+                <div class="text">
+                    <h2>nasybullova</h2>
+                    <h1>MAYANA</h1>
+                    <h3>sculptor</h3>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 </template>
 
 <script>
@@ -19,8 +24,22 @@
 
 <style scoped>
 
+    .inner{
+        background: grey;
+        width: 360px;
+        height: 640px;
+    }
+
+    .outer
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
     .text{
-       /* font-family: AvantGardeGothicCTT;*/
+        /* font-family: AvantGardeGothicCTT;*/
         font-family: AvantGardeGothicCTT;
         margin-left:-100px;
         position: absolute;
@@ -41,21 +60,11 @@
         width:292px;
         height:423px;
 
-        margin-left:-146px;
+        margin-left: 34px;
+        margin-top: 114px;
 
-        z-index:1000;
-        background-color:#fff;
-        position: absolute;
 
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
 
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
     }
 
 
@@ -95,13 +104,6 @@
         color: #000000;
     }
 
-    @font-face {
-       /* font-family: "AvantGardeGothic";
-        src: url("../assets/fonts/AvantGardeGothicCTTBold.ttf") format("ttf");*/
-    }
-
-
-
-
 
 </style>
+
