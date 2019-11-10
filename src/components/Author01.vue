@@ -20,6 +20,8 @@
 <style scoped>
 
     .text{
+       /* font-family: AvantGardeGothicCTT;*/
+        font-family: AvantGardeGothicCTT;
         margin-left:-100px;
         position: absolute;
 
@@ -59,7 +61,7 @@
 
     h2{
         text-align: left;
-    font-family: AvantGardeGothicCTT;
+
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
@@ -72,7 +74,7 @@
     h3{
         margin-top: 0;
         text-align: right;
-        font-family: AvantGardeGothicCTT;
+
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
@@ -84,7 +86,7 @@
 
     h1{
         margin: 0;
-        font-family: AvantGardeGothicCTT;
+
         font-style: normal;
         font-weight: bold;
         font-size: 48px;
@@ -94,8 +96,8 @@
     }
 
     @font-face {
-        font-family: "AvantGardeGothic";
-        src: url("../assets/fonts/AvantGardeGothicCTTBold.ttf") format("ttf");
+       /* font-family: "AvantGardeGothic";
+        src: url("../assets/fonts/AvantGardeGothicCTTBold.ttf") format("ttf");*/
     }
 
 

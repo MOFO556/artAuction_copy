@@ -10,13 +10,19 @@
 </template>
 
 <style>
+
+  @import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap');
+
+
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
+
 
 #nav {
   padding: 30px;
@@ -30,4 +36,17 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+/*
+
+@font-face {
+  font-family: 'Geometria';
+  src: local('Geometria Thin'), local('Geometria-Thin'),
+  url('~@/assets/fonts/geometria/Geometria-Thin.woff') format('woff'),
+  url('~@/assets/fonts/geometria/Geometria-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+*/
+
+
 </style>

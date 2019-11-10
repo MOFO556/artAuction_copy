@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/body.gif" afterDir="false" />
+    <list default="true" id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/Nunitosansregular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fonts/Nunitosanssemibold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Intro03.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Intro03.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Author01.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author01.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
     </list>
+    <list id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
     <list id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -23,6 +27,27 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="3" end1="5" start2="3" end2="7" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="6" end1="7" start2="8" end2="10" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="8" end1="8" start2="11" end2="12" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="24" end1="24" start2="28" end2="49" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="32" end1="33" start2="57" end2="58" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="40" end1="42" start2="65" end2="67" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="45" end1="45" start2="70" end2="74" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="49" end1="52" start2="78" end2="78" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="92" end1="93" start2="118" end2="119" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="94" end1="94" start2="120" end2="122" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="108" end1="109" start2="136" end2="137" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="117" end1="118" start2="145" end2="146" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="120" end1="121" start2="148" end2="162" changelist="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" />
+        <range start1="123" end1="123" start2="164" end2="165" changelist="069510d1-98be-4176-8f19-bacb5659a522" />
+        <range start1="125" end1="125" start2="167" end2="170" changelist="069510d1-98be-4176-8f19-bacb5659a522" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1THPe1UlMVsJjp5FUQFQhN2krrR" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -30,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vuetifytest/vuetify-dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -38,17 +63,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Workspace\ArtAuction\client\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
-    <property name="tasks.close.task.update.state.enabled" value="true" />
+    <property name="settings.editor.selected.configurable" value="tasks.timeTracking" />
+    <property name="tasks.close.task.update.state.enabled" value="false" />
     <property name="tasks.open.task.update.state.enabled" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\ArtAuction\client\src\assets\fonts" />
+      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
       <recent name="C:\Workspace\ArtAuction\client\src\assets" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -90,8 +116,10 @@
       <created>1573114138460</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573114891874</updated>
+      <updated>1573305766537</updated>
       <workItem from="1573114140731" duration="751000" />
+      <workItem from="1573191116807" duration="1647000" />
+      <workItem from="1573305655996" duration="111000" />
     </task>
     <task id="ArtAuction_Client-2" summary="Создание заглушек страниц по аналогии с TorgUmesten  описание страницы">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" original="true" />
@@ -106,7 +134,7 @@
       <updated>1573114891895</updated>
       <workItem from="1573114892032" duration="529000" />
     </task>
-    <task active="true" id="ArtAuction_Client-6" summary="Установка заглушки для Intro">
+    <task id="ArtAuction_Client-6" summary="Установка заглушки для Intro">
       <changelist id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
       <created>1573111171000</created>
       <option name="issue" value="true" />
@@ -115,14 +143,31 @@
       <option name="presentableId" value="ArtAuction_Client-6" />
       <option name="project" value="ArtAuction_Client" />
       <option name="type" value="BUG" />
-      <updated>1573121957813</updated>
+      <updated>1573191116638</updated>
       <workItem from="1573121958661" duration="631000" />
       <workItem from="1573186317332" duration="16000" />
-      <workItem from="1573189870953" duration="1041000" />
+      <workItem from="1573189870953" duration="1245000" />
+    </task>
+    <task active="true" id="ArtAuction_Client-7" summary="Верстка стартового экрана">
+      <changelist id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="" />
+      <created>1573294991000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/7</url>
+      <option name="number" value="7" />
+      <option name="presentableId" value="ArtAuction_Client-7" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1573305766572</updated>
+      <workItem from="1573305767052" duration="1348000" />
+      <workItem from="1573352510849" duration="7598000" />
     </task>
     <option name="createBranch" value="false" />
+    <option name="commitChanges" value="false" />
     <servers>
       <GitHub url="https://github.com">
+        <option name="preferredCloseTaskState">
+          <CustomTaskState id="RESOLVED" predefined="true" name="Resolved" />
+        </option>
         <option name="repoAuthor" value="AndrewAndreevich" />
         <option name="repoName" value="ArtAuction_Client" />
       </GitHub>
