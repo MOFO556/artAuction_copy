@@ -6,8 +6,8 @@
 
 
             <div class="inputtextblock">
-                <div class="StartScreen04Row">
-                    <div class="phoneInputTitle">Registration</div>
+                <div class="row">
+                    <div class="smsInterTitle">Registration</div>
                 </div>
                 <div >
                     <input class="phoneInput" type="text" placeholder="First Name">
@@ -29,7 +29,7 @@
 
 
                 <button class="startAuction block">Go to Agreement</button>
-                <div class="phoneInputInfo StartScreen04Row" >Inter valid data</div>
+                <div class="phoneInputInfo row" >Inter valid data</div>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
         display: block;
     }
 
-    .phoneInputTitle
+    .smsInterTitle
     {
         font-family: Nunito;
         font-style: normal;
@@ -115,7 +115,7 @@
         height: 100vh;
     }
 
-    .StartScreen04Row
+    .row
     {
         width: 100%;
          text-align: center;

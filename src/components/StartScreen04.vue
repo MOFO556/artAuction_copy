@@ -4,7 +4,7 @@
 
             <img src="../assets/images/body.png" height="464px" width="360px">
 
-            <div class="StartScreen04Row">
+            <div class="row">
                 <div class="block">
                     <p class="lastbet">$ 1500</p>
                     <p class="lastbettitle">last bet size</p>
@@ -36,7 +36,7 @@
         height: 100vh;
     }
 
-    .StartScreen04Row
+    .row
     {
         width: 100%;
         text-align: center;

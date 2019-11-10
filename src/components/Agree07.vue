@@ -5,8 +5,8 @@
 
 
             <div class="inputtextblock">
-                <div class="StartScreen04Row">
-                    <div class="phoneInputTitle">User Agreement</div>
+                <div class="row">
+                    <div class="smsInterTitle">User Agreement</div>
                 </div>
                 <div >
                     <textarea class="agreementText" type="text" readonly
@@ -48,7 +48,7 @@
         display: block;
     }
 
-    .phoneInputTitle
+    .smsInterTitle
     {
         font-family: Nunito;
         font-style: normal;
@@ -109,7 +109,7 @@
         height: 100vh;
     }
 
-    .StartScreen04Row
+    .row
     {
         width: 100%;
         text-align: center;

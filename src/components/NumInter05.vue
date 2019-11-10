@@ -4,11 +4,11 @@
 
             <img src="../assets/images/body.png" height="464px" width="360px">
             <div class="inputtextblock">
-                <div class="StartScreen04Row">
-                    <div class="phoneInputTitle">Inter your phone number</div>
+                <div class="row">
+                    <div class="smsInterTitle">Inter your phone number</div>
                     <img class="pricing" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
-                <div class="StartScreen04Row">
+                <div class="row">
                     <input class="phoneInput" type="text">
                     <button class="startAuction block">GO</button>
                 </div>
@@ -38,7 +38,7 @@
         display: block;
     }
 
-    .phoneInputTitle
+    .smsInterTitle
     {
         font-family: Nunito;
         font-style: normal;
@@ -94,7 +94,7 @@
         height: 100vh;
     }
 
-    .StartScreen04Row
+    .row
     {
         width: 100%;
       /*  text-align: center;*/

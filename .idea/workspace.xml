@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edbf7084-0128-472a-998b-b28e21ffe62c" name="ArtAuction_Client-13 Замена изображения заглушки лота" comment="">
+    <list default="true" id="fba85105-bf74-4c90-a352-c845d891b3b9" name="ArtAuction_Client-12 Верстка экрана смс верификации" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/Agree07.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Agree07.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration06.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration06.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SmsInter09.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
     </list>
     <list id="78fdff29-f3ba-475e-a175-1729041041ab" name="ArtAuction_Client-10 Верстка экрана пользовательского соглашения" comment="" />
+    <list id="edbf7084-0128-472a-998b-b28e21ffe62c" name="ArtAuction_Client-13 Замена изображения заглушки лота" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
     <list id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="" />
     <list id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="" />
     <list id="2add6479-73fb-4801-950f-cd6a0a365c6e" name="ArtAuction_Client-9 Верстка экрана регистрации" comment="" />
-    <list id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/body.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +185,7 @@
       <updated>1573373797279</updated>
       <workItem from="1573371178204" duration="2618000" />
     </task>
-    <task active="true" id="ArtAuction_Client-13" summary="Замена изображения заглушки лота">
+    <task id="ArtAuction_Client-13" summary="Замена изображения заглушки лота">
       <changelist id="edbf7084-0128-472a-998b-b28e21ffe62c" name="ArtAuction_Client-13 Замена изображения заглушки лота" comment="" />
       <created>1573363464000</created>
       <option name="issue" value="true" />
@@ -191,9 +194,22 @@
       <option name="presentableId" value="ArtAuction_Client-13" />
       <option name="project" value="ArtAuction_Client" />
       <option name="type" value="BUG" />
-      <updated>1573374253920</updated>
-      <workItem from="1573374254854" duration="219000" />
+      <updated>1573374841014</updated>
+      <workItem from="1573374254854" duration="586000" />
     </task>
+    <task active="true" id="ArtAuction_Client-12" summary="Верстка экрана смс верификации">
+      <changelist id="fba85105-bf74-4c90-a352-c845d891b3b9" name="ArtAuction_Client-12 Верстка экрана смс верификации" comment="" />
+      <created>1573357620000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/12</url>
+      <option name="number" value="12" />
+      <option name="presentableId" value="ArtAuction_Client-12" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1573374841015</updated>
+      <workItem from="1573374841178" duration="2395000" />
+    </task>
+    <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="commitChanges" value="false" />
     <servers>
