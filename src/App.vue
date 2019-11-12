@@ -24,29 +24,5 @@
 }
 
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-/*
-
-@font-face {
-  font-family: 'Geometria';
-  src: local('Geometria Thin'), local('Geometria-Thin'),
-  url('~@/assets/fonts/geometria/Geometria-Thin.woff') format('woff'),
-  url('~@/assets/fonts/geometria/Geometria-Thin.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-}
-*/
-
 
 </style>
