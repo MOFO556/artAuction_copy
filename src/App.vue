@@ -13,7 +13,23 @@
 
   @import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap');
 
+  html{
+    background:grey;
+  }
 
+  .inner{
+    background: white;
+    width: 360px;
+    height: 640px;
+  }
+
+  .outer
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 
 #app {
   font-family: "Nunito", Helvetica, Arial, sans-serif;

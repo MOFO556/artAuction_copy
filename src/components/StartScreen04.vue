@@ -22,19 +22,7 @@
 </script>
 
 <style scoped>
-    .inner{
-        background: grey;
-        width: 360px;
-        height: 640px;
-    }
 
-    .outer
-    {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
 
     .row
     {
