@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fb36bc5-3a16-4779-9dfe-3b16c2d5ea46" name="ArtAuction_Client-15 Установка стандартных заглушек для всех экранов" comment="">
+    <list default="true" id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Agree07.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Agree07.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Author01.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author01.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Author02.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author02.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Intro03.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Intro03.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration06.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration06.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SmsInter09.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
     </list>
     <list id="78fdff29-f3ba-475e-a175-1729041041ab" name="ArtAuction_Client-10 Верстка экрана пользовательского соглашения" comment="" />
+    <list id="205786e7-3651-4d99-9ac8-d626da37bc0f" name="ArtAuction_Client-11 Верстка экрана ставок" comment="ArtAuction_Client-11 Верстка экрана ставок #11" />
     <list id="fba85105-bf74-4c90-a352-c845d891b3b9" name="ArtAuction_Client-12 Верстка экрана смс верификации" comment="" />
     <list id="edbf7084-0128-472a-998b-b28e21ffe62c" name="ArtAuction_Client-13 Замена изображения заглушки лота" comment="" />
     <list id="0136e701-f14f-4ad1-8bee-eda88530058e" name="ArtAuction_Client-14 Верстка экрана загрузки" comment="" />
+    <list id="3fb36bc5-3a16-4779-9dfe-3b16c2d5ea46" name="ArtAuction_Client-15 Установка стандартных заглушек для всех экранов" comment="" />
+    <list id="6461505a-026e-4aa4-8cc6-67909370054f" name="ArtAuction_Client-16 Исправление фона на белый\серый" comment="ArtAuction_Client-16 Исправление фона на белый\серый" />
     <list id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
     <list id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="" />
     <list id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="" />
     <list id="2add6479-73fb-4801-950f-cd6a0a365c6e" name="ArtAuction_Client-9 Верстка экрана регистрации" comment="" />
-    <list id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,19 +105,26 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task id="Default" summary="Default task">
+    <task active="true" id="Default" summary="Default task">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" />
       <changelist id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="" />
       <created>1573114138460</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573377417592</updated>
+      <updated>1573674731145</updated>
       <workItem from="1573114140731" duration="751000" />
       <workItem from="1573191116807" duration="1647000" />
       <workItem from="1573305655996" duration="111000" />
       <workItem from="1573366737828" duration="607000" />
       <workItem from="1573373798798" duration="456000" />
       <workItem from="1573377404963" duration="14000" />
+      <workItem from="1573378462318" duration="343000" />
+      <workItem from="1573420749292" duration="627000" />
+      <workItem from="1573506661566" duration="65000" />
+      <workItem from="1573546378004" duration="762000" />
+      <workItem from="1573551469545" duration="53000" />
+      <workItem from="1573673248117" duration="753000" />
+      <workItem from="1573674731202" duration="1522000" />
     </task>
     <task id="ArtAuction_Client-2" summary="Создание заглушек страниц по аналогии с TorgUmesten  описание страницы">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" original="true" />
@@ -224,7 +238,7 @@
       <updated>1573377697845</updated>
       <workItem from="1573377418536" duration="280000" />
     </task>
-    <task active="true" id="ArtAuction_Client-15" summary="Установка стандартных заглушек для всех экранов">
+    <task id="ArtAuction_Client-15" summary="Установка стандартных заглушек для всех экранов">
       <changelist id="3fb36bc5-3a16-4779-9dfe-3b16c2d5ea46" name="ArtAuction_Client-15 Установка стандартных заглушек для всех экранов" comment="" />
       <created>1573366928000</created>
       <option name="issue" value="true" />
@@ -233,8 +247,32 @@
       <option name="presentableId" value="ArtAuction_Client-15" />
       <option name="project" value="ArtAuction_Client" />
       <option name="type" value="BUG" />
-      <updated>1573377697845</updated>
-      <workItem from="1573377698672" duration="718000" />
+      <updated>1573378460801</updated>
+      <workItem from="1573377698672" duration="762000" />
+    </task>
+    <task id="ArtAuction_Client-11" summary="Верстка экрана ставок">
+      <changelist id="205786e7-3651-4d99-9ac8-d626da37bc0f" name="ArtAuction_Client-11 Верстка экрана ставок" comment="" />
+      <created>1573357607000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/11</url>
+      <option name="number" value="11" />
+      <option name="presentableId" value="ArtAuction_Client-11" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1573551467991</updated>
+      <workItem from="1573547140500" duration="4213000" />
+    </task>
+    <task id="ArtAuction_Client-16" summary="Исправление фона на белый\серый">
+      <changelist id="6461505a-026e-4aa4-8cc6-67909370054f" name="ArtAuction_Client-16 Исправление фона на белый\серый" comment="" />
+      <created>1573663293000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/16</url>
+      <option name="number" value="16" />
+      <option name="presentableId" value="ArtAuction_Client-16" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1573674729836</updated>
+      <workItem from="1573674107026" duration="623000" />
     </task>
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
@@ -268,5 +306,9 @@
   <component name="VcsManagerConfiguration">
     <confirmRemoveEmptyChangelist value="1" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ArtAuction_Client-11 Верстка экрана ставок" />
+    <MESSAGE value="ArtAuction_Client-11 Верстка экрана ставок #11" />
+    <MESSAGE value="ArtAuction_Client-16 Исправление фона на белый\серый" />
+    <option name="LAST_COMMIT_MESSAGE" value="ArtAuction_Client-16 Исправление фона на белый\серый" />
   </component>
 </project>
