@@ -50,9 +50,6 @@
 
         margin-left: 34px;
         margin-top: 114px;
-
-
-
     }
 
 

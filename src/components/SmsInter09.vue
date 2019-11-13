@@ -28,7 +28,7 @@
                         <div class="totalCost">$1500 USD</div>
                         <img class="pricingSize" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                     </div>
-                <button class="completeBet">Complete</button>
+                <button v-on:click="done" class="completeBet">Complete</button>
             </div>
         </div>
     </div>
@@ -36,7 +36,15 @@
 
 <script>
     export default {
-        name: "SmsInter09"
+        name: "SmsInter09",
+        methods:{
+
+            done(){
+                this.$parent.toScreen(4);
+            },
+
+
+        }
     }
 </script>
 

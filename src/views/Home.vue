@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <component :is=component></component>
-    <button v-on:click="nextComp">Next</button>
-    <button v-on:click="prevComp">Prev</button>
+  <!--  <button v-on:click="nextComp">Next</button>
+    <button v-on:click="prevComp">Prev</button>-->
   </div>
 </template>
 <script>
@@ -13,8 +13,8 @@
 
     data(){
       return{
-        component:'Load00',
-        currentComp:0,
+        component:'StartScreen04',
+        currentComp:4,
         components:
                 [
                   'Load00',
@@ -41,6 +41,10 @@
       prevComp: function () {
         this.currentComp-=1;
         this.component =this.components[this.currentComp]
+      },
+      toScreen:function (screenNum) {
+        this.currentComp=screenNum;
+        this.component = this.components[screenNum]
       }
     }
   }

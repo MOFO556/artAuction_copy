@@ -10,7 +10,7 @@
                 </div>
                 <div class="row">
                     <input class="phoneInput" type="text">
-                    <button class="startAuction block">GO</button>
+                    <button v-on:click="next" class="startAuction block">GO</button>
                 </div>
                 <div class="phoneInputInfo" >Inter your phone number</div>
             </div>
@@ -20,7 +20,14 @@
 
 <script>
     export default {
-        name: "NumInter05"
+        name: "NumInter05",
+        methods:{
+            next(){
+                this.$parent.nextComp();
+            },
+
+        }
+
     }
 </script>
 

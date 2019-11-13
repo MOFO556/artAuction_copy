@@ -15,6 +15,7 @@
 
   html{
     background:grey;
+    overflow: hidden;
   }
 
   .inner{

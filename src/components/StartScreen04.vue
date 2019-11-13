@@ -9,7 +9,7 @@
                     <p class="lastbet">$ 1500</p>
                     <p class="lastbettitle">last bet size</p>
                 </div>
-                <button class="startAuction block">Bet</button>
+                <button v-on:click="start" class="startAuction block">Bet</button>
             </div>
         </div>
     </div>
@@ -17,7 +17,13 @@
 
 <script>
     export default {
-        name: "StartScreen04"
+        name: "StartScreen04",
+        methods:{
+            start(){
+                this.$parent.nextComp();
+            },
+
+        }
     }
 </script>
 

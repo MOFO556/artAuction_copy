@@ -18,8 +18,8 @@
                 </div>
 
 
-                    <button class="startAuction block">Agree</button>
-                    <button class="startAuction block  rightDisagree">Disagree</button>
+                    <button v-on:click="next" class="startAuction block">Agree</button>
+                    <button v-on:click="denied" class="startAuction block  rightDisagree">Disagree</button>
 
 
 
@@ -30,7 +30,18 @@
 
 <script>
     export default {
-        name: "Agree07"
+        name: "Agree07",
+        methods:{
+            next(){
+                this.$parent.nextComp();
+            },
+            denied(){
+                this.$parent.toScreen(4);
+            },
+
+
+        }
+
     }
 </script>
 

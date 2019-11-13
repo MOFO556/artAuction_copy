@@ -28,7 +28,7 @@
                 </div>
 
 
-                <button class="startAuction block">Go to Agreement</button>
+                <button v-on:click="next" class="startAuction block">Go to Agreement</button>
                 <div class="phoneInputInfo row" >Inter valid data</div>
             </div>
         </div>
@@ -37,7 +37,14 @@
 
 <script>
     export default {
-        name: "Registration06"
+        name: "Registration06",
+        methods:{
+            next(){
+                this.$parent.nextComp();
+            },
+
+        }
+
     }
 </script>
 
