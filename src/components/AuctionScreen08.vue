@@ -25,7 +25,7 @@
                         <p class="lastbet">$ 1500</p>
                         <p class="totalbettitle">total bet size</p>
                     </div>
-                    <button v-on:click="createBet" class="makeBet">Bet</button>
+                    <button v-on:click="next" class="makeBet">Bet</button>
                 </div>
 
 
@@ -38,31 +38,27 @@
 <script>
     export default {
         name: "AuctionScreen08",
+        beforeCreate(){
+            this.$store
+                .dispatch('session/addSession', {
+                    id: 4,
+                    addedAt: "13.12.2019 13:40",
+                    phone: "TEST",
+                    session_id: 3,
+                    expired: false/*
+                        addedAt: this.addedAt,
+                        phone: this.phone,
+                        session_id: this.session_id,
+                        expired: this.expired*/
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+        },
         methods:{
             next(){
                 this.$parent.nextComp();
-            },
-            createBet () {
-                this.$store
-                    .dispatch('bet/createBet', {
-                        id: 3,
-                        addedAt: "13.12.2019",
-                        phone: "79192790946",
-                        bet_id:5,
-                        bet:5550,
-                        ToPay: 15555/*
-                        addedAt: this.addedAt,
-                        phone: this.phone,
-                        bet_id:this.bet_id,
-                        bet: this.bet,
-                        ToPay: this.ToPay*/
-                    })
-                    .catch(err => {
-                        this.error = err.response.data.error
-                    })
-                this.$parent.nextComp();
             }
-
         }
 
     }

@@ -5,18 +5,15 @@ export const namespaced = true;
 
 export const state = {
     sessions: [],
-    session: {
-        addedAt:"TEST",
-        closedAt:"TEST",
-        phone: "TEST",
-        session_id:111,
-        expired: true
-    }
+    session: {}
 };
 
 export const mutations = {
     ADD_SESSION(state, session) {
-        state.bets.push(session);
+        state.sessions.push(session);
+    },
+    FIN_SESSION(state, session) {
+        state.sessions.unshift(session);
     },
     SWITCH(state) {
         state.session.expired = true
@@ -24,13 +21,13 @@ export const mutations = {
 };
 
 export const actions = {
-    createBet({ commit, dispatch }, session) {
+    addSession({ commit, dispatch }, session) {
         return BetService.startSession(session)
             .then(() => {
                 commit("ADD_SESSION", session);
                 const notification = {
                     type: "success",
-                    message: "Your session been successfully created"
+                    message: "Your session have been successfully created"
                 };
                 dispatch("notification/add", notification, { root: true });
             })
@@ -39,6 +36,26 @@ export const actions = {
                     type: "error",
                     message:
                         "There was a mistake while creating a session: " + error.message
+                };
+                dispatch("notification/add", notification, { root: true });
+                throw error;
+            });
+    },
+    addInSession({ commit, dispatch }, session) {
+        return BetService.finishSession(session)
+            .then(() => {
+                commit("FIN_SESSION", session);
+                const notification = {
+                    type: "success",
+                    message: "Your session have been successfully finished"
+                };
+                dispatch("notification/add", notification, { root: true });
+            })
+            .catch(error => {
+                const notification = {
+                    type: "error",
+                    message:
+                        "There was a mistake while finishing a session: " + error.message
                 };
                 dispatch("notification/add", notification, { root: true });
                 throw error;

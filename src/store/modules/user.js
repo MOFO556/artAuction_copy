@@ -4,7 +4,35 @@ import axios from 'axios'
 export const namespaced = true;
 
 export const state = {
-    users: [],
+    users: [
+        {
+            id: 1,
+            name: "User",
+            surname: "Userov",
+            patronymic: "Userovich",
+            email: "shallo.goiz@yandex.ru",
+            phone: "79192790946",
+            addedAt: "12.12.2019"
+        },
+        {
+            id: 2,
+            name: "User",
+            surname: "Userov",
+            patronymic: "Userovich",
+            email: "shallo.goiz@yandex.ru",
+            phone: "79192790946",
+            addedAt: "12.12.2019"
+        },
+        {
+            id: 3,
+            name: "Test",
+            surname: "Test",
+            patronymic: "Test",
+            email: "shallo.goiz@yandex.ru",
+            phone: "79192790946",
+            addedAt: "12.12.2019"
+        }
+    ],
     user: {}
 };
 

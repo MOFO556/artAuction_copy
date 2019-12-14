@@ -41,6 +41,21 @@
       "phone": "79192790946",
       "session_id": 2,
       "expired": true
+    },
+    {
+      "id": 3,
+      "addedAt": "13.12.2019 13:40",
+      "closedAt": "13.12.2019 13:43",
+      "phone": "79192790946",
+      "session_id": 3,
+      "expired": true
+    },
+    {
+      "id": 4,
+      "addedAt": "13.12.2019 13:40",
+      "phone": "TEST",
+      "session_id": 3,
+      "expired": false
     }
   ],
   "users": [

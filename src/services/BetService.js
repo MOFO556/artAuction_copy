@@ -16,6 +16,9 @@ export default {
     startSession(session) {
         return apiClient.post("/sessions", session);
     },
+    finishSession(session) {
+        return apiClient.post("/sessions", session);
+    },
     addUser(userData){
         return apiClient.post("/users", userData);
     }

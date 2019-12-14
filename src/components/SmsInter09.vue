@@ -40,10 +40,38 @@
         methods:{
 
             done(){
+
                 this.$parent.toScreen(4);
             },
-
-
+        createBet () {
+            this.$store
+                .dispatch('bet/createBet', {
+                    id: 3,
+                    addedAt: "13.12.2019",
+                    phone: "79192790946",
+                    bet_id:5,
+                    bet:5550,
+                    ToPay: 15555/*
+                        addedAt: this.addedAt,
+                        phone: this.phone,
+                        bet_id:this.bet_id,
+                        bet: this.bet,
+                        ToPay: this.ToPay*/
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+            this.$store
+                .dispatch('session/addInSession', {
+                    id: 4,
+                    expiredAt: "13.12.2019 13:48",
+                    expired: true
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+            this.$parent.toScreen(4);
+        }
         }
     }
 </script>

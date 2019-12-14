@@ -23,12 +23,17 @@
         name: "NumInter05",
         methods:{
             next(){
-
-                this.$parent.nextComp();
+                    //if (Запрос номера на сервере === this.phone)
+                    {
+                        //this.$parent.toScreen(8);
+                    }
+                    //else
+                        {
+                        this.$parent.nextComp();
+                    }
             },
 
-        }
-
+        },
     }
 </script>
 
