@@ -23,10 +23,22 @@
         name: "NumInter05",
         methods:{
             next(){
-                    //if (Запрос номера на сервере === this.phone)
+                /*if (Запрос номера на сервере === this.phone)
+                {
+                    /*if (Запрос состояния сессии на сервере)
                     {
-                        //this.$parent.toScreen(8);
+                        this.$parent.toScreen(8);
                     }
+                    else
+                        {
+                            const notification = {
+                                type: "error",
+                                message: "Session is busy"
+                            };
+                            this.$store
+                            .dispatch("notification/add", notification);
+                        }
+                }*/
                     //else
                         {
                         this.$parent.nextComp();
