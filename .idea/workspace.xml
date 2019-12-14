@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/bet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/notification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/session.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
     </list>
     <list id="78fdff29-f3ba-475e-a175-1729041041ab" name="ArtAuction_Client-10 Верстка экрана пользовательского соглашения" comment="" />
     <list id="205786e7-3651-4d99-9ac8-d626da37bc0f" name="ArtAuction_Client-11 Верстка экрана ставок" comment="ArtAuction_Client-11 Верстка экрана ставок #11" />
@@ -47,7 +53,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../auctionApp-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,14 +69,14 @@
     <property name="tasks.open.task.update.state.enabled" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
-      <recent name="C:\Workspace\ArtAuction\client\src\assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Prj\Vue\ArtAuction_Client\src" />
       <recent name="C:\Workspace\ArtAuction\client\src\assets\fonts" />
       <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
+      <recent name="C:\Workspace\ArtAuction\client\src\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -85,7 +91,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.serve">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -99,7 +115,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.serve" />
-        <item itemvalue="npm.serve" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.serve" />
@@ -131,6 +147,7 @@
       <workItem from="1573673248117" duration="753000" />
       <workItem from="1573674731202" duration="1522000" />
       <workItem from="1576253873638" duration="2579000" />
+      <workItem from="1576301631151" duration="659000" />
     </task>
     <task id="ArtAuction_Client-2" summary="Создание заглушек страниц по аналогии с TorgUmesten  описание страницы">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" original="true" />

@@ -25,7 +25,7 @@
                         <p class="lastbet">$ 1500</p>
                         <p class="totalbettitle">total bet size</p>
                     </div>
-                    <button v-on:click="next" class="makeBet">Bet</button>
+                    <button v-on:click="createBet" class="makeBet">Bet</button>
                 </div>
 
 
@@ -42,6 +42,24 @@
             next(){
                 this.$parent.nextComp();
             },
+            createBet () {
+                this.$store
+                    .dispatch('createBet', {
+                        addedAt: "13.12.2019",
+                        phone: "79192790946",
+                        bet_id:5,
+                        bet:5550,
+                        ToPay: 15555/*
+                        addedAt: this.addedAt,
+                        phone: this.phone,
+                        bet_id:this.bet_id,
+                        bet: this.bet,
+                        ToPay: this.ToPay*/
+                    })
+                    .catch(err => {
+                        this.error = err.response.data.error
+                    })
+            }
 
         }
 

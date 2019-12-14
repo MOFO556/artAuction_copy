@@ -45,7 +45,45 @@
       toScreen:function (screenNum) {
         this.currentComp=screenNum;
         this.component = this.components[screenNum]
-      }
+      },
+      register () {
+        this.$store
+                .dispatch('register', {
+                  name: this.name,
+                  surname: this.surname,
+                  patronymic: this.patronymic,
+                  email: this.email,
+                  phone: this.name,
+                  addedAt: this.addedAt,
+                  password: this.password /* должен же быть пароль????*/
+                })
+                .catch(err => {
+                  this.errors = err.response.data.errors
+                })
+      },
+      login () {
+        this.$store
+                .dispatch('login', {
+                  email: this.email,
+                  password: this.password
+                })
+                .catch(err => {
+                  this.error = err.response.data.error
+                })
+      },
+      createBet () {
+        this.$store
+                .dispatch('createBet', {
+                  addedAt: this.addedAt,
+                  phone: this.phone,
+                  bet_id:this.bet_id,
+                  bet: this.bet,
+                  ToPay: this.ToPay
+                })
+                .catch(err => {
+                  this.error = err.response.data.error
+                })
+      },
     }
   }
 </script>
