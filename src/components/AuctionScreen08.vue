@@ -44,7 +44,8 @@
             },
             createBet () {
                 this.$store
-                    .dispatch('createBet', {
+                    .dispatch('bet/createBet', {
+                        id: 3,
                         addedAt: "13.12.2019",
                         phone: "79192790946",
                         bet_id:5,
@@ -59,6 +60,7 @@
                     .catch(err => {
                         this.error = err.response.data.error
                     })
+                this.$parent.nextComp();
             }
 
         }

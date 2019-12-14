@@ -1,52 +1,75 @@
 {
   "bets": [
     {
+      "id": 1,
       "addedAt": "13.12.2019",
       "phone": "79192790946",
-      "bet_id":1,
-      "bet":40,
+      "bet_id": 1,
+      "bet": 40,
       "ToPay": 1500
-      },
+    },
     {
+      "id": 2,
       "addedAt": "13.12.2019",
       "phone": "79192790946",
-      "bet_id":2,
-      "bet":40,
+      "bet_id": 2,
+      "bet": 40,
       "ToPay": 1540
+    },
+    {
+      "id": 3,
+      "addedAt": "13.12.2019",
+      "phone": "79192790946",
+      "bet_id": 5,
+      "bet": 5550,
+      "ToPay": 15555
     }
-    ],
+  ],
   "sessions": [
     {
-      "addedAt":"13.12.2019 13:40",
-      "closedAt":"13.12.2019 13:43",
+      "id": 1,
+      "addedAt": "13.12.2019 13:40",
+      "closedAt": "13.12.2019 13:43",
       "phone": "79192790946",
       "session_id": 1,
       "expired": true
     },
     {
-      "addedAt":"13.12.2019 13:45",
-      "closedAt":"13.12.2019 13:47",
+      "id": 2,
+      "addedAt": "13.12.2019 13:45",
+      "closedAt": "13.12.2019 13:47",
       "phone": "79192790946",
-      "session_id":2,
-      "expired":true
+      "session_id": 2,
+      "expired": true
     }
   ],
   "users": [
     {
-        "name":"User",
-        "surname":"Userov",
-        "patronymic":"Userovich",
-        "email":"shallo.goiz@yandex.ru",
-        "phone":"79192790946",
-        "addedAt":"12.12.2019"
-      },
+      "id": 1,
+      "name": "User",
+      "surname": "Userov",
+      "patronymic": "Userovich",
+      "email": "shallo.goiz@yandex.ru",
+      "phone": "79192790946",
+      "addedAt": "12.12.2019"
+    },
     {
-      "name":"User",
-      "surname":"Userov",
-      "patronymic":"Userovich",
-      "email":"shallo.goiz@yandex.ru",
-      "phone":"79192790946",
-      "addedAt":"12.12.2019"
+      "id": 2,
+      "name": "User",
+      "surname": "Userov",
+      "patronymic": "Userovich",
+      "email": "shallo.goiz@yandex.ru",
+      "phone": "79192790946",
+      "addedAt": "12.12.2019"
+    },
+    {
+      "id": 3,
+      "name": "Test",
+      "surname": "Test",
+      "patronymic": "Test",
+      "email": "shallo.goiz@yandex.ru",
+      "phone": "79192790946",
+      "addedAt": "12.12.2019"
     }
   ]
 }

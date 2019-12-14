@@ -23,6 +23,7 @@
         name: "NumInter05",
         methods:{
             next(){
+
                 this.$parent.nextComp();
             },
 

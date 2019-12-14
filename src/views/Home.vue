@@ -48,7 +48,7 @@
       },
       register () {
         this.$store
-                .dispatch('register', {
+                .dispatch('/user/register', {
                   name: this.name,
                   surname: this.surname,
                   patronymic: this.patronymic,
@@ -63,22 +63,9 @@
       },
       login () {
         this.$store
-                .dispatch('login', {
-                  email: this.email,
-                  password: this.password
-                })
-                .catch(err => {
-                  this.error = err.response.data.error
-                })
-      },
-      createBet () {
-        this.$store
-                .dispatch('createBet', {
-                  addedAt: this.addedAt,
+                .dispatch('/user/login', {
                   phone: this.phone,
-                  bet_id:this.bet_id,
-                  bet: this.bet,
-                  ToPay: this.ToPay
+                  password: this.password
                 })
                 .catch(err => {
                   this.error = err.response.data.error

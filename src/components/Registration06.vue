@@ -28,7 +28,7 @@
                 </div>
 
 
-                <button v-on:click="next" class="startAuction block">Go to Agreement</button>
+                <button v-on:click="register" class="startAuction block">Go to Agreement</button>
                 <div class="phoneInputInfo row" >Inter valid data</div>
             </div>
         </div>
@@ -40,6 +40,29 @@
         name: "Registration06",
         methods:{
             next(){
+                this.$parent.nextComp();
+            },
+            register () {
+                this.$store
+                    .dispatch('user/register', {
+                        id: 3,
+                        name: "Test",
+                        surname: "Test",
+                        patronymic: "Test",
+                        email: "shallo.goiz@yandex.ru",
+                        phone: "79192790946",
+                        addedAt: "12.12.2019",
+                        /*name: this.name,
+                        surname: this.surname,
+                        patronymic: this.patronymic,
+                        email: this.email,
+                        phone: this.name,
+                        addedAt: this.addedAt,
+                        password: this.password *//* должен же быть пароль????*/
+                    })
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+                    })
                 this.$parent.nextComp();
             },
 
