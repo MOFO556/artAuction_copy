@@ -37,6 +37,17 @@
 <script>
     export default {
         name: "SmsInter09",
+        beforeDestroy(){
+            this.$store
+                .dispatch('session/addInSession', {
+                    id: 4,
+                    expiredAt: "13.12.2019 13:48",
+                    expired: true
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+        },
         methods:{
 
             done(){
@@ -57,15 +68,6 @@
                         bet_id:this.bet_id,
                         bet: this.bet,
                         ToPay: this.ToPay*/
-                })
-                .catch(err => {
-                    this.error = err.response.data.error
-                })
-            this.$store
-                .dispatch('session/addInSession', {
-                    id: 4,
-                    expiredAt: "13.12.2019 13:48",
-                    expired: true
                 })
                 .catch(err => {
                     this.error = err.response.data.error
