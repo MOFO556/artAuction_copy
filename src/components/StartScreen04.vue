@@ -3,7 +3,6 @@
         <div class="inner">
 
             <img src="../assets/images/body.png" height="464px" width="360px">
-
             <div class="row">
                 <div class="block">
                     <p class="lastbet">$ 1500</p>

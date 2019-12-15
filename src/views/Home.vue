@@ -1,6 +1,8 @@
 <template>
   <div class="home">
+    <transition name="slide-fade" mode="out-in">
     <component :is=component></component>
+    </transition>
   <!--  <button v-on:click="nextComp">Next</button>
     <button v-on:click="prevComp">Prev</button>-->
   </div>
@@ -74,3 +76,61 @@
     }
   }
 </script>
+
+<style>
+  .modal {
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 2%;
+    background-color: #e0e0e0;
+  }
+  /*First transition*/
+  .fade-enter {
+    opacity: 0;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease-out;
+  }
+
+  .fade-leave-to {
+    opacity: 0;
+  }
+  /*Second transition*/
+  .slide-fade-enter {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
+  .slide-fade-enter-active,
+  .slide-fade-leave-active {
+    transition: all 0.2s ease;
+  }
+
+  .slide-fade-leave-to {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  /*Third transition*/
+  .slide-up-enter {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  .slide-up-enter-active,
+  .slide-up-leave-active {
+    transition: all 0.2s ease;
+  }
+
+  .slide-up-leave-to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  .slide-up-move {
+    transition: transform .5s ease-out;
+  }
+</style>
