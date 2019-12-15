@@ -38,23 +38,7 @@
 <script>
     export default {
         name: "AuctionScreen08",
-        beforeCreate(){
-            this.$store
-                .dispatch('session/addSession', {
-                    id: 4,
-                    addedAt: "13.12.2019 13:40",
-                    phone: "TEST",
-                    session_id: 3,
-                    expired: false/*
-                        addedAt: this.addedAt,
-                        phone: this.phone,
-                        session_id: this.session_id,
-                        expired: this.expired*/
-                })
-                .catch(err => {
-                    this.error = err.response.data.error
-                })
-        },
+
         methods:{
             next(){
                 this.$parent.nextComp();

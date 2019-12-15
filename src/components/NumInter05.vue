@@ -21,6 +21,23 @@
 <script>
     export default {
         name: "NumInter05",
+        beforeDestroy(){
+            this.$store
+                .dispatch('session/addSession', {
+                    id: 4,
+                    addedAt: "13.12.2019 13:40",
+                    phone: "TEST",
+                    session_id: 3,
+                    expired: false/*
+                        addedAt: this.addedAt,
+                        phone: this.phone,
+                        session_id: this.session_id,
+                        expired: this.expired*/
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+        },
         methods:{
             next(){
                 /*if (Запрос номера на сервере === this.phone)

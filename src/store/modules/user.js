@@ -1,5 +1,4 @@
 import BetService from "@/services/BetService";
-import axios from 'axios'
 
 export const namespaced = true;
 
@@ -54,13 +53,6 @@ export const mutations = {
 };
 
 export const actions = {
-    /*register ({ commit }, credentials) {
-        return axios
-            .post('//localhost:3000/users', credentials)
-            .then(({ data }) => {
-                commit('SET_USER_DATA', data)
-            })
-    },*/
     register({ commit, dispatch }, userData) {
         return BetService.addUser(userData)
             .then(() => {
@@ -81,12 +73,25 @@ export const actions = {
                 throw error;
             });
     },
-    login ({ commit }, credentials) {
-        return axios
-            .post('//localhost:3000/users', credentials)
-            .then(({ data }) => {
-                commit('SET_USER_DATA', data)
+    login ({ commit, dispatch }, userPhone) {
+        return BetService.checkPhone(userPhone)
+            .then(() => { //тут получается и ответ от сервера сразу
+                commit("ADD_USER", userPhone);
+                const notification = {
+                    type: "success",
+                    message: "You have been successfully checked phone"
+                };
+                dispatch("notification/add", notification, { root: true });
             })
+            .catch(error => {
+                const notification = {
+                    type: "error",
+                    message:
+                        "There was a mistake while checking the phone: " + error.message
+                };
+                dispatch("notification/add", notification, { root: true });
+                throw error;
+            });
     }
 };
 
