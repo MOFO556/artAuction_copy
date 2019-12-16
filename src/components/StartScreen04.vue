@@ -5,7 +5,7 @@
             <img src="../assets/images/body.png" height="464px" width="360px">
             <div class="row">
                 <div class="block">
-                    <p class="lastbet">$ 1500</p>
+                    <p class="lastbet">$ {{price}}</p>
                     <p class="lastbettitle">last bet size</p>
                 </div>
                 <button v-on:click="start" class="startAuction block">Bet</button>
@@ -17,6 +17,21 @@
 <script>
     export default {
         name: "StartScreen04",
+        beforeCreate(){
+            this.$store
+                .dispatch('getPrice') //Отправляем запрос на получение цены
+                .then(()=>{
+                    this.price = this.$store.state.currentPrice
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
+        },
+        data(){
+            return {
+                price: null
+            }
+        },
         methods:{
             start(){
                 this.$parent.nextComp();

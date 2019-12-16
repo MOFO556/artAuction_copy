@@ -16,8 +16,9 @@ export const mutations = {
 export const actions = {
     createBet({ commit, dispatch }, bet) {
         return BetService.postBet(bet)
-            .then(() => {
+            .then((res) => {
                 commit("ADD_BET", bet);
+                dispatch("setPrice", res.data.sum, { root: true });
                 const notification = {
                     type: "success",
                     message: "Your bet been successfully created"
