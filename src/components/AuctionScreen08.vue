@@ -22,7 +22,7 @@
                 </div>
                 <div class="row">
                     <div class="block">
-                        <p class="lastbet">$ 1500</p>
+                        <p class="lastbet">$ {{price}}</p>
                         <p class="totalbettitle">total bet size</p>
                     </div>
                     <button v-on:click="next" class="makeBet">Bet</button>
@@ -38,10 +38,57 @@
 <script>
     export default {
         name: "AuctionScreen08",
-
+        beforeCreate() {
+            this.$store
+                .dispatch('getPrice') //Отправляем запрос на получение цены
+                .then(() => {
+                    this.price = this.$store.state.currentPrice
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
+        },
+        data(){
+            return {
+                price: this.$store.state.currentPrice
+            }
+        },
         methods:{
             next(){
-                this.$parent.nextComp();
+                this.$store //Запрос, свободна ли сессия
+                    .dispatch('session/isFree', {
+                        phone: "79999999999"/*
+                        addedAt: this.addedAt,
+                        phone: this.phone,
+                        session_id: this.session_id,
+                        expired: this.expired*/
+                    }).then(()=>{ //Проверяем ответ
+                        if (!this.$store.state.answerLock){ //Если свободна, то добавляем новую и едём вперед
+                            this.$store
+                                .dispatch('session/addSession', {
+                                    phone: "79999999999",
+                                    bet: 1550/*
+                        phone: this.phone,
+                        bet: this.bet
+                        */
+                                })
+                                .catch(err => {
+                                    this.error = err.response.data.error
+                                })
+                            this.$parent.nextComp();
+                        }
+                        else { //Если занята, то выводим сообщение
+                            const notification = {
+                                type: "error",
+                                message: "Session is busy"
+                            };
+                            this.$store
+                                .dispatch("notification/add", notification);
+                        }
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
             }
         }
 

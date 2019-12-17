@@ -1,62 +1,23 @@
 import BetService from "@/services/BetService";
-
 export const namespaced = true;
 
 export const state = {
-    users: [
-        {
-            id: 1,
-            name: "User",
-            surname: "Userov",
-            patronymic: "Userovich",
-            email: "shallo.goiz@yandex.ru",
-            phone: "79192790946",
-            addedAt: "12.12.2019"
-        },
-        {
-            id: 2,
-            name: "User",
-            surname: "Userov",
-            patronymic: "Userovich",
-            email: "shallo.goiz@yandex.ru",
-            phone: "79192790946",
-            addedAt: "12.12.2019"
-        },
-        {
-            id: 3,
-            name: "Test",
-            surname: "Test",
-            patronymic: "Test",
-            email: "shallo.goiz@yandex.ru",
-            phone: "79192790946",
-            addedAt: "12.12.2019"
-        }
-    ],
+    users: [],
     user: {}
 };
 
 export const mutations = {
-    /*SET_USER_DATA (state, userData) {
-        state.user = userData
-        localStorage.setItem('user', JSON.stringify(userData))
-        axios.defaults.headers.common['Authorization'] = `Bearer ${
-            userData.token
-        }`
-    },*/
-    ADD_USER(state, bet) {
-        state.users.push(bet);
-    },
-    CLEAR_USER_DATA () {
-        localStorage.removeItem('user')
-        location.reload()
+    ADD_USER(state, user) {
+        state.users.push(user);
     }
 };
 
 export const actions = {
     register({ commit, dispatch }, userData) {
         return BetService.addUser(userData)
-            .then(() => {
+            .then((res) => {
                 commit("ADD_USER", userData);
+                dispatch("setPrice", res.data.sum, { root: true });
                 const notification = {
                     type: "success",
                     message: "User have been successfully created"
@@ -75,8 +36,10 @@ export const actions = {
     },
     login ({ commit, dispatch }, userPhone) {
         return BetService.checkPhone(userPhone)
-            .then(() => { //тут получается и ответ от сервера сразу
+            .then((res) => {
                 commit("ADD_USER", userPhone);
+                dispatch("getPhoneStat", res.data.exists, { root: true });
+                dispatch("setPrice", res.data.sum, { root: true });
                 const notification = {
                     type: "success",
                     message: "You have been successfully checked phone"
@@ -92,14 +55,5 @@ export const actions = {
                 dispatch("notification/add", notification, { root: true });
                 throw error;
             });
-    }
-};
-
-export const getters = {
-    loggedIn (state) {
-        return !!state.user
-    },
-    getUserPhone: state => {
-        return state.users.filter(users => users.phone);
     }
 };

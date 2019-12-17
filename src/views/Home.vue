@@ -9,7 +9,6 @@
 </template>
 <script>
   // @ is an alias to /src
-
   export default {
     name: "home",
 
@@ -38,7 +37,7 @@
     methods: {
       nextComp: function () {
         this.currentComp+=1;
-        this.component = this.components[this.currentComp]
+        this.component = this.components[this.currentComp];
       },
       prevComp: function () {
         this.currentComp-=1;
@@ -78,6 +77,16 @@
 </script>
 
 <style>
+  .invalid
+  {
+    border-color: #FF0000;
+    border-width: 5px;
+    border-style: inset;
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
   .modal {
     width: 250px;
     height: 200px;

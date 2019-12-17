@@ -38,8 +38,6 @@
             denied(){
                 this.$parent.toScreen(4);
             },
-
-
         }
 
     }

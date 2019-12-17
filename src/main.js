@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import ProgressBar from 'vuejs-progress-bar'
 
 import Load00 from './components/Load00.vue';
 import Author01 from './components/Author01.vue';
@@ -13,9 +14,12 @@ import Registration06 from "./components/Registration06";
 import Agree07 from "./components/Agree07";
 import AuctionScreen08 from "./components/AuctionScreen08";
 import SmsInter09 from "./components/SmsInter09";
+import Vuelidate from "vuelidate/src";
 
 
+Vue.use(Vuelidate);
 
+Vue.use(ProgressBar);
 Vue.component('Load00',Load00);
 Vue.component('Author01',Author01);
 Vue.component('Author02',Author02);
@@ -31,6 +35,7 @@ Vue.component('SmsInter09',SmsInter09);
 
 
 Vue.config.productionTip = false;
+
 
 new Vue({
   router,

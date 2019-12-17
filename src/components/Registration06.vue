@@ -10,25 +10,38 @@
                     <div class="smsInterTitle">Registration</div>
                 </div>
                 <div >
-                    <input class="phoneInput" type="text" placeholder="First Name">
+                    <input class="phoneInput" type="text" placeholder="First Name"
+                           v-model="FirstName"
+                           :class="{ invalid: $v.FirstName.$error }"
+                           @blur="$v.FirstName.$touch()">
                 </div>
                 <div>
-                    <input class="phoneInput" type="text" placeholder="Last Name">
+                    <input class="phoneInput" type="text" placeholder="Last Name"
+                           v-model="SecondName"
+                           :class="{ invalid: $v.SecondName.$error }"
+                           @blur="$v.SecondName.$touch()">
                 </div>
 
                 <div>
-                    <input class="phoneInput" type="text" placeholder="Email Address">
+                    <input class="phoneInput" type="email" placeholder="Email Address"
+                           v-model="Email"
+                           :class="{ invalid: $v.Email.$error }"
+                           @blur="$v.Email.$touch()">
                 </div>
 
                 <div>
-                    <input class="phoneInput" type="text" placeholder="Country">
+                    <input class="phoneInput" type="text" placeholder="Country"
+                           v-model="Country"
+                           :class="{ invalid: $v.Country.$error }"
+                           @blur="$v.Country.$touch()">
                 </div>
                 <div>
-                    <input class="phoneInput" type="text" placeholder="Mobile number">
+                    <input class="phoneInput" type="text" placeholder="Mobile number"
+                           v-model="Phone" disabled="true">
                 </div>
 
 
-                <button v-on:click="register" class="startAuction block">Go to Agreement</button>
+                <button v-on:click="register" :disabled="$v.$anyError" class="startAuction block" >Go to Agreement</button>
                 <div class="phoneInputInfo row" >Inter valid data</div>
             </div>
         </div>
@@ -36,34 +49,41 @@
 </template>
 
 <script>
+    import {required,email} from "vuelidate/lib/validators";
     export default {
         name: "Registration06",
+        validations: {
+            FirstName: {required},
+            SecondName: {required},
+            Email: {required,email},
+            Country: {required},
+            Phone: {required},
+        },
+        data(){
+            return{
+                FirstName: null,
+                SecondName: null,
+                Email: null,
+                Country: null,
+                Phone: this.$store.state.userPhone
+            }
+        },
         methods:{
-            next(){
-                this.$parent.nextComp();
-            },
             register () {
-                this.$store
-                    .dispatch('user/register', {
-                        id: 3,
-                        name: "Test",
-                        surname: "Test",
-                        patronymic: "Test",
-                        email: "shallo.goiz@yandex.ru",
-                        phone: "79192790946",
-                        addedAt: "12.12.2019",
-                        /*name: this.name,
-                        surname: this.surname,
-                        patronymic: this.patronymic,
-                        email: this.email,
-                        phone: this.name,
-                        addedAt: this.addedAt,
-                        password: this.password *//* должен же быть пароль????*/
-                    })
-                    .catch(err => {
-                        this.errors = err.response.data.errors
-                    })
-                this.$parent.nextComp();
+                if (!this.$v.$invalid) {
+                    this.$store
+                        .dispatch('user/register', { //Отправляем заполненные данные и идём вперед
+                            name: this.FirstName,
+                            surname: this.SecondName,
+                            email: this.Email,
+                            country: this.Country,
+                            phone: this.Phone
+                        })
+                        .catch(err => {
+                            this.errors = err.response.data.errors
+                        })
+                    this.$parent.nextComp();
+                }
             },
 
         }
