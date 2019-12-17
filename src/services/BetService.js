@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-    baseURL: ` http://localhost:80`,
+    baseURL: ` http://192.168.0.11:80`,
     withCredentials: false, // This is the default
     headers: {
         Accept: "application/json",
@@ -36,5 +36,8 @@ export default {
     },
     completeVerification(code){
         return apiClient.post("/verification/verify", code);
+    },
+    getBetStep(){
+        return apiClient.get("/getMinMax");
     },
 };

@@ -16,7 +16,9 @@ export default new Vuex.Store({
       currentPrice: null,
       verificationData: [],
       isSMSsent: null,
-      userPhone: null
+      userPhone: null,
+      betStepMin: null,
+      betStepMax: null,
   },
   mutations: {
     PHONE_STAT(state, answer){
@@ -36,7 +38,13 @@ export default new Vuex.Store({
       },
       ADD_USER_PHONE(state, number){
         state.userPhone = number
-      }
+      },
+      SET_BET_STEPMIN(state, betStep){
+        state.betStepMin = betStep
+      },
+      SET_BET_STEPMAX(state, betStep){
+          state.betStepMax = betStep
+      },
   },
   actions: {
       getPhoneStat({ commit }, ans) {
@@ -54,7 +62,7 @@ export default new Vuex.Store({
                   commit("CHANGE_PRICE", res.data.sum);
                   const notification = {
                       type: "success",
-                      message: "Prices nave been successfully loaded"
+                      message: "Prices have been successfully loaded"
                   };
                   dispatch("notification/add", notification, { root: true });
               })
@@ -63,6 +71,33 @@ export default new Vuex.Store({
                       type: "error",
                       message:
                           "There was a mistake while loading the price: " + error.message
+                  };
+                  dispatch("notification/add", notification, { root: true });
+                  throw error;
+              });
+      },
+      getBetStep({ commit, dispatch }){
+          return BetService.getBetStep()
+              .then((res) => {
+                  /* eslint-disable no-console */
+                  console.log("1: "+ res.data)
+                  /* eslint-disable no-console */
+                  console.log("2: "+ res.data.min)
+                  commit("SET_BET_STEPMIN", res.data.min);
+                  /* eslint-disable no-console */
+                  console.log("3: "+ res.data.max)
+                  commit("SET_BET_STEPMAX", res.data.max);
+                  const notification = {
+                      type: "success",
+                      message: "Bet steps have been successfully loaded"
+                  };
+                  dispatch("notification/add", notification, { root: true });
+              })
+              .catch(error => {
+                  const notification = {
+                      type: "error",
+                      message:
+                          "There was a mistake while loading bet steps: " + error.message
                   };
                   dispatch("notification/add", notification, { root: true });
                   throw error;

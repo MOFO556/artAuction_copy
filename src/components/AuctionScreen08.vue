@@ -14,11 +14,11 @@
 
                 <div class="row">
                     <div class="block">
-                        <p class="lastbet">$ 100</p>
+                        <p class="lastbet">$ {{betStepmn}}</p>
                         <p class="totalbettitle">bet step</p>
                     </div>
-                    <button class="betMinus">-</button>
-                    <button class="betPlus">+</button>
+                    <button class="betMinus" v-on:click="decrementBet">-</button>
+                    <button class="betPlus" v-on:click="incrementBet">+</button>
                 </div>
                 <div class="row">
                     <div class="block">
@@ -47,30 +47,37 @@
                 .catch(err => {
                     this.errors = err.response.data.errors
                 })
+            this.$store
+                .dispatch('getBetStep')
+                .then(() => {
+                    this.betStepmn = this.$store.state.betStepMin,
+                    this.betStepmx = this.$store.state.betStepMax,
+                    this.bet = this.betStepmn
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
         },
         data(){
             return {
-                price: this.$store.state.currentPrice
+                price: this.$store.state.currentPrice,
+                phone: this.$store.state.userPhone,
+                betStepmn: null,
+                betStepmx: null,
+                bet: null
             }
         },
         methods:{
             next(){
                 this.$store //Запрос, свободна ли сессия
                     .dispatch('session/isFree', {
-                        phone: "79999999999"/*
-                        addedAt: this.addedAt,
-                        phone: this.phone,
-                        session_id: this.session_id,
-                        expired: this.expired*/
+                        phone: this.phone
                     }).then(()=>{ //Проверяем ответ
                         if (!this.$store.state.answerLock){ //Если свободна, то добавляем новую и едём вперед
                             this.$store
                                 .dispatch('session/addSession', {
-                                    phone: "79999999999",
-                                    bet: 1550/*
-                        phone: this.phone,
-                        bet: this.bet
-                        */
+                                    phone: this.phone,
+                                    bet: this.price
                                 })
                                 .catch(err => {
                                     this.error = err.response.data.error
@@ -89,6 +96,20 @@
                 .catch(err => {
                     this.error = err.response.data.error
                 })
+            },
+            incrementBet(){
+                if (this.bet <= this.betStepmx)
+                {
+                    this.price += this.betStepmn
+                    this.bet += this.betStepmn
+                }
+            },
+            decrementBet(){
+                if (this.bet > this.betStepmn)
+                {
+                    this.price -= this.betStepmn
+                    this.bet -= this.betStepmn
+                }
             }
         }
 
