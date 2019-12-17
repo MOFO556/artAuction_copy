@@ -28,9 +28,8 @@
                 </div>
 
 
-                <button v-on:click="next" class="startAuction block">Go to Agreement</button>
-                <div class="phoneInputInfo row" >Inter valid data</div>
-            </div>
+                <button v-on:click="register" class="startAuction block">Go to Agreement</button>
+               </div>
         </div>
     </div>
 </template>
@@ -40,6 +39,29 @@
         name: "Registration06",
         methods:{
             next(){
+                this.$parent.nextComp();
+            },
+            register () {
+                this.$store
+                    .dispatch('user/register', {
+                        id: 3,
+                        name: "Test",
+                        surname: "Test",
+                        patronymic: "Test",
+                        email: "shallo.goiz@yandex.ru",
+                        phone: "79192790946",
+                        addedAt: "12.12.2019",
+                        /*name: this.name,
+                        surname: this.surname,
+                        patronymic: this.patronymic,
+                        email: this.email,
+                        phone: this.name,
+                        addedAt: this.addedAt,
+                        password: this.password *//* должен же быть пароль????*/
+                    })
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+                    })
                 this.$parent.nextComp();
             },
 
@@ -64,7 +86,7 @@
 
     .smsInterTitle
     {
-        font-family: Nunito;
+
         font-style: normal;
         font-weight: bold;
         font-size: 28px;
@@ -72,10 +94,10 @@
         display: flex;
         align-items: center;
         color: #393939;
-        margin-bottom:10px;
+
         text-align:center;
-        margin-bottom: 34px;
-        margin-top: 40px;
+        margin-bottom: 39px;
+        margin-top: 23px;
     }
 
     .phoneInputInfo
@@ -93,11 +115,15 @@
 
 
     .phoneInput{
+        -webkit-box-shadow:none;
+        -moz-box-shadow:none;
+        border:none;
+        box-shadow: none;
         background: #DFDEDE;
         opacity: 0.3;
         border-radius: 10px;
-        width:338px;
-        height:40px;
+        width:327px;
+        height:50px;
         font-family: Nunito;
         font-style: normal;
         font-weight: normal;
@@ -105,7 +131,7 @@
         line-height: 22px;
         color: #000000;
         text-align:center;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
     }
 
 
@@ -136,7 +162,7 @@
         font-size:28px;
         font-weight: 800;
         color:white;
-        width: 338px;
+        width: 327px;
         height: 70px;
         box-shadow: 0px 10px 40px rgba(248, 161, 112, 0.2);
         background-image: linear-gradient(to right, #F8A170 0%, #FFCD61  100%);
@@ -144,7 +170,7 @@
 
         align: right;
         margin-right: 0px;
-        margin-top:80px;
+        margin-top:46px;
     }
 
     .lastbet{

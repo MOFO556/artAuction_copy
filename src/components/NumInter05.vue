@@ -2,7 +2,7 @@
     <div class="outer">
         <div class="inner">
 
-            <img src="../assets/images/body.png" height="464px" width="360px">
+            <img src="../assets/images/body.png" height="444px" width="360px">
             <div class="inputtextblock">
                 <div class="row">
                     <div class="smsInterTitle">Inter your phone number</div>
@@ -12,7 +12,8 @@
                     <input class="phoneInput" type="text">
                     <button v-on:click="next" class="startAuction block">GO</button>
                 </div>
-                <div class="phoneInputInfo" >Inter your phone number</div>
+
+
             </div>
         </div>
     </div>
@@ -23,11 +24,29 @@
         name: "NumInter05",
         methods:{
             next(){
-                this.$parent.nextComp();
+                /*if (Запрос номера на сервере === this.phone)
+                {
+                    /*if (Запрос состояния сессии на сервере)
+                    {
+                        this.$parent.toScreen(8);
+                    }
+                    else
+                        {
+                            const notification = {
+                                type: "error",
+                                message: "Session is busy"
+                            };
+                            this.$store
+                            .dispatch("notification/add", notification);
+                        }
+                }*/
+                    //else
+                        {
+                        this.$parent.nextComp();
+                    }
             },
 
-        }
-
+        },
     }
 </script>
 
@@ -40,8 +59,8 @@
 
     .pricing
     {
-        margin-left: 50px;
-        margin-top:3px;
+        margin-left: 56px;
+        margin-top: 17px;
         display: block;
     }
 
@@ -56,6 +75,9 @@
         align-items: center;
         color: #393939;
         margin-bottom:10px;
+        margin-top:11px;
+        letter-spacing: -0.024em;
+        margin-left:-1px;
     }
 
     .phoneInputInfo
@@ -73,10 +95,14 @@
 
 
     .phoneInput{
+        -webkit-box-shadow:none;
+        -moz-box-shadow:none;
+        border:none;
+        box-shadow: none;
         background: #DFDEDE;
         opacity: 0.3;
         border-radius: 10px;
-        width:205px;
+        width:195px;
         height:40px;
         font-family: Nunito;
         font-style: normal;
@@ -133,9 +159,6 @@
         line-height: 160%;
         color: #393939;
         margin:0px;
-
-
-
     }
 
     .lastbettitle{

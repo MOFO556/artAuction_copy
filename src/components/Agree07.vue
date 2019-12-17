@@ -9,20 +9,12 @@
                     <div class="smsInterTitle">User Agreement</div>
                 </div>
                 <div >
-                    <textarea class="agreementText" type="text" readonly
-                    >
+                    <textarea class="agreementText" type="text" readonly>
                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ex elit, imperdiet at dapibus vel, consequat eu erat. Cras odio ipsum, malesuada vel est nec, cursus scelerisque mi. Nunc quam elit, iaculis sit amet facilisis et, auctor et tellus. Nunc a felis vitae nulla egestas varius. Praesent quis tortor consectetur est laoreet finibus. Praesent suscipit, augue sit amet eleifend maximus, dolor nibh blandit nunc, vel tincidunt quam massa sit amet velit. In sem diam, vulputate in purus a, dictum posuere felis. Quisque vehicula commodo magna vel
-
-
                     </textarea>
                 </div>
-
-
                     <button v-on:click="next" class="startAuction block">Agree</button>
                     <button v-on:click="denied" class="startAuction block  rightDisagree">Disagree</button>
-
-
-
                  </div>
         </div>
     </div>
@@ -69,10 +61,9 @@
         display: flex;
         align-items: center;
         color: #393939;
-        margin-bottom:10px;
         text-align:center;
-        margin-bottom: 34px;
-        margin-top: 42px;
+        margin-bottom: 37px;
+        margin-top: 22px;
     }
 
     .phoneInputInfo
@@ -90,6 +81,10 @@
 
 
     .agreementText{
+        -webkit-box-shadow:none;
+        -moz-box-shadow:none;
+        border:none;
+        box-shadow: none;
         resize: none;
         background: #DFDEDE;
         opacity: 0.3;
@@ -141,7 +136,7 @@
         border-radius: 10px;
         align: right;
         margin-right: 0px;
-        margin-top:77px;
+        margin-top:69px;
     }
 
     .rightDisagree{

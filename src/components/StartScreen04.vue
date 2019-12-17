@@ -2,14 +2,13 @@
     <div class="outer">
         <div class="inner">
 
-            <img src="../assets/images/body.png" height="464px" width="360px">
-
+            <img src="../assets/images/body.png" height="444px" width="360px">
             <div class="row">
                 <div class="block">
                     <p class="lastbet">$ 1500</p>
                     <p class="lastbettitle">last bet size</p>
                 </div>
-                <button v-on:click="start" class="startAuction block">Bet</button>
+                <button v-on:click="start" class="startAuction">Bet</button>
             </div>
         </div>
     </div>
@@ -32,6 +31,7 @@
 
     .row
     {
+        margin-top: 34px;
         width: 100%;
         text-align: center;
         display: flex;
@@ -42,7 +42,7 @@
     .block{
         width: 100px;
         display: inline-block;
-        margin-right: 43px;
+        margin-right: 30px;
     }
 
 
@@ -59,9 +59,11 @@
         box-shadow: 0px 10px 40px rgba(248, 161, 112, 0.2);
         background-image: linear-gradient(to right, #F8A170 0%, #FFCD61  100%);
         border-radius: 10px;
+        margin-right: 15px;
     }
 
     .lastbet{
+
         font-family: Nunito;
         font-style: normal;
         font-weight: 600;
@@ -69,20 +71,20 @@
         line-height: 160%;
         color: #393939;
         margin:0px;
-
-
+        letter-spacing: -0.02em;
 
     }
 
     .lastbettitle{
 
-        margin:0px;
+        margin-top: -6px;
         color: #999999;
         font-family: Nunito;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
         line-height: 160%;
+
     }
 
 

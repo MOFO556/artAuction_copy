@@ -14,14 +14,14 @@
   @import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap');
 
   html{
-    background:grey;
+    background-color: gray;
     overflow: hidden;
   }
 
   .inner{
-    background: white;
+    background-color: white;
     width: 360px;
-    height: 640px;
+    height: 580px;
   }
 
   .outer

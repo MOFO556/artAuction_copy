@@ -1,30 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="">
+    <list default="true" id="368a3d83-df35-435a-bd10-c7145eb1a217" name="ArtAuction_Client-34 Смешивание верски под 560 с чем-то непонятным" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Agree07.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Agree07.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Author02.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author02.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Registration06.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration06.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SmsInter09.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
     </list>
-    <list id="78fdff29-f3ba-475e-a175-1729041041ab" name="ArtAuction_Client-10 Верстка экрана пользовательского соглашения" comment="" />
-    <list id="205786e7-3651-4d99-9ac8-d626da37bc0f" name="ArtAuction_Client-11 Верстка экрана ставок" comment="ArtAuction_Client-11 Верстка экрана ставок #11" />
-    <list id="fba85105-bf74-4c90-a352-c845d891b3b9" name="ArtAuction_Client-12 Верстка экрана смс верификации" comment="" />
-    <list id="edbf7084-0128-472a-998b-b28e21ffe62c" name="ArtAuction_Client-13 Замена изображения заглушки лота" comment="" />
-    <list id="0136e701-f14f-4ad1-8bee-eda88530058e" name="ArtAuction_Client-14 Верстка экрана загрузки" comment="" />
-    <list id="3fb36bc5-3a16-4779-9dfe-3b16c2d5ea46" name="ArtAuction_Client-15 Установка стандартных заглушек для всех экранов" comment="" />
-    <list id="6461505a-026e-4aa4-8cc6-67909370054f" name="ArtAuction_Client-16 Исправление фона на белый\серый" comment="ArtAuction_Client-16 Исправление фона на белый\серый" />
-    <list id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
-    <list id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="" />
-    <list id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="" />
-    <list id="2add6479-73fb-4801-950f-cd6a0a365c6e" name="ArtAuction_Client-9 Верстка экрана регистрации" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list id="99dbe590-a1e3-4eeb-9f25-6f77c8d005fa" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,11 +23,17 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vuetifytest/vuetify-dashboard" />
+    <property name="last_opened_file_path" value="C:/vuetifytest/vuetify-dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,33 +41,31 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Workspace\ArtAuction\client\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="tasks.timeTracking" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="tasks.close.task.update.state.enabled" value="true" />
     <property name="tasks.open.task.update.state.enabled" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Workspace\ArtAuction\client\src\assets\fonts" />
-      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
       <recent name="C:\Workspace\ArtAuction\client\src\assets" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\ArtAuction\client\src\assets\fonts" />
+      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.serve">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -94,24 +79,36 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.serve" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.serve" />
-        <item itemvalue="npm.serve" />
-        <item itemvalue="npm.serve" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.serve" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" />
       <changelist id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="" />
       <created>1573114138460</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573674731145</updated>
+      <updated>1575908432637</updated>
       <workItem from="1573114140731" duration="751000" />
       <workItem from="1573191116807" duration="1647000" />
       <workItem from="1573305655996" duration="111000" />
@@ -125,6 +122,7 @@
       <workItem from="1573551469545" duration="53000" />
       <workItem from="1573673248117" duration="753000" />
       <workItem from="1573674731202" duration="1522000" />
+      <workItem from="1575906655519" duration="1776000" />
     </task>
     <task id="ArtAuction_Client-2" summary="Создание заглушек страниц по аналогии с TorgUmesten  описание страницы">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" original="true" />
@@ -274,14 +272,46 @@
       <updated>1573674729836</updated>
       <workItem from="1573674107026" duration="623000" />
     </task>
+    <task active="true" id="ArtAuction_Client-18" summary="Переверстать на новое разрешение 560 по высоте">
+      <changelist id="bfa326be-a066-498b-ba57-4271e1f4febc" name="ArtAuction_Client-18 Переверстать на новое разрешение 580 по высоте" comment="" />
+      <created>1573666329000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/18</url>
+      <option name="number" value="18" />
+      <option name="presentableId" value="ArtAuction_Client-18" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1576333909000</updated>
+      <workItem from="1575908432920" duration="1378000" />
+      <workItem from="1575965260541" duration="3695000" />
+      <workItem from="1575985521764" duration="2634000" />
+      <workItem from="1576149339433" duration="129000" />
+      <workItem from="1576149488229" duration="612000" />
+      <workItem from="1576151741915" duration="408000" />
+      <workItem from="1576166822551" duration="267000" />
+      <workItem from="1576490425734" duration="9115000" />
+      <workItem from="1576512508471" duration="5514000" />
+      <workItem from="1576576649106" duration="5915000" />
+    </task>
+    <task active="true" id="ArtAuction_Client-34" summary="Смешивание верски под 560 с чем-то непонятным">
+      <branch name="master" repository="C:\Workspace\ArtAuction_Client" />
+      <changelist id="368a3d83-df35-435a-bd10-c7145eb1a217" name="ArtAuction_Client-34 Смешивание верски под 560 с чем-то непонятным" comment="" />
+      <created>1576572430000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/34</url>
+      <option name="number" value="34" />
+      <option name="presentableId" value="ArtAuction_Client-34" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1576583276729</updated>
+      <workItem from="1576583277447" duration="537000" />
+    </task>
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
+    <option name="useBranch" value="true" />
     <option name="commitChanges" value="false" />
     <servers>
       <GitHub url="https://github.com">
-        <option name="preferredCloseTaskState">
-          <CustomTaskState id="RESOLVED" predefined="true" name="Resolved" />
-        </option>
         <option name="repoAuthor" value="AndrewAndreevich" />
         <option name="repoName" value="ArtAuction_Client" />
       </GitHub>
@@ -306,9 +336,52 @@
   <component name="VcsManagerConfiguration">
     <confirmRemoveEmptyChangelist value="1" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <MESSAGE value="ArtAuction_Client-11 Верстка экрана ставок" />
     <MESSAGE value="ArtAuction_Client-11 Верстка экрана ставок #11" />
     <MESSAGE value="ArtAuction_Client-16 Исправление фона на белый\серый" />
     <option name="LAST_COMMIT_MESSAGE" value="ArtAuction_Client-16 Исправление фона на белый\серый" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="264" y="18" key="#Servers" timestamp="1575908257191">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="264" y="18" key="#Servers/62.0.1218.720@62.0.1218.720" timestamp="1575908257191" />
+    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog" timestamp="1576583804833">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog/62.0.1218.720@62.0.1218.720" timestamp="1576583804833" />
+    <state width="1160" height="510" key="GridCell.Tab.0.bottom" timestamp="1576577149652">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state width="1160" height="510" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1576577149652" />
+    <state width="1160" height="510" key="GridCell.Tab.0.center" timestamp="1576577149650">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state width="1160" height="510" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1576577149650" />
+    <state width="1160" height="510" key="GridCell.Tab.0.left" timestamp="1576577149649">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state width="1160" height="510" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1576577149649" />
+    <state width="1160" height="510" key="GridCell.Tab.0.right" timestamp="1576577149650">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state width="1160" height="510" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1576577149650" />
+    <state x="173" y="0" key="SettingsEditor" timestamp="1576149463280">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="173" y="0" key="SettingsEditor/62.0.1218.720@62.0.1218.720" timestamp="1576149463280" />
+    <state x="402" y="175" key="SimpleOpenTaskDialog" timestamp="1576583276740">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="402" y="175" key="SimpleOpenTaskDialog/62.0.1218.720@62.0.1218.720" timestamp="1576583276740" />
+    <state x="0" y="0" width="612" height="720" key="find.popup" timestamp="1575967642563">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="0" y="0" width="612" height="720" key="find.popup/62.0.1218.720@62.0.1218.720" timestamp="1575967642563" />
+    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1575907371671">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" timestamp="1575907371671" />
   </component>
 </project>

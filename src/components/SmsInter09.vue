@@ -2,14 +2,10 @@
 <template>
     <div class="outer">
         <div class="inner">
-
-
             <div class="inputtextblock">
-
                 <div class="row">
                     <div class="title">Verification</div>
                 </div>
-
                 <div class="row">
 
                     <div class="smsInterTitleDone">Inter sms verification code</div>
@@ -20,9 +16,6 @@
                     <input class="smsCodeInput" type="text" placeholder="code">
                 </div>
 
-                <div class="row">
-                    <div class="smsInputInfo" >Inter valid data</div>
-                </div>
 
                     <div class="row">
                         <div class="totalCost">$1500 USD</div>
@@ -37,13 +30,43 @@
 <script>
     export default {
         name: "SmsInter09",
+        beforeDestroy(){
+            this.$store
+                .dispatch('session/addInSession', {
+                    id: 4,
+                    expiredAt: "13.12.2019 13:48",
+                    expired: true
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+        },
         methods:{
 
             done(){
+
                 this.$parent.toScreen(4);
             },
-
-
+        createBet () {
+            this.$store
+                .dispatch('bet/createBet', {
+                    id: 3,
+                    addedAt: "13.12.2019",
+                    phone: "79192790946",
+                    bet_id:5,
+                    bet:5550,
+                    ToPay: 15555/*
+                        addedAt: this.addedAt,
+                        phone: this.phone,
+                        bet_id:this.bet_id,
+                        bet: this.bet,
+                        ToPay: this.ToPay*/
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+            this.$parent.toScreen(4);
+        }
         }
     }
 </script>
@@ -57,15 +80,15 @@
 
     .pricingVerification
     {
-        margin-left: 50px;
-        margin-top:174px;
+        margin-left: 43px;
+        margin-top:165px;
         display: block;
     }
 
 
     .pricingSize{
-        margin-left: 111px;
-        margin-top:97px;
+        margin-left: 140px;
+        margin-top:165px;
         display: block;
     }
 
@@ -80,11 +103,14 @@
         align-items: center;
         color: #393939;
         text-align:center;
-        margin-top: 178px;
+        margin-top: 165px;
+        margin-left: 0px;
+        letter-spacing: -0.02em;
     }
 
     .title
     {
+
         font-family: Nunito;
         font-style: normal;
         font-weight: bold;
@@ -96,20 +122,20 @@
 
         text-align:center;
 
-        margin-top: 40px;
+        margin-top: 22px;
     }
 
     .totalCost{
         font-family: Nunito;
         font-style: normal;
         font-weight: bold;
-        font-size: 36px;
+        font-size: 28px;
         line-height: 130%;
         display: flex;
         align-items: center;
         color: #393939;
         text-align:center;
-        margin-top: 97px;
+        margin-top: 165px;
 
     }
 
@@ -132,6 +158,10 @@
 
 
     .smsCodeInput{
+        -webkit-box-shadow:none;
+        -moz-box-shadow:none;
+        border:none;
+        box-shadow: none;
         background: #DFDEDE;
         opacity: 0.3;
         border-radius: 10px;
@@ -173,11 +203,11 @@
         border: none;
         background: none;
         font-family: "Nunito", Helvetica, Arial, sans-serif;
-        font-size:28px;
+        font-size:24px;
         font-weight: 800;
         color:white;
         width: 338px;
-        height: 70px;
+        height: 45px;
         box-shadow: 0px 10px 40px rgba(248, 161, 112, 0.2);
         background-image: linear-gradient(to right, #F8A170 0%, #FFCD61  100%);
         border-radius: 10px;

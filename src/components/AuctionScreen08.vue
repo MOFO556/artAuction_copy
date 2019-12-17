@@ -10,9 +10,9 @@
                     <div class="title">Make Bet</div>
                 </div>
 
-                <img src="../assets/images/bodyBet.png" height="410px" width="360px">
+                <img src="../assets/images/bodyBet.png" height="381px" width="360px">
 
-                <div class="row">
+                <div class="rowB">
                     <div class="block">
                         <p class="lastbet">$ 100</p>
                         <p class="totalbettitle">bet step</p>
@@ -20,10 +20,10 @@
                     <button class="betMinus">-</button>
                     <button class="betPlus">+</button>
                 </div>
-                <div class="row">
+                <div class="rowC">
                     <div class="block">
-                        <p class="lastbet">$ 1500</p>
-                        <p class="totalbettitle">total bet size</p>
+                        <p class="lastPrise">$ 1500</p>
+                        <p class="totalPrisetitle">total bet size</p>
                     </div>
                     <button v-on:click="next" class="makeBet">Bet</button>
                 </div>
@@ -38,11 +38,27 @@
 <script>
     export default {
         name: "AuctionScreen08",
+        beforeCreate(){
+            this.$store
+                .dispatch('session/addSession', {
+                    id: 4,
+                    addedAt: "13.12.2019 13:40",
+                    phone: "TEST",
+                    session_id: 3,
+                    expired: false/*
+                        addedAt: this.addedAt,
+                        phone: this.phone,
+                        session_id: this.session_id,
+                        expired: this.expired*/
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+        },
         methods:{
             next(){
                 this.$parent.nextComp();
-            },
-
+            }
         }
 
     }
@@ -68,7 +84,7 @@
 
         align: right;
         margin-right: 0px;
-        margin-top:0px;
+        margin-top:7px;
     }
 
     .betMinus{
@@ -89,7 +105,7 @@
 
         align: right;
         margin-right: 4px;
-        margin-top:0px;
+        margin-top:7px;
     }
 
     .inputtextblock
@@ -137,8 +153,9 @@
         color: #393939;
 
         text-align:center;
+        margin-top: 21px;
+        margin-bottom: 12px;
 
-        margin-top: 40px;
     }
 
     .totalCost{
@@ -190,8 +207,6 @@
         margin-top: 10px;
     }
 
-
-
     .row
     {
         width: 100%;
@@ -199,13 +214,35 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+    }
+
+    .rowB
+    {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3px;
+    }
+
+    .rowC
+    {
+
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
     }
 
     .block{
 
         width: 100px;
         display: inline-block;
-        margin-right: 43px;
+        margin-right: 15px;
     }
 
 
@@ -228,23 +265,56 @@
 
         align: right;
         margin-right: 0px;
-        margin-top:0px;
+        margin-top:8px;
     }
 
     .lastbet{
         font-family: Nunito;
         font-style: normal;
         font-weight: 600;
-        font-size: 22px;
+        font-size: 21px;
         line-height: 160%;
         color: #393939;
         margin:0px;
+        margin-right: 42px;
+        margin-top: -2px
 
+    }
+
+
+    .totalbettitle{
+
+       /* margin-top:-5px;*/
+        color: #999999;
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        margin:0px;
+        margin-right: 42px;
+        margin-left: -13px;
+        margin-top: -10px;
+
+    }
+
+
+
+    .lastPrise{
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 160%;
+        color: #393939;
+        /* margin:0px;*/
+        margin:0px;
+        margin-right: 27px;
 
 
     }
 
-    .totalbettitle{
+    .totalPrisetitle{
 
         margin:0px;
         color: #999999;
@@ -253,30 +323,10 @@
         font-weight: normal;
         font-size: 12px;
         line-height: 160%;
-    }
 
-    .lastbet{
-        font-family: Nunito;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 160%;
-        color: #393939;
-        margin:0px;
-
-
-
-    }
-
-    .totalbettitle{
-
-        margin:0px;
-        color: #999999;
-        font-family: Nunito;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 160%;
+        margin-right: 0px;
+        margin-left: -31px;
+        margin-top: -6px;
     }
 
 
