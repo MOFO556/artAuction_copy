@@ -75,10 +75,15 @@
                     }).then(()=>{ //Проверяем ответ
                         if (!this.$store.state.answerLock){ //Если свободна, то добавляем новую и едём вперед
                             this.$store
-                                .dispatch('session/addSession', {
+                                .dispatch('session/addSession', { // Добавили сессию
                                     phone: this.phone,
                                     bet: this.price
                                 })
+                                .catch(err => {
+                                    this.error = err.response.data.error
+                                })
+                            this.$store
+                                .dispatch('setPrice', this.price)
                                 .catch(err => {
                                     this.error = err.response.data.error
                                 })

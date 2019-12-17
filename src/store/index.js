@@ -79,13 +79,7 @@ export default new Vuex.Store({
       getBetStep({ commit, dispatch }){
           return BetService.getBetStep()
               .then((res) => {
-                  /* eslint-disable no-console */
-                  console.log("1: "+ res.data)
-                  /* eslint-disable no-console */
-                  console.log("2: "+ res.data.min)
                   commit("SET_BET_STEPMIN", res.data.min);
-                  /* eslint-disable no-console */
-                  console.log("3: "+ res.data.max)
                   commit("SET_BET_STEPMAX", res.data.max);
                   const notification = {
                       type: "success",
@@ -107,8 +101,6 @@ export default new Vuex.Store({
           return BetService.verificationStart(phone)
               .then((res) => {
                   commit("SET_SMS_STAT", res.data.isSent);
-                  // eslint-disable-next-line no-console
-                  console.log("Запрос на смс отправлен: "+res.data.isSent)
               })
       },
      verify({ commit, dispatch }, code){

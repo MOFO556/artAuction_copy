@@ -39,14 +39,6 @@
         name: "SmsInter09",
         beforeCreate() {
             this.$store
-                .dispatch('getPrice') //Отправляем запрос на получение цены
-                .then(() => {
-                    this.price = this.$store.state.currentPrice
-                })
-                .catch(err => {
-                    this.errors = err.response.data.errors
-                })
-            this.$store
                 .dispatch('startVerification', {
                     phone: "7999999999"
                     //phone: this.phone
@@ -67,7 +59,7 @@
         },
         data(){
           return{
-              price: null
+              price: this.$store.state.currentPrice //Устанавливаем текущую цену
           }
         },
         methods:{
