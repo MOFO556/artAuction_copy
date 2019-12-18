@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="block">
                     <p class="lastbet">$ 1500</p>
-                    <p class="lastbettitle">last bet size</p>
+                    <p class="lastbettitle">remain : 02 - 24:24 </p>
                 </div>
                 <button v-on:click="start" class="startAuction">Bet</button>
             </div>
@@ -40,9 +40,9 @@
     }
 
     .block{
-        width: 100px;
+        width: 120px;
         display: inline-block;
-        margin-right: 30px;
+        margin-right: 9px;
     }
 
 
@@ -60,6 +60,7 @@
         background-image: linear-gradient(to right, #F8A170 0%, #FFCD61  100%);
         border-radius: 10px;
         margin-right: 15px;
+        margin-bottom: 5px;
     }
 
     .lastbet{
@@ -72,7 +73,8 @@
         color: #393939;
         margin:0px;
         letter-spacing: -0.02em;
-
+        margin-left: -20px;
+        margin-top: 4px;
     }
 
     .lastbettitle{
@@ -84,6 +86,7 @@
         font-weight: normal;
         font-size: 12px;
         line-height: 160%;
+        margin-left:10px;
 
     }
 

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="368a3d83-df35-435a-bd10-c7145eb1a217" name="ArtAuction_Client-34 Смешивание верски под 560 с чем-то непонятным" comment="">
+    <list default="true" id="b0b164fe-6605-40f8-b614-436fcda0304f" name="ArtAuction_Client-33 Добавление таймера" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+    </list>
+    <list id="368a3d83-df35-435a-bd10-c7145eb1a217" name="ArtAuction_Client-34 Смешивание верски под 560 с чем-то непонятным" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="99dbe590-a1e3-4eeb-9f25-6f77c8d005fa" name="Default Changelist" comment="" />
@@ -104,7 +108,7 @@
   <component name="TaskManager">
     <task id="Default" summary="Default task">
       <branch name="master" repository="C:\Workspace\ArtAuction\client" />
-      <changelist id="069510d1-98be-4176-8f19-bacb5659a522" name="Default Changelist" comment="" />
+      <changelist id="99dbe590-a1e3-4eeb-9f25-6f77c8d005fa" name="Default Changelist" comment="" />
       <created>1573114138460</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -138,7 +142,6 @@
       <workItem from="1573114892032" duration="529000" />
     </task>
     <task id="ArtAuction_Client-6" summary="Установка заглушки для Intro">
-      <changelist id="dc75ea56-1747-474d-8ae0-86ec9283bb0a" name="ArtAuction_Client-6 Установка заглушки для Intro" comment="" />
       <created>1573111171000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/6</url>
@@ -152,7 +155,6 @@
       <workItem from="1573189870953" duration="1245000" />
     </task>
     <task id="ArtAuction_Client-7" summary="Верстка стартового экрана">
-      <changelist id="a1776d1a-6c66-41db-8e17-1ea3a6f23d59" name="ArtAuction_Client-7 Верстка стартового экрана" comment="" />
       <created>1573294991000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/7</url>
@@ -165,7 +167,6 @@
       <workItem from="1573352510849" duration="7969000" />
     </task>
     <task id="ArtAuction_Client-8" summary="Верстка экрана ввода номера">
-      <changelist id="fea692b7-1279-4c51-b454-d29ab8ab2062" name="ArtAuction_Client-8 Верстка экрана ввода номера" comment="" />
       <created>1573351984000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/8</url>
@@ -177,7 +178,6 @@
       <workItem from="1573362764248" duration="3970000" />
     </task>
     <task id="ArtAuction_Client-9" summary="Верстка экрана регистрации">
-      <changelist id="2add6479-73fb-4801-950f-cd6a0a365c6e" name="ArtAuction_Client-9 Верстка экрана регистрации" comment="" />
       <created>1573357574000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/9</url>
@@ -189,7 +189,6 @@
       <workItem from="1573369413266" duration="1764000" />
     </task>
     <task id="ArtAuction_Client-10" summary="Верстка экрана пользовательского соглашения">
-      <changelist id="78fdff29-f3ba-475e-a175-1729041041ab" name="ArtAuction_Client-10 Верстка экрана пользовательского соглашения" comment="" />
       <created>1573357592000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/10</url>
@@ -201,7 +200,6 @@
       <workItem from="1573371178204" duration="2618000" />
     </task>
     <task id="ArtAuction_Client-13" summary="Замена изображения заглушки лота">
-      <changelist id="edbf7084-0128-472a-998b-b28e21ffe62c" name="ArtAuction_Client-13 Замена изображения заглушки лота" comment="" />
       <created>1573363464000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/13</url>
@@ -213,7 +211,6 @@
       <workItem from="1573374254854" duration="586000" />
     </task>
     <task id="ArtAuction_Client-12" summary="Верстка экрана смс верификации">
-      <changelist id="fba85105-bf74-4c90-a352-c845d891b3b9" name="ArtAuction_Client-12 Верстка экрана смс верификации" comment="" />
       <created>1573357620000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/12</url>
@@ -225,7 +222,6 @@
       <workItem from="1573374841178" duration="2561000" />
     </task>
     <task id="ArtAuction_Client-14" summary="Верстка экрана загрузки">
-      <changelist id="0136e701-f14f-4ad1-8bee-eda88530058e" name="ArtAuction_Client-14 Верстка экрана загрузки" comment="" />
       <created>1573366638000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/14</url>
@@ -237,7 +233,6 @@
       <workItem from="1573377418536" duration="280000" />
     </task>
     <task id="ArtAuction_Client-15" summary="Установка стандартных заглушек для всех экранов">
-      <changelist id="3fb36bc5-3a16-4779-9dfe-3b16c2d5ea46" name="ArtAuction_Client-15 Установка стандартных заглушек для всех экранов" comment="" />
       <created>1573366928000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/15</url>
@@ -249,7 +244,6 @@
       <workItem from="1573377698672" duration="762000" />
     </task>
     <task id="ArtAuction_Client-11" summary="Верстка экрана ставок">
-      <changelist id="205786e7-3651-4d99-9ac8-d626da37bc0f" name="ArtAuction_Client-11 Верстка экрана ставок" comment="" />
       <created>1573357607000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/11</url>
@@ -261,7 +255,6 @@
       <workItem from="1573547140500" duration="4213000" />
     </task>
     <task id="ArtAuction_Client-16" summary="Исправление фона на белый\серый">
-      <changelist id="6461505a-026e-4aa4-8cc6-67909370054f" name="ArtAuction_Client-16 Исправление фона на белый\серый" comment="" />
       <created>1573663293000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/16</url>
@@ -272,8 +265,7 @@
       <updated>1573674729836</updated>
       <workItem from="1573674107026" duration="623000" />
     </task>
-    <task active="true" id="ArtAuction_Client-18" summary="Переверстать на новое разрешение 560 по высоте">
-      <changelist id="bfa326be-a066-498b-ba57-4271e1f4febc" name="ArtAuction_Client-18 Переверстать на новое разрешение 580 по высоте" comment="" />
+    <task id="ArtAuction_Client-18" summary="Переверстать на новое разрешение 560 по высоте">
       <created>1573666329000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/18</url>
@@ -293,9 +285,10 @@
       <workItem from="1576512508471" duration="5514000" />
       <workItem from="1576576649106" duration="5915000" />
     </task>
-    <task active="true" id="ArtAuction_Client-34" summary="Смешивание верски под 560 с чем-то непонятным">
+    <task id="ArtAuction_Client-34" summary="Смешивание верски под 560 с чем-то непонятным">
       <branch name="master" repository="C:\Workspace\ArtAuction_Client" />
       <changelist id="368a3d83-df35-435a-bd10-c7145eb1a217" name="ArtAuction_Client-34 Смешивание верски под 560 с чем-то непонятным" comment="" />
+      <option name="closed" value="true" />
       <created>1576572430000</created>
       <option name="issue" value="true" />
       <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/34</url>
@@ -303,12 +296,28 @@
       <option name="presentableId" value="ArtAuction_Client-34" />
       <option name="project" value="ArtAuction_Client" />
       <option name="type" value="BUG" />
-      <updated>1576583276729</updated>
+      <updated>1576677989668</updated>
       <workItem from="1576583277447" duration="537000" />
+      <workItem from="1576653493813" duration="615000" />
+      <workItem from="1576677633050" duration="356000" />
+    </task>
+    <task active="true" id="ArtAuction_Client-33" summary="Добавление таймера">
+      <branch name="master" repository="C:\Workspace\ArtAuction_Client" original="true" />
+      <branch name="ArtAuction_Client-33" repository="C:\Workspace\ArtAuction_Client" />
+      <changelist id="b0b164fe-6605-40f8-b614-436fcda0304f" name="ArtAuction_Client-33 Добавление таймера" comment="" />
+      <created>1576335163000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/33</url>
+      <option name="number" value="33" />
+      <option name="presentableId" value="ArtAuction_Client-33" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1576677989668</updated>
+      <workItem from="1576677989896" duration="1856000" />
+      <workItem from="1576679887859" duration="4000" />
+      <workItem from="1576680629036" duration="141000" />
     </task>
     <option name="clearContext" value="false" />
-    <option name="createBranch" value="false" />
-    <option name="useBranch" value="true" />
     <option name="commitChanges" value="false" />
     <servers>
       <GitHub url="https://github.com">
@@ -351,30 +360,30 @@
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="162" y="100" width="1018" height="520" key="DiffContextDialog/62.0.1218.720@62.0.1218.720" timestamp="1576583804833" />
-    <state width="1160" height="510" key="GridCell.Tab.0.bottom" timestamp="1576577149652">
+    <state width="1258" height="564" key="GridCell.Tab.0.bottom" timestamp="1576679848190">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1160" height="510" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1576577149652" />
-    <state width="1160" height="510" key="GridCell.Tab.0.center" timestamp="1576577149650">
+    <state width="1258" height="564" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1576679848190" />
+    <state width="1258" height="564" key="GridCell.Tab.0.center" timestamp="1576679848190">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1160" height="510" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1576577149650" />
-    <state width="1160" height="510" key="GridCell.Tab.0.left" timestamp="1576577149649">
+    <state width="1258" height="564" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1576679848190" />
+    <state width="1258" height="564" key="GridCell.Tab.0.left" timestamp="1576679848190">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1160" height="510" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1576577149649" />
-    <state width="1160" height="510" key="GridCell.Tab.0.right" timestamp="1576577149650">
+    <state width="1258" height="564" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1576679848190" />
+    <state width="1258" height="564" key="GridCell.Tab.0.right" timestamp="1576679848190">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1160" height="510" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1576577149650" />
+    <state width="1258" height="564" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1576679848190" />
     <state x="173" y="0" key="SettingsEditor" timestamp="1576149463280">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="173" y="0" key="SettingsEditor/62.0.1218.720@62.0.1218.720" timestamp="1576149463280" />
-    <state x="402" y="175" key="SimpleOpenTaskDialog" timestamp="1576583276740">
+    <state x="402" y="175" key="SimpleOpenTaskDialog" timestamp="1576677989676">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state x="402" y="175" key="SimpleOpenTaskDialog/62.0.1218.720@62.0.1218.720" timestamp="1576583276740" />
+    <state x="402" y="175" key="SimpleOpenTaskDialog/62.0.1218.720@62.0.1218.720" timestamp="1576677989676" />
     <state x="0" y="0" width="612" height="720" key="find.popup" timestamp="1575967642563">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
