@@ -19,6 +19,7 @@ export default new Vuex.Store({
       userPhone: null,
       betStepMin: null,
       betStepMax: null,
+      remainTime: []
   },
   mutations: {
     PHONE_STAT(state, answer){
@@ -45,6 +46,9 @@ export default new Vuex.Store({
       SET_BET_STEPMAX(state, betStep){
           state.betStepMax = betStep
       },
+      SET_REMAIN_TIME(state, time){
+        state.remainTime.push(time);
+    }
   },
   actions: {
       getPhoneStat({ commit }, ans) {
@@ -126,6 +130,14 @@ export default new Vuex.Store({
       setUserPhone({ commit }, number) {
           commit("ADD_USER_PHONE", number);
       },
+      getRemainTime({commit}){
+          return BetService.getRemainedTime()
+              .then((res) => {
+                  commit("SET_REMAIN_TIME", res.data.day);
+                  commit("SET_REMAIN_TIME", res.data.hour);
+                  commit("SET_REMAIN_TIME", res.data.minute);
+        })
+      }
   },
   modules: {
       user,

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99dbe590-a1e3-4eeb-9f25-6f77c8d005fa" name="Default Changelist" comment="">
+    <list default="true" id="b0b164fe-6605-40f8-b614-436fcda0304f" name="ArtAuction_Client-33 Добавление таймера" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Registration06.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration06.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Author01.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author01.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Author02.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author02.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Intro03.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Intro03.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Load00.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Load00.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
-    <list id="b0b164fe-6605-40f8-b614-436fcda0304f" name="ArtAuction_Client-33 Добавление таймера" comment="" />
     <list id="368a3d83-df35-435a-bd10-c7145eb1a217" name="ArtAuction_Client-34 Смешивание верски под 560 с чем-то непонятным" comment="" />
+    <list id="99dbe590-a1e3-4eeb-9f25-6f77c8d005fa" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.serve">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -99,8 +102,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.serve" />
-        <item itemvalue="npm.serve" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.serve" />
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.build" />
       </list>
@@ -306,7 +309,7 @@
       <workItem from="1576653493813" duration="615000" />
       <workItem from="1576677633050" duration="356000" />
     </task>
-    <task id="ArtAuction_Client-33" summary="Добавление таймера">
+    <task active="true" id="ArtAuction_Client-33" summary="Добавление таймера">
       <branch name="master" repository="C:\Workspace\ArtAuction_Client" original="true" />
       <branch name="ArtAuction_Client-33" repository="C:\Workspace\ArtAuction_Client" />
       <changelist id="b0b164fe-6605-40f8-b614-436fcda0304f" name="ArtAuction_Client-33 Добавление таймера" comment="" />
@@ -317,11 +320,12 @@
       <option name="presentableId" value="ArtAuction_Client-33" />
       <option name="project" value="ArtAuction_Client" />
       <option name="type" value="BUG" />
-      <updated>1576685712767</updated>
+      <updated>1576688859313</updated>
       <workItem from="1576677989896" duration="1856000" />
       <workItem from="1576679887859" duration="4000" />
       <workItem from="1576680629036" duration="141000" />
       <workItem from="1576685667420" duration="46000" />
+      <workItem from="1576688859362" duration="6319000" />
     </task>
     <option name="clearContext" value="false" />
     <option name="commitChanges" value="false" />

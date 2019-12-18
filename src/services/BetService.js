@@ -40,4 +40,7 @@ export default {
     getBetStep(){
         return apiClient.get("/getMinMax");
     },
+    getRemainedTime(){
+        return apiClient.get("/getRemTime");
+    },
 };

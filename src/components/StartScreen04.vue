@@ -6,7 +6,8 @@
             <div class="row">
                 <div class="block">
                     <p class="lastbet">$ {{price}}</p>
-                    <p class="lastbettitle">remain : 02 - 24:24 </p>
+                    <p class="lastbettitle">{{pState}} </p>
+
                 </div>
                 <button v-on:click="start" class="startAuction">Bet</button>
             </div>
@@ -26,17 +27,85 @@
                 .catch(err => {
                     this.errors = err.response.data.errors
                 })
+            this.$store
+                .dispatch('getRemainTime') //Отправляем запрос на оставшееся время
+                .then(()=>{
+                    this.days = this.$store.state.remainTime[0]     // Установка дней из хранилища
+                    this.hours = this.$store.state.remainTime[1]    // Установка часов из хранилища
+                    this.minutes = this.$store.state.remainTime[2]  // Установка минут из хранилища
+                    this.sec = this.$store.state.remainTime[3]      // Установка секунд из хранилища
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
+
         },
         data(){
             return {
-                price: null
+                price: null,
+                remTime: [],
+                days: null,
+                hours: null,
+                minutes: null,
+                sec: null,
+                polling: null,
+                pState: null
             }
         },
         methods:{
             start(){
                 this.$parent.nextComp();
             },
-
+            getCountdown(){
+               if (this.sec<60 && !(this.days<0)) {
+                   return setTimeout(() => {
+                       ++this.sec
+                       this.getCountdown()
+                   }, 1)
+               }
+               this.sec=0;
+               this.minutes-=1;
+                if (this.minutes< 0)
+                {
+                    this.minutes=60
+                    this.hours-=1
+                }
+                if (this.hours< 0)
+                {
+                    this.hours=24
+                    this.days-=1
+                }
+                if (this.days<0){
+                    this.days=0
+                    this.$parent.nextComp();
+                }
+                this.getCountdown()
+            },
+            pollData () {
+                this.polling = setInterval(() => {
+                    if(this.hours<10 && this.minutes<10){
+                        this.pState= "remain : "+this.days+" - 0"+this.hours+":0"+this.minutes
+                    }
+                    if(this.hours<10 && this.minutes>=10){
+                        this.pState= "remain : "+this.days+" - 0"+this.hours+":"+this.minutes
+                    }
+                    if(this.hours>=10 && this.minutes<10){
+                        this.pState= "remain : "+this.days+" - "+this.hours+":0"+this.minutes
+                    }
+                    if(this.hours>=10 && this.minutes>=10){
+                        this.pState= "remain : "+this.days+" - "+this.hours+":"+this.minutes
+                    }
+                }, 1)
+            }
+        },
+        beforeMount() {
+            this.getCountdown();
+        },
+        created() {
+            this.pollData();
+        },
+        beforeDestroy () {
+            clearInterval(this.polling)
         }
     }
 </script>

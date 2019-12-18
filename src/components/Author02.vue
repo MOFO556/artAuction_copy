@@ -33,7 +33,7 @@
                     return setTimeout(() => {
                         ++this.value
                         this.countDown()
-                    }, 100)
+                    }, 10)
                 }
                 this.$parent.nextComp();
             }
