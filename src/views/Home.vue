@@ -77,6 +77,10 @@
 </script>
 
 <style>
+    /*Стили invalid и invalidButton для ошибок при валидации*/
+    .invalidButton{
+
+    }
   .invalid
   {
     border-color: #FF0000;

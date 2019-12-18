@@ -12,7 +12,9 @@
                            :class="{ invalid: $v.phone.$error }"
                            @blur="$v.phone.$touch()"
                     >
-                    <button v-on:click="next" class="startAuction block" :disabled="$v.$anyError">GO</button>
+                    <button v-on:click="next" class="startAuction block" :disabled="$v.$anyError"
+                            :class="{ invalidButton: $v.$anyError }"
+                    >GO</button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
                 </div>
             </div>
         </div>

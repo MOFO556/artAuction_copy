@@ -41,7 +41,9 @@
                 </div>
 
 
-                <button v-on:click="register" :disabled="$v.$anyError" class="startAuction block" >Go to Agreement</button>
+                <button v-on:click="register" :disabled="$v.$anyError" class="startAuction block"
+                        :class="{ invalidButton: $v.$anyError }"
+                >Go to Agreement</button> <!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
                </div>
         </div>
     </div>
