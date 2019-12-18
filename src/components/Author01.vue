@@ -18,7 +18,26 @@
 
 <script>
     export default {
-        name: "Author01"
+        name: "Author01",
+        beforeMount() {
+            this.countDown()
+        },
+        data(){
+            return{
+                value: 0,
+            }
+        },
+        methods: {
+            countDown() {
+                if (this.value<=100) {
+                    return setTimeout(() => {
+                        ++this.value
+                        this.countDown()
+                    }, 100)
+                }
+                this.$parent.nextComp();
+            }
+        }
     }
 </script>
 

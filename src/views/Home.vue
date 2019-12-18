@@ -14,8 +14,8 @@
 
     data(){
       return{
-        component:'StartScreen04',
-        currentComp:4,
+        component:'Load00',
+        currentComp:0,
         components:
                 [
                   'Load00',

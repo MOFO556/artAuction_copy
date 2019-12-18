@@ -1,27 +1,24 @@
 
 <template>
-    <div class="outer">
+    <div class="outer" v-on:loadeddata="countDown">
         <div class="inner">
             <progress-bar
                     style="padding-right: 350px; padding-top: 315px"
                     :options="options"
                     :value="value"
             />
-            <radial-progress-bar
-            :diameter="200"
-            :completed-steps="completedSteps"
-            :total-steps="totalSteps"
-            startColor="#F8A170"
-            stopColor="#FFCD61"
-            />
+
         </div>
     </div>
 </template>
 
 <script>
-    import RadialProgressBar from 'vue-radial-progress'
     export default {
         name: "Load",
+
+       beforeMount() {
+            this.countDown()
+        },
         data(){
             return{
                 options: {
@@ -35,7 +32,7 @@
                         hideText: false
                     },
                     progress: {
-                        color: '#11111111',
+                        color: '#F8A170',
                         backgroundColor: '#A3A3A3'
                     },
                     layout: {
@@ -49,20 +46,23 @@
                         type: 'line'
                     }
                 },
-                value: 33,
-                completedSteps: 10,
-                totalSteps: 30,
+                value: 0,
             }
         },
-        components:{
-            RadialProgressBar
+        methods: {
+            countDown() {
+                if (this.value<=100) {
+                    return setTimeout(() => {
+                        ++this.value
+                        this.countDown()
+                    }, 100)
+                }
+                this.$parent.nextComp();
+            }
         },
-
     }
 </script>
 
 <style scoped>
-
-
 
 </style>
