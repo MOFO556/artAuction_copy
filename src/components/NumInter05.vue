@@ -1,7 +1,6 @@
 <template>
     <div class="outer">
         <div class="inner">
-
             <img src="../assets/images/body.png" height="444px" width="360px">
             <div class="inputtextblock">
                 <div class="row">
@@ -9,49 +8,90 @@
                     <img class="pricing" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
                 <div class="row">
-                    <input class="phoneInput" type="text">
-                    <button v-on:click="next" class="startAuction block">GO</button>
+                    <input class="phoneInput" type="text" v-model="phone"
+                           :class="{ invalid: $v.phone.$error }"
+                           @blur="$v.phone.$touch()"
+                    >
+                    <button v-on:click="next" class="startAuction block" :disabled="$v.$anyError">GO</button>
                 </div>
-
-
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import {required, minLength, maxLength} from "vuelidate/lib/validators";
+    const telephone = (value) => {
+            return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(value);
+    };
+
     export default {
         name: "NumInter05",
+        validations: {
+            phone: {
+                required,
+                minLength: minLength(11),
+                maxLength: maxLength(12),
+                telephone
+            }
+        },
+        data(){
+          return{
+              phone:null,
+              changeClass:null
+          }
+        },
         methods:{
             next(){
-                /*if (Запрос номера на сервере === this.phone)
-                {
-                    /*if (Запрос состояния сессии на сервере)
-                    {
-                        this.$parent.toScreen(8);
-                    }
-                    else
-                        {
-                            const notification = {
-                                type: "error",
-                                message: "Session is busy"
-                            };
-                            this.$store
-                            .dispatch("notification/add", notification);
-                        }
-                }*/
-                    //else
-                        {
-                        this.$parent.nextComp();
-                    }
-            },
+                if (!this.$v.$invalid){
+                        this.$store
+                            .dispatch('user/login', { //Запрос на наличие в базе телефона
+                                phone: this.phone
+                            }).then(()=>{
+                            if (!this.$store.state.answerPhone) //Если есть, проверяем свободна ли сессия
+                            {
+                                this.$store
+                                    .dispatch('session/isFree', { //Запрос состояния сессии
+                                        phone: this.phone
+                                    }).then(()=>{
+                                    if (!this.$store.state.answerLock) //Если свободна, то идём делать ставку
+                                    {
+                                        this.$parent.toScreen(8);
+                                    }
+                                    else //Если занята, выводим сообщение и гуляем???
+                                    {
+                                        const notification = {
+                                            type: "error",
+                                            message: "Session is busy"
+                                        };
+                                        this.$store
+                                            .dispatch("notification/add", notification);
+                                        this.$parent.toScreen(8); //Пока гуляем так же на став0чку
+                                    }
+                                })
+                                    .catch(err => {
+                                        this.error = err.response.data.error
+                                    })
+                            }
+                            else //Если телефона в базе нет, то идём регистрироваться
+                            {
+                                this.$parent.nextComp();
+                            }
+                          }
+                        )
+                            .catch(err => {
+                                this.errors = err.response.data.errors
+                            })
+                    this.$store.dispatch('setUserPhone', this.phone)
+
+                }
+                },
 
         },
     }
 </script>
 
 <style scoped>
-
     .inputtextblock
     {
         margin-left: 24px;
@@ -171,10 +211,4 @@
         font-size: 12px;
         line-height: 160%;
     }
-
-
-
-
-
-
 </style>

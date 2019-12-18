@@ -1,20 +1,68 @@
 
 <template>
-    <div class="outer">
+    <div class="outer" v-on:loadeddata="countDown">
         <div class="inner">
-            LOAD
+            <progress-bar
+                    style="padding-right: 350px; padding-top: 315px"
+                    :options="options"
+                    :value="value"
+            />
+
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Load"
+        name: "Load",
+
+       beforeMount() {
+            this.countDown()
+        },
+        data(){
+            return{
+                options: {
+                    text: {
+                        color: '#FFFFFF',
+                        shadowEnable: true,
+                        shadowColor: '#000000',
+                        fontSize: 0,
+                        fontFamily: 'Helvetica',
+                        dynamicPosition: false,
+                        hideText: false
+                    },
+                    progress: {
+                        color: '#F8A170',
+                        backgroundColor: '#A3A3A3'
+                    },
+                    layout: {
+                        height: 10,
+                        width: 349,
+                        verticalTextAlign: 61,
+                        horizontalTextAlign: 43,
+                        zeroOffset: 0,
+                        strokeWidth: 30,
+                        progressPadding: 0,
+                        type: 'line'
+                    }
+                },
+                value: 0,
+            }
+        },
+        methods: {
+            countDown() {
+                if (this.value<=100) {
+                    return setTimeout(() => {
+                        ++this.value
+                        this.countDown()
+                    }, 100)
+                }
+                this.$parent.nextComp();
+            }
+        },
     }
 </script>
 
 <style scoped>
-
-
 
 </style>

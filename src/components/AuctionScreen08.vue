@@ -14,15 +14,15 @@
 
                 <div class="rowB">
                     <div class="block">
-                        <p class="lastbet">$ 100</p>
+                        <p class="lastbet">$ {{betStepmn}}</p>
                         <p class="totalbettitle">bet step</p>
                     </div>
-                    <button class="betMinus">-</button>
-                    <button class="betPlus">+</button>
+                    <button class="betMinus" v-on:click="decrementBet">-</button>
+                    <button class="betPlus" v-on:click="incrementBet">+</button>
                 </div>
                 <div class="rowC">
                     <div class="block">
-                        <p class="lastPrise">$ 1500</p>
+                        <p class="lastPrise">$ {{price}}</p>
                         <p class="totalPrisetitle">total bet size</p>
                     </div>
                     <button v-on:click="next" class="makeBet">Bet</button>
@@ -38,26 +38,83 @@
 <script>
     export default {
         name: "AuctionScreen08",
-        beforeCreate(){
+        beforeCreate() {
             this.$store
-                .dispatch('session/addSession', {
-                    id: 4,
-                    addedAt: "13.12.2019 13:40",
-                    phone: "TEST",
-                    session_id: 3,
-                    expired: false/*
-                        addedAt: this.addedAt,
-                        phone: this.phone,
-                        session_id: this.session_id,
-                        expired: this.expired*/
+                .dispatch('getPrice') //Отправляем запрос на получение цены
+                .then(() => {
+                    this.price = this.$store.state.currentPrice
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
+            this.$store
+                .dispatch('getBetStep')
+                .then(() => {
+                    this.betStepmn = this.$store.state.betStepMin,
+                    this.betStepmx = this.$store.state.betStepMax,
+                    this.bet = this.betStepmn
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
+        },
+        data(){
+            return {
+                price: this.$store.state.currentPrice,
+                phone: this.$store.state.userPhone,
+                betStepmn: null,
+                betStepmx: null,
+                bet: null
+            }
+        },
+        methods:{
+            next(){
+                this.$store //Запрос, свободна ли сессия
+                    .dispatch('session/isFree', {
+                        phone: this.phone
+                    }).then(()=>{ //Проверяем ответ
+                        if (!this.$store.state.answerLock){ //Если свободна, то добавляем новую и едём вперед
+                            this.$store
+                                .dispatch('session/addSession', { // Добавили сессию
+                                    phone: this.phone,
+                                    bet: this.price
+                                })
+                                .catch(err => {
+                                    this.error = err.response.data.error
+                                })
+                            this.$store
+                                .dispatch('setPrice', this.price)
+                                .catch(err => {
+                                    this.error = err.response.data.error
+                                })
+                            this.$parent.nextComp();
+                        }
+                        else { //Если занята, то выводим сообщение
+                            const notification = {
+                                type: "error",
+                                message: "Session is busy"
+                            };
+                            this.$store
+                                .dispatch("notification/add", notification);
+                        }
                 })
                 .catch(err => {
                     this.error = err.response.data.error
                 })
-        },
-        methods:{
-            next(){
-                this.$parent.nextComp();
+            },
+            incrementBet(){
+                if (this.bet <= this.betStepmx)
+                {
+                    this.price += this.betStepmn
+                    this.bet += this.betStepmn
+                }
+            },
+            decrementBet(){
+                if (this.bet > this.betStepmn)
+                {
+                    this.price -= this.betStepmn
+                    this.bet -= this.betStepmn
+                }
             }
         }
 

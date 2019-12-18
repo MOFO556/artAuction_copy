@@ -1,6 +1,4 @@
 import BetService from "@/services/BetService";
-/*import axios from 'axios'*/
-
 export const namespaced = true;
 
 export const state = {
@@ -13,7 +11,7 @@ export const mutations = {
         state.sessions.push(session);
     },
     FIN_SESSION(state, session) {
-        state.sessions.unshift(session);
+        state.sessions.push(session);
     },
     SWITCH(state) {
         state.session.expired = true
@@ -41,7 +39,7 @@ export const actions = {
                 throw error;
             });
     },
-    addInSession({ commit, dispatch }, session) {
+    finishSession({ commit, dispatch }, session) {
         return BetService.finishSession(session)
             .then(() => {
                 commit("FIN_SESSION", session);
@@ -63,11 +61,25 @@ export const actions = {
     },
     switch({ commit }) {
         commit("SWITCH");
-    }
-};
-
-export const getters = {
-    getSessionState: state => {
-        return state.sessions.filter(sessions => sessions.expired === false);
-    }
+    },
+    isFree({ dispatch }, session) {
+        return BetService.checkSession(session)
+            .then((res) => {
+                dispatch("getLockStat", res.data.locked, { root: true });
+                const notification = {
+                    type: "success",
+                    message: "Your session have been successfully finished"
+                };
+                dispatch("notification/add", notification, { root: true });
+            })
+            .catch(error => {
+                const notification = {
+                    type: "error",
+                    message:
+                        "There was a mistake while finishing a session: " + error.message
+                };
+                dispatch("notification/add", notification, { root: true });
+                throw error;
+            });
+    },
 };

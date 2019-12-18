@@ -13,15 +13,15 @@
                 </div>
 
                 <div class="row">
-                    <input class="smsCodeInput" type="text" placeholder="code">
+                    <input class="smsCodeInput" type="text" placeholder="code" v-on:focusout="verify">
                 </div>
 
 
                     <div class="row">
-                        <div class="totalCost">$1500 USD</div>
+                        <div class="totalCost">${{price}} USD</div>
                         <img class="pricingSize" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                     </div>
-                <button v-on:click="done" class="completeBet">Complete</button>
+                <button v-on:click="createBet" class="completeBet">Complete</button>
             </div>
         </div>
     </div>
@@ -30,43 +30,57 @@
 <script>
     export default {
         name: "SmsInter09",
+        beforeCreate() {
+            this.$store
+                .dispatch('startVerification', {
+                    phone: "7999999999"
+                    //phone: this.phone
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
+        },
         beforeDestroy(){
             this.$store
-                .dispatch('session/addInSession', {
-                    id: 4,
-                    expiredAt: "13.12.2019 13:48",
-                    expired: true
+                .dispatch('session/finishSession', {
+                    phone: "7999999999"
+                    //phone: this.phone
                 })
                 .catch(err => {
                     this.error = err.response.data.error
                 })
         },
+        data(){
+          return{
+              price: this.$store.state.currentPrice //Устанавливаем текущую цену
+          }
+        },
         methods:{
-
-            done(){
-
+            createBet () {
+                this.$store
+                    .dispatch('bet/createBet', {
+                        phone: "79192790946",
+                        bet:5550/*
+                            phone: this.phone,
+                            bet: this.bet,*/
+                    })
+                    .catch(err => {
+                        this.error = err.response.data.error
+                    })
                 this.$parent.toScreen(4);
             },
-        createBet () {
-            this.$store
-                .dispatch('bet/createBet', {
-                    id: 3,
-                    addedAt: "13.12.2019",
-                    phone: "79192790946",
-                    bet_id:5,
-                    bet:5550,
-                    ToPay: 15555/*
-                        addedAt: this.addedAt,
+            verify(){
+                this.$store
+                    .dispatch('verify', {
+                        phone: "79192790946",
+                        token:"5550"/*
                         phone: this.phone,
-                        bet_id:this.bet_id,
-                        bet: this.bet,
-                        ToPay: this.ToPay*/
-                })
-                .catch(err => {
-                    this.error = err.response.data.error
-                })
-            this.$parent.toScreen(4);
-        }
+                        bet: this.bet,*/
+                    })
+                    .catch(err => {
+                        this.error = err.response.data.error
+                    })
+            }
         }
     }
 </script>
