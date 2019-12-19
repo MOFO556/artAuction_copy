@@ -42,6 +42,7 @@
                 })
         },
         beforeDestroy(){
+            clearInterval(this.polling)
             this.$store
                 .dispatch('session/finishSession', {
                    phone: this.phone
@@ -94,9 +95,6 @@
         },
         mounted() {
             this.abortSession();
-        },
-        beforeDestroy () {
-            clearInterval(this.polling)
         }
     }
 </script>

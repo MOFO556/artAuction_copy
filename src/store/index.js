@@ -47,10 +47,6 @@ export default new Vuex.Store({
           state.betStepMax = betStep
       },
       SET_REMAIN_TIME(state, time){
-          // eslint-disable-next-line no-console
-          console.log(time);
-          // eslint-disable-next-line no-console
-          console.log(state);
         state.remainTime.push(time);
     }
   },
@@ -137,11 +133,6 @@ export default new Vuex.Store({
       getRemainTime({commit}){
           return BetService.getRemainedTime()
               .then((res) => {
-
-                  // eslint-disable-next-line no-console
-                  console.log(res);
-
-
                   commit("SET_REMAIN_TIME", res.data);
         })
       }

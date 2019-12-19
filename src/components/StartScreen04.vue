@@ -50,7 +50,7 @@
                 days: null,
                 hours: null,
                 minutes: null,
-                sec: null,
+                sec: 0,
                 polling: null,
                 pState: null
             }
@@ -64,7 +64,7 @@
                    return setTimeout(() => {
                        ++this.sec
                        this.getCountdown()
-                   }, 1)
+                   }, 1000)
                }
                this.sec=0;
                this.minutes-=1;

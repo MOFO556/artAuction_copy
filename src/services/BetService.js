@@ -41,7 +41,6 @@ export default {
         return apiClient.get("/getMinMax");
     },
     getRemainedTime(){
-
         // eslint-disable-next-line no-console
         console.log("her");
         return apiClient.post("/expirationDate");
