@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" name="ArtAuction_Client-37 Связывание даты полученной от сервера с датой таймера" comment="">
+    <list default="true" id="60299ca2-652a-43d2-81f6-b2411afba24c" name="ArtAuction_Client-39 Разрешение возврата в сессию пользователя, который её заблокировал" comment="">
       <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/session.js" afterDir="false" />
+    </list>
+    <list id="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" name="ArtAuction_Client-37 Связывание даты полученной от сервера с датой таймера" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SmsInter09.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
     </list>
     <list id="2c914306-eeb0-439d-a7ba-fe9ffa42cef3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +26,15 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/services/BetService.js">
+      <ranges>
+        <range start1="3" end1="4" start2="3" end2="4" changelist="60299ca2-652a-43d2-81f6-b2411afba24c" />
+        <range start1="33" end1="35" start2="33" end2="35" changelist="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" />
+        <range start1="43" end1="45" start2="43" end2="43" changelist="60299ca2-652a-43d2-81f6-b2411afba24c" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1THPe1UlMVsJjp5FUQFQhN2krrR" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -34,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/vuetifytest/vuetify-dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../auctionApp-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -348,6 +363,20 @@
       <option name="type" value="BUG" />
       <updated>1576763341484</updated>
       <workItem from="1576763341524" duration="2334000" />
+    </task>
+    <task active="true" id="ArtAuction_Client-39" summary="Разрешение возврата в сессию пользователя, который её заблокировал">
+      <branch name="master" repository="D:\Prj\Vue\ArtAuction_Client" original="true" />
+      <branch name="ArtAuction_Client-39" repository="D:\Prj\Vue\ArtAuction_Client" />
+      <changelist id="60299ca2-652a-43d2-81f6-b2411afba24c" name="ArtAuction_Client-39 Разрешение возврата в сессию пользователя, который её заблокировал" comment="" />
+      <created>1576765584000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/39</url>
+      <option name="number" value="39" />
+      <option name="presentableId" value="ArtAuction_Client-39" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1576776400679</updated>
+      <workItem from="1576776400855" duration="2043000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <option name="clearContext" value="false" />

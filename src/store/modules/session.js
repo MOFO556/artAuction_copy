@@ -67,6 +67,10 @@ export const actions = {
         return BetService.checkSession(session)
             .then((res) => {
                 dispatch("getLockStat", res.data.locked, { root: true });
+                if (res.data.error)
+                {
+                    dispatch("getLockStat", false, { root: true });
+                }
                 const notification = {
                     type: "success",
                     message: "Your session have been successfully finished"

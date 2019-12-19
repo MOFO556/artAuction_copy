@@ -33,6 +33,7 @@
     export default {
         name: "SmsInter09",
         beforeCreate() {
+            this.phone=this.$store.state.userPhone  //Устанавливаем номер телефона
             this.$store
                 .dispatch('startVerification', {
                     phone: this.phone
@@ -75,7 +76,7 @@
                 this.$store
                     .dispatch('verify', {
                         phone: this.phone,
-                        bet: this.price,
+                        token: this.code,
                     })
                     .catch(err => {
                         this.error = err.response.data.error
@@ -90,6 +91,7 @@
                         .catch(err => {
                             this.error = err.response.data.error
                         })
+                    this.$parent.toScreen(5);
                 }, 300000)
             }
         },
