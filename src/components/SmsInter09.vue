@@ -13,7 +13,9 @@
                 </div>
 
                 <div class="row">
-                    <input class="smsCodeInput" type="text" placeholder="code" v-on:focusout="verify">
+                    <input class="smsCodeInput" type="text" placeholder="code"
+                           v-on:focusout="verify"
+                            v-model="code">
                 </div>
 
 
@@ -33,8 +35,7 @@
         beforeCreate() {
             this.$store
                 .dispatch('startVerification', {
-                    phone: "7999999999"
-                    //phone: this.phone
+                    phone: this.phone
                 })
                 .catch(err => {
                     this.errors = err.response.data.errors
@@ -43,8 +44,7 @@
         beforeDestroy(){
             this.$store
                 .dispatch('session/finishSession', {
-                    phone: "7999999999"
-                    //phone: this.phone
+                   phone: this.phone
                 })
                 .catch(err => {
                     this.error = err.response.data.error
@@ -52,17 +52,18 @@
         },
         data(){
           return{
-              price: this.$store.state.currentPrice //Устанавливаем текущую цену
+              price: this.$store.state.currentPrice, //Устанавливаем текущую цену
+              phone: this.$store.state.userPhone, //Устанавливаем номер телефона
+              code: null,
+              polling: null
           }
         },
         methods:{
             createBet () {
                 this.$store
                     .dispatch('bet/createBet', {
-                        phone: "79192790946",
-                        bet:5550/*
-                            phone: this.phone,
-                            bet: this.bet,*/
+                        phone: this.phone,
+                        bet: this.price
                     })
                     .catch(err => {
                         this.error = err.response.data.error
@@ -80,7 +81,24 @@
                     .catch(err => {
                         this.error = err.response.data.error
                     })
+            },
+            abortSession(){
+                this.polling = setInterval(() => {
+                    this.$store
+                        .dispatch('session/finishSession', {
+                            phone: this.phone
+                        })
+                        .catch(err => {
+                            this.error = err.response.data.error
+                        })
+                }, 300000)
             }
+        },
+        mounted() {
+            this.abortSession();
+        },
+        beforeDestroy () {
+            clearInterval(this.polling)
         }
     }
 </script>

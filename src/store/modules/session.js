@@ -43,6 +43,7 @@ export const actions = {
         return BetService.finishSession(session)
             .then(() => {
                 commit("FIN_SESSION", session);
+                dispatch("getLockStat", false, { root: true });
                 const notification = {
                     type: "success",
                     message: "Your session have been successfully finished"
