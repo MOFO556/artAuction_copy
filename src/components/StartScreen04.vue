@@ -30,10 +30,13 @@
             this.$store
                 .dispatch('getRemainTime') //Отправляем запрос на оставшееся время
                 .then(()=>{
-                    this.days = this.$store.state.remainTime[0]     // Установка дней из хранилища
-                    this.hours = this.$store.state.remainTime[1]    // Установка часов из хранилища
-                    this.minutes = this.$store.state.remainTime[2]  // Установка минут из хранилища
-                    this.sec = this.$store.state.remainTime[3]      // Установка секунд из хранилища
+                    // eslint-disable-next-line no-console
+                    console.log(this.$store.state);
+
+                    this.days = this.$store.state.remainTime[0].days    // Установка дней из хранилища
+                    this.hours = this.$store.state.remainTime[0].hours// Установка часов из хранилища
+                    this.minutes = this.$store.state.remainTime[0].minutes // Установка минут из хранилища
+                    //this.sec = this.$store.state.remainTime[3]      // Установка секунд из хранилища
                 })
                 .catch(err => {
                     this.errors = err.response.data.errors
@@ -54,10 +57,9 @@
         },
         methods:{
             start(){
-                /*this.$parent.nextComp();*/
+                this.$parent.nextComp();
             },
             getCountdown(){
-                /*
                if (this.sec<60 && !(this.days<0)) {
                    return setTimeout(() => {
                        ++this.sec
@@ -78,9 +80,9 @@
                 }
                 if (this.days<0){
                     this.days=0
-                    this.$parent.nextComp();
+                   /* this.$parent.nextComp();*/
                 }
-                this.getCountdown()*/
+                this.getCountdown()
             },
             pollData () {
                 this.polling = setInterval(() => {
