@@ -50,7 +50,7 @@
                             .dispatch('user/login', { //Запрос на наличие в базе телефона
                                 phone: this.phone
                             }).then(()=>{
-                            if (!this.$store.state.answerPhone) //Если есть, проверяем свободна ли сессия
+                            if (this.$store.state.answerPhone) //Если есть, проверяем свободна ли сессия
                             {
                                 this.$store
                                     .dispatch('session/isFree', { //Запрос состояния сессии

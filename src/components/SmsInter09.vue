@@ -73,10 +73,8 @@
             verify(){
                 this.$store
                     .dispatch('verify', {
-                        phone: "79192790946",
-                        token:"5550"/*
                         phone: this.phone,
-                        bet: this.bet,*/
+                        bet: this.price,
                     })
                     .catch(err => {
                         this.error = err.response.data.error

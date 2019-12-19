@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" name="ArtAuction_Client-37 Связывание даты полученной от сервера с датой таймера" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SmsInter09.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
     </list>
     <list id="2c914306-eeb0-439d-a7ba-fe9ffa42cef3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +59,18 @@
       <recent name="C:\Workspace\ArtAuction\client\src\assets" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="npm.serve">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -91,18 +101,6 @@
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -385,45 +383,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="ArtAuction_Client-16 Исправление фона на белый\серый" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="18" key="#Servers" timestamp="1575908257191">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state x="264" y="18" key="#Servers/62.0.1218.720@62.0.1218.720" timestamp="1575908257191" />
-    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog" timestamp="1576761091631">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog/62.0.1218.720@62.0.1218.720" timestamp="1576761091631" />
-    <state width="1258" height="564" key="GridCell.Tab.0.bottom" timestamp="1576765650134">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state width="1258" height="564" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1576765650134" />
-    <state width="1258" height="564" key="GridCell.Tab.0.center" timestamp="1576765650134">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state width="1258" height="564" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1576765650134" />
-    <state width="1258" height="564" key="GridCell.Tab.0.left" timestamp="1576765650134">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state width="1258" height="564" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1576765650134" />
-    <state width="1258" height="564" key="GridCell.Tab.0.right" timestamp="1576765650134">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state width="1258" height="564" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1576765650134" />
-    <state x="173" y="0" key="SettingsEditor" timestamp="1576149463280">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state x="173" y="0" key="SettingsEditor/62.0.1218.720@62.0.1218.720" timestamp="1576149463280" />
-    <state x="402" y="175" key="SimpleOpenTaskDialog" timestamp="1576763341498">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state x="402" y="175" key="SimpleOpenTaskDialog/62.0.1218.720@62.0.1218.720" timestamp="1576763341498" />
-    <state x="0" y="0" width="612" height="720" key="find.popup" timestamp="1575967642563">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state x="0" y="0" width="612" height="720" key="find.popup/62.0.1218.720@62.0.1218.720" timestamp="1575967642563" />
-    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1576763909517">
-      <screen x="62" y="0" width="1218" height="720" />
-    </state>
-    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" timestamp="1576763909517" />
+    <state x="264" y="18" key="#Servers" />
+    <state x="264" y="18" key="#Servers/62.0.1218.720@62.0.1218.720" />
+    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog" />
+    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog/62.0.1218.720@62.0.1218.720" />
+    <state width="1258" height="564" key="GridCell.Tab.0.bottom" />
+    <state width="1258" height="564" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" />
+    <state width="1258" height="564" key="GridCell.Tab.0.center" />
+    <state width="1258" height="564" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" />
+    <state width="1258" height="564" key="GridCell.Tab.0.left" />
+    <state width="1258" height="564" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" />
+    <state width="1258" height="564" key="GridCell.Tab.0.right" />
+    <state width="1258" height="564" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" />
+    <state x="173" y="0" key="SettingsEditor" />
+    <state x="173" y="0" key="SettingsEditor/62.0.1218.720@62.0.1218.720" />
+    <state x="402" y="175" key="SimpleOpenTaskDialog" />
+    <state x="402" y="175" key="SimpleOpenTaskDialog/62.0.1218.720@62.0.1218.720" />
+    <state x="0" y="0" width="612" height="720" key="find.popup" />
+    <state x="0" y="0" width="612" height="720" key="find.popup/62.0.1218.720@62.0.1218.720" />
+    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup" />
+    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" />
   </component>
 </project>
