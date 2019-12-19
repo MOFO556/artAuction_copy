@@ -29,13 +29,13 @@
         },
         methods: {
             countDown() {
-                if (this.value<=100) {
+                /*if (this.value<=100) {
                     return setTimeout(() => {
                         ++this.value
                         this.countDown()
                     }, 10)
                 }
-                this.$parent.nextComp();
+                this.$parent.nextComp();*/
             }
         }
     }
@@ -47,7 +47,7 @@
 
     .text{
         /* font-family: AvantGardeGothicCTT;*/
-        font-family: AvantGardeGothicCTT;
+        font-family: AvantGardeGothicC-Demi;
         margin-left:-100px;
         position: absolute;
 
@@ -60,6 +60,7 @@
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+        margin-bottom: 5px;
     }
 
     .element {
@@ -68,7 +69,7 @@
         height:423px;
 
         margin-left: 34px;
-        margin-top: 114px;
+        margin-top: 78px;
 
 
 
@@ -85,12 +86,13 @@
 
         color: #000000;
         margin-bottom: 0;
+        margin-top: -3px;
     }
 
     h3{
         margin-top: 0;
         text-align: right;
-
+        margin-bottom: -10px;
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
@@ -109,6 +111,7 @@
         line-height: 59px;
 
         color: #000000;
+        margin-bottom: -9px;
     }
 
 

@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0b164fe-6605-40f8-b614-436fcda0304f" name="ArtAuction_Client-33 Добавление таймера" comment="">
+    <list default="true" id="558ba00a-ef4d-4f9a-9537-0ff7a68bdca0" name="ArtAuction_Client-36 Переделывание экрана первого автора" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Author01.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author01.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Author02.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Author02.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Intro03.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Intro03.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Load00.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Load00.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
+    <list id="b0b164fe-6605-40f8-b614-436fcda0304f" name="ArtAuction_Client-33 Добавление таймера" comment="" />
     <list id="368a3d83-df35-435a-bd10-c7145eb1a217" name="ArtAuction_Client-34 Смешивание верски под 560 с чем-то непонятным" comment="" />
     <list id="99dbe590-a1e3-4eeb-9f25-6f77c8d005fa" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,18 +61,6 @@
       <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="npm.serve">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -108,6 +91,18 @@
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -327,6 +322,21 @@
       <workItem from="1576685667420" duration="46000" />
       <workItem from="1576688859362" duration="6319000" />
     </task>
+    <task active="true" id="ArtAuction_Client-36" summary="Переделывание экрана первого автора">
+      <branch name="master" repository="C:\Workspace\ArtAuction_Client" original="true" />
+      <branch name="ArtAuction_Client-36" repository="C:\Workspace\ArtAuction_Client" />
+      <changelist id="558ba00a-ef4d-4f9a-9537-0ff7a68bdca0" name="ArtAuction_Client-36 Переделывание экрана первого автора" comment="" />
+      <created>1576753328000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/36</url>
+      <option name="number" value="36" />
+      <option name="presentableId" value="ArtAuction_Client-36" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1576760603795</updated>
+      <workItem from="1576760604263" duration="86000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
     <option name="clearContext" value="false" />
     <option name="commitChanges" value="false" />
     <servers>
@@ -369,22 +379,22 @@
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="162" y="100" width="1018" height="520" key="DiffContextDialog/62.0.1218.720@62.0.1218.720" timestamp="1576583804833" />
-    <state width="1258" height="564" key="GridCell.Tab.0.bottom" timestamp="1576679848190">
+    <state width="1258" height="564" key="GridCell.Tab.0.bottom" timestamp="1576757241441">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1258" height="564" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1576679848190" />
-    <state width="1258" height="564" key="GridCell.Tab.0.center" timestamp="1576679848190">
+    <state width="1258" height="564" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1576757241441" />
+    <state width="1258" height="564" key="GridCell.Tab.0.center" timestamp="1576757241439">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1258" height="564" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1576679848190" />
-    <state width="1258" height="564" key="GridCell.Tab.0.left" timestamp="1576679848190">
+    <state width="1258" height="564" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1576757241439" />
+    <state width="1258" height="564" key="GridCell.Tab.0.left" timestamp="1576757241436">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1258" height="564" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1576679848190" />
-    <state width="1258" height="564" key="GridCell.Tab.0.right" timestamp="1576679848190">
+    <state width="1258" height="564" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1576757241436" />
+    <state width="1258" height="564" key="GridCell.Tab.0.right" timestamp="1576757241439">
       <screen x="62" y="0" width="1218" height="720" />
     </state>
-    <state width="1258" height="564" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1576679848190" />
+    <state width="1258" height="564" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1576757241439" />
     <state x="173" y="0" key="SettingsEditor" timestamp="1576149463280">
       <screen x="62" y="0" width="1218" height="720" />
     </state>

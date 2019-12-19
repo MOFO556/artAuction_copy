@@ -16,6 +16,13 @@
 <style>
 
   @import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap');
+  @font-face {
+    font-family: 'AvantGardeGothicC-Demi';
+    src: local('AvantGardeGothicC-Demi'),
+    url('https://nomail.com.ua/files/woff/480fd5d5d446343bb7fa4599c1e98b2d.woff')
+    format('woff');
+  }
+
 
   html{
     background-color: gray;
