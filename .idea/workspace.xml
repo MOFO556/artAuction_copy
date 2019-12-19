@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60299ca2-652a-43d2-81f6-b2411afba24c" name="ArtAuction_Client-39 Разрешение возврата в сессию пользователя, который её заблокировал" comment="">
+    <list default="true" id="49cb25dd-3ae6-4f85-b250-f6ec6d21fb81" name="ArtAuction_Client-41 Реализация механизма блокировок" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/session.js" afterDir="false" />
     </list>
-    <list id="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" name="ArtAuction_Client-37 Связывание даты полученной от сервера с датой таймера" comment="">
+    <list id="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" name="ArtAuction_Client-37 Связывание даты полученной от сервера с датой таймера" comment="" />
+    <list id="60299ca2-652a-43d2-81f6-b2411afba24c" name="ArtAuction_Client-39 Разрешение возврата в сессию пользователя, который её заблокировал" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SmsInter09.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
     </list>
     <list id="2c914306-eeb0-439d-a7ba-fe9ffa42cef3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,19 +19,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="ArtAuction_Client-39" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/services/BetService.js">
-      <ranges>
-        <range start1="3" end1="4" start2="3" end2="4" changelist="60299ca2-652a-43d2-81f6-b2411afba24c" />
-        <range start1="33" end1="35" start2="33" end2="35" changelist="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" />
-        <range start1="43" end1="45" start2="43" end2="43" changelist="60299ca2-652a-43d2-81f6-b2411afba24c" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1THPe1UlMVsJjp5FUQFQhN2krrR" />
   <component name="ProjectLevelVcsManager">
@@ -364,7 +353,7 @@
       <updated>1576763341484</updated>
       <workItem from="1576763341524" duration="2334000" />
     </task>
-    <task active="true" id="ArtAuction_Client-39" summary="Разрешение возврата в сессию пользователя, который её заблокировал">
+    <task id="ArtAuction_Client-39" summary="Разрешение возврата в сессию пользователя, который её заблокировал">
       <branch name="master" repository="D:\Prj\Vue\ArtAuction_Client" original="true" />
       <branch name="ArtAuction_Client-39" repository="D:\Prj\Vue\ArtAuction_Client" />
       <changelist id="60299ca2-652a-43d2-81f6-b2411afba24c" name="ArtAuction_Client-39 Разрешение возврата в сессию пользователя, который её заблокировал" comment="" />
@@ -375,14 +364,32 @@
       <option name="presentableId" value="ArtAuction_Client-39" />
       <option name="project" value="ArtAuction_Client" />
       <option name="type" value="BUG" />
-      <updated>1576776400679</updated>
-      <workItem from="1576776400855" duration="2043000" />
+      <updated>1576781223630</updated>
+      <workItem from="1576776400855" duration="4480000" />
+    </task>
+    <task active="true" id="ArtAuction_Client-41" summary="Реализация механизма блокировок">
+      <branch name="ArtAuction_Client-39" repository="D:\Prj\Vue\ArtAuction_Client" original="true" />
+      <branch name="ArtAuction_Client-41" repository="D:\Prj\Vue\ArtAuction_Client" />
+      <changelist id="49cb25dd-3ae6-4f85-b250-f6ec6d21fb81" name="ArtAuction_Client-41 Реализация механизма блокировок" comment="" />
+      <created>1576770385000</created>
+      <option name="issue" value="true" />
+      <url>https://github.com/AndrewAndreevich/ArtAuction_Client/issues/41</url>
+      <option name="number" value="41" />
+      <option name="presentableId" value="ArtAuction_Client-41" />
+      <option name="project" value="ArtAuction_Client" />
+      <option name="type" value="BUG" />
+      <updated>1576781223630</updated>
+      <workItem from="1576781224285" duration="2189000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <option name="clearContext" value="false" />
     <option name="commitChanges" value="false" />
+    <option name="mergeBranch" value="false" />
     <servers>
       <GitHub url="https://github.com">
+        <option name="preferredCloseTaskState">
+          <CustomTaskState id="RESOLVED" predefined="true" name="Resolved" />
+        </option>
         <option name="repoAuthor" value="AndrewAndreevich" />
         <option name="repoName" value="ArtAuction_Client" />
       </GitHub>

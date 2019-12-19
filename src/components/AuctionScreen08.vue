@@ -48,7 +48,7 @@
                     this.errors = err.response.data.errors
                 })
             this.$store
-                .dispatch('getBetStep')
+                .dispatch('getBetStep') //Отправляем запрос на шаг ставки
                 .then(() => {
                     this.betStepmn = this.$store.state.betStepMin,
                     this.betStepmx = this.$store.state.betStepMax,
@@ -69,38 +69,7 @@
         },
         methods:{
             next(){
-                this.$store //Запрос, свободна ли сессия
-                    .dispatch('session/isFree', {
-                        phone: this.phone
-                    }).then(()=>{ //Проверяем ответ
-                        if (!this.$store.state.answerLock){ //Если свободна, то добавляем новую и едём вперед
-                            this.$store
-                                .dispatch('session/addSession', { // Добавили сессию
-                                    phone: this.phone,
-                                    bet: this.price
-                                })
-                                .catch(err => {
-                                    this.error = err.response.data.error
-                                })
-                            this.$store
-                                .dispatch('setPrice', this.price)
-                                .catch(err => {
-                                    this.error = err.response.data.error
-                                })
-                            this.$parent.nextComp();
-                        }
-                        else { //Если занята, то выводим сообщение
-                            const notification = {
-                                type: "error",
-                                message: "Session is busy"
-                            };
-                            this.$store
-                                .dispatch("notification/add", notification);
-                        }
-                })
-                .catch(err => {
-                    this.error = err.response.data.error
-                })
+                this.$parent.nextComp();
             },
             incrementBet(){
                 if (this.bet <= this.betStepmx)

@@ -95,7 +95,7 @@
                     if(this.hours>=10 && this.minutes>=10){
                         this.pState= "remain : "+this.days+" - "+this.hours+":"+this.minutes
                     }
-                }, 1)
+                }, 1000)
             }
         },
         beforeMount() {

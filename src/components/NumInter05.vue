@@ -4,7 +4,7 @@
             <img src="../assets/images/body.png" height="444px" width="360px">
             <div class="inputtextblock">
                 <div class="row">
-                    <div class="smsInterTitle">Inter your phone number</div>
+                    <div class="smsInterTitle" :class="{busyStyle : busyFlag}">{{message}}</div>
                     <img class="pricing" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
                 <div class="row">
@@ -40,60 +40,79 @@
         data(){
           return{
               phone:null,
-              changeClass:null
+              changeClass:null,
+              polling:null,
+              message: "Inter your phone number",
+              busyFlag:false
           }
         },
         methods:{
             next(){
                 if (!this.$v.$invalid){
-                        this.$store
-                            .dispatch('user/login', { //Запрос на наличие в базе телефона
-                                phone: this.phone
-                            }).then(()=>{
-                            if (this.$store.state.answerPhone) //Если есть, проверяем свободна ли сессия
+                    this.$store
+                        .dispatch('session/isFree', { //Запрос состояния сессии
+                            phone: this.phone
+                        }).then(()=>{
+                            if (!this.$store.state.answerLock) //Если свободна, то проверяем телефон
+                                {
+                                    this.$store
+                                        .dispatch('user/login', { //Запрос на наличие в базе телефона
+                                            phone: this.phone
+                                        }).then(()=>{
+                                            if (this.$store.state.answerPhone) //Если есть, то идём делать ставку
+                                                {
+                                                    this.$parent.toScreen(8);
+                                                }
+                                            else //Если нет, то идём регистрироваться
+                                            {
+                                                this.$parent.nextComp();
+                                            }
+                                        })
+                                        .catch(err => {
+                                            this.error = err.response.data.error
+                                        })
+                                }
+                            else //Если сессия занята, то подменяем надпись
                             {
-                                this.$store
-                                    .dispatch('session/isFree', { //Запрос состояния сессии
-                                        phone: this.phone
-                                    }).then(()=>{
-                                    if (!this.$store.state.answerLock) //Если свободна, то идём делать ставку
-                                    {
-                                        this.$parent.toScreen(8);
-                                    }
-                                    else //Если занята, выводим сообщение и гуляем???
-                                    {
-                                        const notification = {
-                                            type: "error",
-                                            message: "Session is busy"
-                                        };
-                                        this.$store
-                                            .dispatch("notification/add", notification);
-                                        this.$parent.toScreen(8); //Пока гуляем так же на став0чку
-                                    }
-                                })
-                                    .catch(err => {
-                                        this.error = err.response.data.error
-                                    })
+                                this.busyFlag=true;
+                                this.message="Sorry, somebody placing a bet"
+                                this.polling = setInterval(() => {
+                                    this.busyFlag = false;
+                                    this.message = "Inter your phone number"
+                                }, 30000)
                             }
-                            else //Если телефона в базе нет, то идём регистрироваться
-                            {
-                                this.$parent.nextComp();
-                            }
-                          }
-                        )
-                            .catch(err => {
-                                this.errors = err.response.data.errors
-                            })
+                          })
+                        .catch(err => {
+                            this.errors = err.response.data.errors
+                        })
                     this.$store.dispatch('setUserPhone', this.phone)
-
                 }
-                },
-
+            },
         },
+        beforeDestroy () {
+            clearInterval(this.polling)//
+
+            this.$store
+                .dispatch('session/addSession', { // Добавили сессию покинув экран
+                    phone: this.phone,
+                    bet: this.price
+                })
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+            this.$store
+                .dispatch('setPrice', this.price)
+                .catch(err => {
+                    this.error = err.response.data.error
+                })
+        }
     }
 </script>
 
 <style scoped>
+    .busyStyle{
+        color: red;
+    }
     .inputtextblock
     {
         margin-left: 24px;
