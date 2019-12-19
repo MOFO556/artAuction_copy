@@ -19,13 +19,13 @@
         },
         methods: {
             countDown() {
-                if (this.value<=100) {
+
                     return setTimeout(() => {
-                        ++this.value
-                        this.countDown()
-                    }, 10)
-                }
-                this.$parent.nextComp();
+                        this.$parent.nextComp();
+                    }, 10000);
+
+
+
             }
         }
     }

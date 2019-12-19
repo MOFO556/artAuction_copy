@@ -25,7 +25,7 @@
 
 
   html{
-    background-color: gray;
+    background-color: white;
     overflow: hidden;
   }
 
