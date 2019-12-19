@@ -1,33 +1,9 @@
 <template>
-    <div>
-        <h1>Intro 3</h1>
-
-    </div>
-
-
-</template>
-
-<script>
-    export default {
-
-    }
-</script>
-
-<style scoped>
-
-</style>
-
-
-
-
-<template>
     <div class="outer">
         <div class="inner">
-                <img src="../assets/images/body.gif" height="640px" width="360">
+                <img src="../assets/images/body.gif" height="580px" width="360">
         </div>
     </div>
-
-
 </template>
 
 <script>

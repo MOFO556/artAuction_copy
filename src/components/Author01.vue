@@ -29,13 +29,13 @@
         },
         methods: {
             countDown() {
-                /*if (this.value<=100) {
+                if (this.value<=100) {
                     return setTimeout(() => {
                         ++this.value
                         this.countDown()
                     }, 10)
                 }
-                this.$parent.nextComp();*/
+                this.$parent.nextComp();
             }
         }
     }
@@ -51,16 +51,22 @@
         margin-left:-100px;
         position: absolute;
 
-        left: 50%;
+       left: 50%;
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
 
-        top: 50%;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
-        margin-bottom: 5px;
+
+        margin-top: 202px;
+
+        /*
+
+
+
+       */
     }
 
     .element {
@@ -90,9 +96,9 @@
     }
 
     h3{
-        margin-top: 0;
+
         text-align: right;
-        margin-bottom: -10px;
+
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
@@ -100,10 +106,12 @@
 
         color: #000000;
 
+        margin-top: 0;
+        margin-bottom: -10px;
     }
 
     h1{
-        margin: 0;
+
 
         font-style: normal;
         font-weight: bold;
@@ -111,6 +119,8 @@
         line-height: 59px;
 
         color: #000000;
+
+        margin: 0;
         margin-bottom: -9px;
     }
 

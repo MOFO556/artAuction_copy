@@ -54,9 +54,10 @@
         },
         methods:{
             start(){
-                this.$parent.nextComp();
+                /*this.$parent.nextComp();*/
             },
             getCountdown(){
+                /*
                if (this.sec<60 && !(this.days<0)) {
                    return setTimeout(() => {
                        ++this.sec
@@ -79,7 +80,7 @@
                     this.days=0
                     this.$parent.nextComp();
                 }
-                this.getCountdown()
+                this.getCountdown()*/
             },
             pollData () {
                 this.polling = setInterval(() => {

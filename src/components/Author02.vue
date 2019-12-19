@@ -45,21 +45,29 @@
 
 
 
+
     .text{
         /* font-family: AvantGardeGothicCTT;*/
-        font-family: AvantGardeGothicCTT;
+        font-family: AvantGardeGothicC-Demi;
         margin-left:-100px;
         position: absolute;
 
-        left: 50%;
+        left: 49%;
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
 
-        top: 50%;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+
+        margin-top: 213px;
+
+        /*
+
+
+
+       */
     }
 
     .element {
@@ -68,7 +76,7 @@
         height:423px;
 
         margin-left: 34px;
-        margin-top: 114px;
+        margin-top: 78px;
     }
 
 
@@ -99,6 +107,7 @@
 
     h1{
         margin: 0;
+
 
         font-style: normal;
         font-weight: bold;

@@ -64,5 +64,17 @@
 </script>
 
 <style scoped>
+    .inner{
+        background: white;
+        width: 360px;
+        height: 580px;
+    }
 
+    .outer
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
 </style>
