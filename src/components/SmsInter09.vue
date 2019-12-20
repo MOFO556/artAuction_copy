@@ -13,9 +13,9 @@
                 </div>
 
                 <div class="row">
-                    <input class="smsCodeInput" type="text" placeholder="code"
-                           v-on:focusout="verify"
-                            v-model="code">
+                    <input class="smsCodeInput" type="text" placeholder="code"  v-model="code">
+                          <!-- v-on:focusout="verify"-->
+
                 </div>
 
 
@@ -23,7 +23,7 @@
                         <div class="totalCost">${{price}} USD</div>
                         <img class="pricingSize" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                     </div>
-                <button v-on:click="createBet" class="completeBet">Complete</button>
+                <button v-on:click="verify" class="completeBet">Complete</button>
             </div>
         </div>
     </div>
@@ -54,6 +54,7 @@
         },
         data(){
           return{
+              bet : this.$store.state.bet1,
               price: this.$store.state.currentPrice, //Устанавливаем текущую цену
               phone: this.$store.state.userPhone, //Устанавливаем номер телефона
               code: null,
@@ -65,7 +66,7 @@
                 this.$store
                     .dispatch('bet/createBet', {
                         phone: this.phone,
-                        bet: this.price
+                        bet: this.bet
                     })
                     .catch(err => {
                         this.error = err.response.data.error
@@ -77,10 +78,17 @@
                     .dispatch('verify', {
                         phone: this.phone,
                         token: this.code,
-                    })
+                        bet: this.bet
+                    }).then(() => {
+
+                    this.$parent.toScreen(4);
+
+                     })
                     .catch(err => {
                         this.error = err.response.data.error
-                    })
+                    });
+
+
             },
             abortSession(){
                 this.polling = setInterval(() => {
@@ -91,7 +99,7 @@
                         .catch(err => {
                             this.error = err.response.data.error
                         })
-                    this.$parent.toScreen(5);
+                    this.$parent.toScreen(4);
                 }, 300000)
             }
         },

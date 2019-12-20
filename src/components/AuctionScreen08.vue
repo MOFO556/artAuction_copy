@@ -10,7 +10,7 @@
                     <div class="title">Make Bet</div>
                 </div>
 
-                <img src="../assets/images/bodyBet.png" height="381px" width="360px">
+                <img src="../assets/images/bodyBet2.gif" height="381px" width="360px">
 
                 <div class="rowB">
                     <div class="block">
@@ -50,6 +50,8 @@
             this.$store
                 .dispatch('getBetStep') //Отправляем запрос на шаг ставки
                 .then(() => {
+
+
                     this.betStepmn = this.$store.state.betStepMin,
                     this.betStepmx = this.$store.state.betStepMax,
                     this.bet = this.betStepmn
@@ -77,6 +79,16 @@
                     this.price += this.betStepmn
                     this.bet += this.betStepmn
                 }
+
+                // eslint-disable-next-line no-console
+                console.log(this.price + " " + this.bet);
+
+                this.$store
+                    .dispatch('incBet',this.bet) //Отправляем запрос на получение цены
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+                    })
+
             },
             decrementBet(){
                 if (this.bet > this.betStepmn)
@@ -84,6 +96,16 @@
                     this.price -= this.betStepmn
                     this.bet -= this.betStepmn
                 }
+
+                // eslint-disable-next-line no-console
+                console.log(this.price + " " + this.bet);
+
+                this.$store
+                    .dispatch('decBet',this.bet) //Отправляем запрос на получение цены
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+                    })
+
             }
         }
 

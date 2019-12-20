@@ -19,9 +19,13 @@ export default new Vuex.Store({
       userPhone: null,
       betStepMin: null,
       betStepMax: null,
-      remainTime: []
+      remainTime: [],
+      bet1: 0
   },
   mutations: {
+      SET_BET(state, bet){
+          state.bet1 = bet
+      },
     PHONE_STAT(state, answer){
         state.answerPhone = answer
     },
@@ -51,6 +55,33 @@ export default new Vuex.Store({
     }
   },
   actions: {
+
+      incBet({ commit }, bet) {
+          let a = parseInt(this.state.bet1);
+          let b = parseInt(bet);
+          let c = a+b;
+          // eslint-disable-next-line no-console
+          console.log(a);
+          // eslint-disable-next-line no-console
+          console.log(b);
+          // eslint-disable-next-line no-console
+          console.log(c);
+
+          commit("SET_BET",  c );
+      },
+      decBet({ commit }, bet) {
+          let a = parseInt(this.state.bet1);
+          let b = parseInt(bet);
+          let c = a-b;
+          // eslint-disable-next-line no-console
+          console.log(a);
+          // eslint-disable-next-line no-console
+          console.log(b);
+          // eslint-disable-next-line no-console
+          console.log(c);
+
+          commit("SET_BET",  c );
+      },
       getPhoneStat({ commit }, ans) {
           commit("PHONE_STAT", ans);
       },
@@ -85,6 +116,9 @@ export default new Vuex.Store({
               .then((res) => {
                   commit("SET_BET_STEPMIN", res.data.min);
                   commit("SET_BET_STEPMAX", res.data.max);
+
+                  // eslint-disable-next-line no-console
+                  console.log(res.data);
                   const notification = {
                       type: "success",
                       message: "Bet steps have been successfully loaded"

@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49cb25dd-3ae6-4f85-b250-f6ec6d21fb81" name="ArtAuction_Client-41 Реализация механизма блокировок" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bodyBet2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/bodybet.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/body.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/body.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/body.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/bodyBet.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuctionScreen08.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SmsInter09.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StartScreen04.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartScreen04.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <list id="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" name="ArtAuction_Client-37 Связывание даты полученной от сервера с датой таймера" comment="" />
-    <list id="60299ca2-652a-43d2-81f6-b2411afba24c" name="ArtAuction_Client-39 Разрешение возврата в сессию пользователя, который её заблокировал" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list id="60299ca2-652a-43d2-81f6-b2411afba24c" name="ArtAuction_Client-39 Разрешение возврата в сессию пользователя, который её заблокировал" comment="" />
     <list id="2c914306-eeb0-439d-a7ba-fe9ffa42cef3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ArtAuction_Client-39" />
+        <entry key="$PROJECT_DIR$" value="ArtAuction_Client-42" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,12 +45,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../auctionApp-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -55,25 +65,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\ArtAuction_Client\src\assets\images" />
+      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
+      <recent name="C:\Workspace\ArtAuction\client\src\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Workspace\ArtAuction\client\src\assets\fonts" />
       <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Workspace\ArtAuction\client\src\assets\images" />
-      <recent name="C:\Workspace\ArtAuction\client\src\assets" />
-    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="/makeBet" />
     </option>
   </component>
   <component name="RunManager" selected="npm.serve">
@@ -102,10 +106,22 @@
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.serve" />
-        <item itemvalue="npm.serve" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.serve" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -420,25 +436,47 @@
     <option name="LAST_COMMIT_MESSAGE" value="ArtAuction_Client-16 Исправление фона на белый\серый" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="18" key="#Servers" />
-    <state x="264" y="18" key="#Servers/62.0.1218.720@62.0.1218.720" />
-    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog" />
-    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog/62.0.1218.720@62.0.1218.720" />
-    <state width="1258" height="564" key="GridCell.Tab.0.bottom" />
-    <state width="1258" height="564" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" />
-    <state width="1258" height="564" key="GridCell.Tab.0.center" />
-    <state width="1258" height="564" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" />
-    <state width="1258" height="564" key="GridCell.Tab.0.left" />
-    <state width="1258" height="564" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" />
-    <state width="1258" height="564" key="GridCell.Tab.0.right" />
-    <state width="1258" height="564" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" />
-    <state x="173" y="0" key="SettingsEditor" />
-    <state x="173" y="0" key="SettingsEditor/62.0.1218.720@62.0.1218.720" />
-    <state x="402" y="175" key="SimpleOpenTaskDialog" />
-    <state x="402" y="175" key="SimpleOpenTaskDialog/62.0.1218.720@62.0.1218.720" />
-    <state x="0" y="0" width="612" height="720" key="find.popup" />
-    <state x="0" y="0" width="612" height="720" key="find.popup/62.0.1218.720@62.0.1218.720" />
-    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup" />
-    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" />
+    <state x="233" y="18" key="#ESLint" timestamp="1576796455210">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="233" y="18" key="#ESLint/62.0.1218.720@62.0.1218.720" timestamp="1576796455210" />
+    <state x="264" y="18" key="#Servers" timestamp="1576785507818" />
+    <state x="264" y="18" key="#Servers/62.0.1218.720@62.0.1218.720" timestamp="1576785507818" />
+    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog" timestamp="1576785507818" />
+    <state x="162" y="100" width="1018" height="520" key="DiffContextDialog/62.0.1218.720@62.0.1218.720" timestamp="1576785507818" />
+    <state width="1258" height="568" key="GridCell.Tab.0.bottom" timestamp="1576796953693">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state width="1258" height="568" key="GridCell.Tab.0.bottom/62.0.1218.720@62.0.1218.720" timestamp="1576796953693" />
+    <state width="1258" height="568" key="GridCell.Tab.0.center" timestamp="1576796953693">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state width="1258" height="568" key="GridCell.Tab.0.center/62.0.1218.720@62.0.1218.720" timestamp="1576796953693" />
+    <state width="1258" height="568" key="GridCell.Tab.0.left" timestamp="1576796953693">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state width="1258" height="568" key="GridCell.Tab.0.left/62.0.1218.720@62.0.1218.720" timestamp="1576796953693" />
+    <state width="1258" height="568" key="GridCell.Tab.0.right" timestamp="1576796953693">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state width="1258" height="568" key="GridCell.Tab.0.right/62.0.1218.720@62.0.1218.720" timestamp="1576796953693" />
+    <state x="354" y="75" key="MultipleFileMergeDialog" timestamp="1576785520006">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="354" y="75" key="MultipleFileMergeDialog/62.0.1218.720@62.0.1218.720" timestamp="1576785520006" />
+    <state x="173" y="0" key="SettingsEditor" timestamp="1576785507818" />
+    <state x="173" y="0" key="SettingsEditor/62.0.1218.720@62.0.1218.720" timestamp="1576785507818" />
+    <state x="402" y="175" key="SimpleOpenTaskDialog" timestamp="1576785507818" />
+    <state x="402" y="175" key="SimpleOpenTaskDialog/62.0.1218.720@62.0.1218.720" timestamp="1576785507818" />
+    <state x="0" y="0" width="612" height="720" key="find.popup" timestamp="1576785507818" />
+    <state x="0" y="0" width="612" height="720" key="find.popup/62.0.1218.720@62.0.1218.720" timestamp="1576785507818" />
+    <state x="304" y="164" key="run.anything.popup" timestamp="1576791511667">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="304" y="164" key="run.anything.popup/62.0.1218.720@62.0.1218.720" timestamp="1576791511667" />
+    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1576795199674">
+      <screen x="62" y="0" width="1218" height="720" />
+    </state>
+    <state x="334" y="41" width="672" height="678" key="search.everywhere.popup/62.0.1218.720@62.0.1218.720" timestamp="1576795199674" />
   </component>
 </project>
