@@ -40,27 +40,32 @@
         name: "AuctionScreen08",
         beforeCreate() {
             this.$store
-                .dispatch('getPrice') //Отправляем запрос на получение цены
-                .then(() => {
-                    this.price = this.$store.state.currentPrice
-                })
-                .catch(err => {
-                    this.errors = err.response.data.errors
-                })
-            this.$store
                 .dispatch('getBetStep') //Отправляем запрос на шаг ставки
                 .then(() => {
                     this.betStepmn = this.$store.state.betStepMin,
                     this.betStepmx = this.$store.state.betStepMax,
                     this.bet = this.betStepmn
+
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
+            this.$store
+                .dispatch('getPrice') //Отправляем запрос на получение цены и сразу плюсуем ставку
+                .then(() => {
+                    this.price = (this.$store.state.currentPrice + this.$store.state.betStepMin)
                 })
                 .catch(err => {
                     this.errors = err.response.data.errors
                 })
         },
+        beforeDestroy(){
+            this.$store.dispatch('setBet', this.bet)
+            this.$store.dispatch('setPrice', this.price)
+        },
         data(){
             return {
-                price: this.$store.state.currentPrice,
+                price: (this.$store.state.currentPrice + this.$store.state.betStepMin),
                 phone: this.$store.state.userPhone,
                 betStepmn: null,
                 betStepmx: null,

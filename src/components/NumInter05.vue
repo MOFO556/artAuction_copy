@@ -79,7 +79,7 @@
                                 this.polling = setInterval(() => {
                                     this.busyFlag = false;
                                     this.message = "Inter your phone number"
-                                }, 30000)
+                                }, 20000)
                             }
                           })
                         .catch(err => {
