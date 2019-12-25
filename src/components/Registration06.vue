@@ -73,7 +73,7 @@
             register () {
                 if (!this.$v.$invalid) {
                     this.$store
-                        .dispatch('user/register', { //Отправляем заполненные данные и идём вперед
+                        .dispatch('user/addUser', { //Отправляем заполненные данные в хранилище
                             name: this.FirstName,
                             surname: this.SecondName,
                             email: this.Email,
