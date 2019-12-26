@@ -25,6 +25,7 @@
         name: "Agree07",
         methods:{
             next(){
+                this.$store.dispatch('user/commit'); //sending user data to the server
                 this.$parent.nextComp();
             },
             denied(){

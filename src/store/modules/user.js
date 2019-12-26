@@ -9,14 +9,17 @@ export const state = {
 export const mutations = {
     ADD_USER(state, user) {
         state.users.push(user);
+        state.user = user;
     }
 };
 
 export const actions = {
-    register({ commit, dispatch }, userData) {
-        return BetService.addUser(userData)
+    register({ commit }, userData) {
+            return  commit("ADD_USER", userData);
+    },
+    commit({state, dispatch}){
+        return BetService.addUser(state.user)
             .then((res) => {
-                commit("ADD_USER", userData);
                 dispatch("setPrice", res.data.sum, { root: true });
                 const notification = {
                     type: "success",
