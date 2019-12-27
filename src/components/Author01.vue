@@ -70,7 +70,7 @@
     }
 
     .element {
-        background-image: url("../assets/images/ramka.png");
+        background-image: url("../assets/images/ramka.svg");
         width:292px;
         height:423px;
 
