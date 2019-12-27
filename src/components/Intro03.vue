@@ -52,17 +52,7 @@
         transform: translateY(-50%);
     }
 
-    .element {
-        background-image: url("../assets/images/ramka.png");
-        width:292px;
-        height:423px;
 
-        margin-left: 34px;
-        margin-top: 114px;
-
-
-
-    }
 
 
     h2{
