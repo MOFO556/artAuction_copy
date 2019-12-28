@@ -13,9 +13,7 @@
                 </div>
 
                 <div class="row">
-                    <input class="smsCodeInput" type="text" placeholder="code"
-                           v-on:focusout="verify"
-                            v-model="code">
+                    <input class="smsCodeInput" :disabled="verification_active" type="text" placeholder="code" v-model="code">
                 </div>
 
 
@@ -23,7 +21,10 @@
                         <div class="totalCost">${{price}} USD</div>
                         <img class="pricingSize" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                     </div>
-                <button v-on:click="createBet" class="completeBet">Complete</button>
+                <button v-on:click="createBet" :disabled="verification_active" class="completeBet">
+									Complete
+									<img height="20px" width="20px" v-show="verification_active" alt="please wait..." src="../assets/images/button_loading.svg" />
+								</button>
             </div>
         </div>
     </div>
@@ -58,23 +59,33 @@
               price: this.$store.state.currentPrice,
               phone: this.$store.state.userPhone,
               code: null,
-              polling: null
+              polling: null,
+							verification_active: false
           }
         },
         methods:{
             createBet () {
-                if (this.$store.state.verificationStatus)
-                {
-                    this.$store
-                        .dispatch('bet/createBet', {
-                            phone: this.phone,
-                            bet: this.$store.state.bet
-                        })
-                        .catch(err => {
-                            this.error = err.response.data.error
-                        })
-                    this.$parent.toScreen(4);
-                }
+								this.verification_active = true;
+								this.$store
+                    .dispatch('verify', {
+                        phone: this.phone,
+                        token: this.code,
+										}).then(() => {
+											if (this.$store.state.verificationStatus)
+											{
+													this.verification_active = false;
+													this.$store
+															.dispatch('bet/createBet', {
+																	phone: this.phone,
+																	bet: this.$store.state.bet
+															})
+															.catch(err => {
+																	this.verification_active = false;
+																	this.error = err.response.data.error
+															})
+													this.$parent.toScreen(4);
+											}
+										});
             },
             verify(){
                 this.$store
@@ -99,9 +110,9 @@
                 }, 300000)
             }
         },
-        mounted() {
+        /*mounted() {
             this.abortSession();
-        }
+        }*/
     }
 </script>
 
