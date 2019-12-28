@@ -40,27 +40,32 @@
         name: "AuctionScreen08",
         beforeCreate() {
             this.$store
-                .dispatch('getPrice') //Отправляем запрос на получение цены
+                .dispatch('getBetStep') //Отправляем запрос на шаг ставки
                 .then(() => {
-                    this.price = this.$store.state.currentPrice
+                    this.betStepmn = this.$store.state.betStepMin,
+                    this.betStepmx = this.$store.state.betStepMax,
+                    this.bet = this.betStepmn
+
                 })
                 .catch(err => {
                     this.errors = err.response.data.errors
                 })
             this.$store
-                .dispatch('getBetStep')
+                .dispatch('getPrice') //Отправляем запрос на получение цены и сразу плюсуем ставку
                 .then(() => {
-                    this.betStepmn = this.$store.state.betStepMin,
-                    this.betStepmx = this.$store.state.betStepMax,
-                    this.bet = this.betStepmn
+                    this.price = (this.$store.state.currentPrice + this.$store.state.betStepMin)
                 })
                 .catch(err => {
                     this.errors = err.response.data.errors
                 })
         },
+        beforeDestroy(){
+            this.$store.dispatch('setBet', this.bet)
+            this.$store.dispatch('setPrice', this.price)
+        },
         data(){
             return {
-                price: this.$store.state.currentPrice,
+                price: (this.$store.state.currentPrice + this.$store.state.betStepMin),
                 phone: this.$store.state.userPhone,
                 betStepmn: null,
                 betStepmx: null,
@@ -69,38 +74,7 @@
         },
         methods:{
             next(){
-                this.$store //Запрос, свободна ли сессия
-                    .dispatch('session/isFree', {
-                        phone: this.phone
-                    }).then(()=>{ //Проверяем ответ
-                        if (!this.$store.state.answerLock){ //Если свободна, то добавляем новую и едём вперед
-                            this.$store
-                                .dispatch('session/addSession', { // Добавили сессию
-                                    phone: this.phone,
-                                    bet: this.price
-                                })
-                                .catch(err => {
-                                    this.error = err.response.data.error
-                                })
-                            this.$store
-                                .dispatch('setPrice', this.price)
-                                .catch(err => {
-                                    this.error = err.response.data.error
-                                })
-                            this.$parent.nextComp();
-                        }
-                        else { //Если занята, то выводим сообщение
-                            const notification = {
-                                type: "error",
-                                message: "Session is busy"
-                            };
-                            this.$store
-                                .dispatch("notification/add", notification);
-                        }
-                })
-                .catch(err => {
-                    this.error = err.response.data.error
-                })
+                this.$parent.nextComp();
             },
             incrementBet(){
                 if (this.bet <= this.betStepmx)

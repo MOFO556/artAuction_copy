@@ -19,7 +19,9 @@ export default new Vuex.Store({
       userPhone: null,
       betStepMin: null,
       betStepMax: null,
-      remainTime: []
+      remainTime: [],
+      verificationStatus: false,
+      bet: null
   },
   mutations: {
     PHONE_STAT(state, answer){
@@ -48,7 +50,13 @@ export default new Vuex.Store({
       },
       SET_REMAIN_TIME(state, time){
         state.remainTime.push(time);
-    }
+    },
+      SET_VERIFICATION_STATUS(state, status){
+        state.verificationStatus = status
+      },
+      SET_BET(state, bet){
+        state.bet = bet
+      }
   },
   actions: {
       getPhoneStat({ commit }, ans) {
@@ -109,8 +117,9 @@ export default new Vuex.Store({
       },
      verify({ commit, dispatch }, code){
           return BetService.completeVerification(code)
-              .then(() => {
+              .then((res) => {
                   commit("SET_VERIFICATION_DATA", code);
+                  commit("SET_VERIFICATION_STATUS", res.data.success)
                   const notification = {
                       type: "success",
                       message: "Your telephone have been successfully verified"
@@ -135,6 +144,9 @@ export default new Vuex.Store({
               .then((res) => {
                   commit("SET_REMAIN_TIME", res.data);
         })
+      },
+      setBet({commit}, bet){
+          commit("SET_BET", bet)
       }
   },
   modules: {

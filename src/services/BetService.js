@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-    baseURL: ` http://192.168.0.12:80`,
+    baseURL: ` http://192.168.0.13:80`,
     withCredentials: false, // This is the default
     headers: {
         Accept: "application/json",
@@ -31,8 +31,8 @@ export default {
     getPrice(){
         return apiClient.post("/getLastBet");
     },
-    verificationStart(){
-        return apiClient.post("/verification/start");
+    verificationStart(phone){
+        return apiClient.post("/verification/start", phone);
     },
     completeVerification(code){
         return apiClient.post("/verification/verify", code);
@@ -41,8 +41,6 @@ export default {
         return apiClient.get("/getMinMax");
     },
     getRemainedTime(){
-        // eslint-disable-next-line no-console
-        console.log("her");
         return apiClient.post("/expirationDate");
     },
 };

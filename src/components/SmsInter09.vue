@@ -33,6 +33,8 @@
     export default {
         name: "SmsInter09",
         beforeCreate() {
+            this.price=this.$store.state.currentPrice, //Устанавливаем текущую цену
+            this.phone=this.$store.state.userPhone      //Устанавливаем номер телефона
             this.$store
                 .dispatch('startVerification', {
                     phone: this.phone
@@ -53,29 +55,32 @@
         },
         data(){
           return{
-              price: this.$store.state.currentPrice, //Устанавливаем текущую цену
-              phone: this.$store.state.userPhone, //Устанавливаем номер телефона
+              price: this.$store.state.currentPrice,
+              phone: this.$store.state.userPhone,
               code: null,
               polling: null
           }
         },
         methods:{
             createBet () {
-                this.$store
-                    .dispatch('bet/createBet', {
-                        phone: this.phone,
-                        bet: this.price
-                    })
-                    .catch(err => {
-                        this.error = err.response.data.error
-                    })
-                this.$parent.toScreen(4);
+                if (this.$store.state.verificationStatus)
+                {
+                    this.$store
+                        .dispatch('bet/createBet', {
+                            phone: this.phone,
+                            bet: this.$store.state.bet
+                        })
+                        .catch(err => {
+                            this.error = err.response.data.error
+                        })
+                    this.$parent.toScreen(4);
+                }
             },
             verify(){
                 this.$store
                     .dispatch('verify', {
                         phone: this.phone,
-                        bet: this.price,
+                        token: this.code,
                     })
                     .catch(err => {
                         this.error = err.response.data.error
@@ -90,6 +95,7 @@
                         .catch(err => {
                             this.error = err.response.data.error
                         })
+                    this.$parent.toScreen(5);
                 }, 300000)
             }
         },

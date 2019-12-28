@@ -30,9 +30,6 @@
             this.$store
                 .dispatch('getRemainTime') //Отправляем запрос на оставшееся время
                 .then(()=>{
-                    // eslint-disable-next-line no-console
-                    console.log(this.$store.state);
-
                     this.days = this.$store.state.remainTime[0].days    // Установка дней из хранилища
                     this.hours = this.$store.state.remainTime[0].hours// Установка часов из хранилища
                     this.minutes = this.$store.state.remainTime[0].minutes // Установка минут из хранилища
@@ -98,7 +95,7 @@
                     if(this.hours>=10 && this.minutes>=10){
                         this.pState= "remain : "+this.days+" - "+this.hours+":"+this.minutes
                     }
-                }, 1)
+                }, 100)
             }
         },
         beforeMount() {
