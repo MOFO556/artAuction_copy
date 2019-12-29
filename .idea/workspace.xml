@@ -4,10 +4,9 @@
     <list default="true" id="49cb25dd-3ae6-4f85-b250-f6ec6d21fb81" name="ArtAuction_Client-41 Реализация механизма блокировок" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NumInter05.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NumInter05.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Registration06.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration06.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SmsInter09.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmsInter09.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/BetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BetService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/session.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/user.js" afterDir="false" />
     </list>
     <list id="f67a7f35-9c64-48c2-a5c7-9b94b66b686e" name="ArtAuction_Client-37 Связывание даты полученной от сервера с датой таймера" comment="" />
     <list id="60299ca2-652a-43d2-81f6-b2411afba24c" name="ArtAuction_Client-39 Разрешение возврата в сессию пользователя, который её заблокировал" comment="" />
@@ -380,7 +379,7 @@
       <updated>1576781223630</updated>
       <workItem from="1576781224285" duration="3110000" />
       <workItem from="1577288523109" duration="5972000" />
-      <workItem from="1577608738665" duration="2321000" />
+      <workItem from="1577608738665" duration="4010000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <option name="clearContext" value="false" />

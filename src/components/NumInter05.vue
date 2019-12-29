@@ -17,21 +17,22 @@
 							:style="verification_field_error ? field_error_animation : ''"
 							:disabled="verification_active"
                     >
-                    <button v-on:click="next"
-                            :disabled="$v.$anyError"
-										<template slot="popover">
+                                        <template slot="popover">
 												<span>
 													{{error_message}}
 												</span>
-										</template>
-									</v-popover>
-                    <button v-on:click="next" class="startAuction block" :disabled="$v.$anyError || verification_active"
+                                        </template>
+                                    </v-popover>
+
+                    <button v-on:click="next"
+                            :disabled="$v.$anyError || verification_active"
                             :class="{ invalidButton: $v.$anyError }"
                             class="startAuction block"
-                    >GO</button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
-                    >GO<img height="20px" width="20px" v-show="verification_active"
-														alt="please wait..." src="../assets/images/button_loading.svg" />
-										</button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
+                    >GO <img height="20px" width="20px" v-show="verification_active"
+                            alt="please wait..." src="../assets/images/button_loading.svg" />
+                    </button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
+
+
                 </div>
             </div>
         </div>
@@ -282,7 +283,7 @@
   15% {
   left: 0px;}
   100% {
-      border-radius : 2px;
+      border-radius : 8px;
     border: solid red;}
 }
 .tooltip {

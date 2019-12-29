@@ -8,7 +8,7 @@
                 </div>
                 <div class="row">
 
-                    <div :class="{busyStyle : busyFlag}" class="smsInterTitleDone">{{message}}</div>
+                    <div class="smsInterTitleDone">Inter sms verification code</div>
                     <img class="pricingVerification" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
                 <div class="row">
@@ -30,7 +30,7 @@
                     </div>
 									<v-popover trigger='click' open :disabled='error_message==""' >
 										<button v-on:click="createBet" :disabled="verification_active" class="completeBet">
-												Complete<img height="20px" width="20px" v-show="verification_active"
+												Complete <img height="20px" width="20px" v-show="verification_active"
 																																alt="please wait..." src="../assets/images/button_loading.svg" /></button>
 										<template slot="popover">
 												<span>
@@ -72,9 +72,6 @@
               price: this.$store.state.currentPrice,
               phone: this.$store.state.userPhone,
               code: null,
-              polling: null,
-              message: "Inter sms verification code",
-              busyFlag:false
               polling: null,
 							verification_active: false,
 							field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
@@ -123,15 +120,6 @@
 											this.verification_active = false;
 											this.verification_field_error = true;
 										});
-                            else
-                                {
-                                    this.busyFlag=true;
-                                    this.message="Sorry, we're confirming the phone"
-                                    this.polling = setInterval(() => {
-                                        this.busyFlag = false;
-                                        this.message = "Inter sms verification code"
-                                    }, 20000)
-                                }
 							}
             },
             verify(){
