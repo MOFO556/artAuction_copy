@@ -11,6 +11,7 @@
                     <div class="smsInterTitleDone">Inter sms verification code</div>
                     <img class="pricingVerification" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
+
                 <div class="row">
 									<v-popover trigger='click' open :disabled='!verification_field_error' >
 										<input class="smsCodeInput" :style="verification_field_error ? field_error_animation : ''"
@@ -218,6 +219,10 @@
         margin-top: 165px;
 
     }
+
+
+
+
     .smsInputInfo
     {
         font-family: Nunito;
@@ -301,6 +306,9 @@
         line-height: 160%;
         color: #393939;
         margin:0px;
+
+
+
     }
 
     .lastbettitle{
@@ -426,4 +434,3 @@
   transition: opacity .15s;
 }
 </style>
-

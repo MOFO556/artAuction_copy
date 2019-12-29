@@ -2,7 +2,7 @@
     <div class="outer">
         <div class="inner">
 
-            <img src="../assets/images/body.png" height="444px" width="360px">
+            <img src="../assets/images/bodybet.gif" height="444px" width="360px">
             <div class="row">
                 <div class="block">
                     <p class="lastbet">$ {{price}}</p>

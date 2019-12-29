@@ -10,7 +10,7 @@
                     <div class="title">Make Bet</div>
                 </div>
 
-                <img src="../assets/images/bodyBet.png" height="381px" width="360px">
+                <img src="../assets/images/bodyBet2.gif" height="381px" width="360px">
 
                 <div class="rowB">
                     <div class="block">
@@ -39,6 +39,14 @@
     export default {
         name: "AuctionScreen08",
         beforeCreate() {
+            this.$store
+                .dispatch('getPrice') //Отправляем запрос на получение цены
+                .then(() => {
+                    this.price = this.$store.state.currentPrice
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+                })
             this.$store
                 .dispatch('getBetStep') //Отправляем запрос на шаг ставки
                 .then(() => {
