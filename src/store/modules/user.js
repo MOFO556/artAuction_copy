@@ -13,7 +13,7 @@ export const mutations = {
 };
 
 export const actions = {
-    register({ commit, dispatch }) {
+    register({ dispatch }) {
         return BetService.addUser(this.state.user)
             .then((res) => {
                 dispatch("setPrice", res.data.sum, { root: true });
@@ -33,7 +33,7 @@ export const actions = {
                 throw error;
             });
     },
-    addUser({ commit, dispatch }, userData) {
+    addUser({ commit }, userData) {
                 commit("ADD_USER", userData);
     },
     login ({ commit, dispatch }, userPhone) {
