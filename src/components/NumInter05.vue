@@ -78,8 +78,6 @@
                         .dispatch('session/isFree', { //Запрос состояния сессии
                             phone: this.phone
                         }).then(()=>{
-                            if (!this.$store.state.answerLock) //Если свободна, то проверяем телефон
-                                {
                                     this.$store
                                         .dispatch('user/login', { //Запрос на наличие в базе телефона
                                             phone: this.phone
@@ -96,16 +94,6 @@
                                         .catch(err => {
                                             this.error = err.response.data.error
                                         })
-                                }
-                            else //Если сессия занята, то подменяем надпись
-                            {
-                                this.busyFlag=true;
-                                this.message="Sorry, somebody placing a bet"
-                                this.polling = setInterval(() => {
-                                    this.busyFlag = false;
-                                    this.message = "Inter your phone number"
-                                }, 20000)
-                            }
                           })
                         .catch(err => {
                             this.errors = err.response.data.error
@@ -116,7 +104,7 @@
 																setTimeout( ()=> this.error_message='',30000);
 																break;
 															case 2:
-																this.error_message = "Incorect phone number. Make sure you are \nentering it in international formate.";
+																this.error_message = "Incorrect phone number. Make sure you are \nentering it in international formate.";
 																this.verification_field_error = true;
 																this.verification_active = false;
 																break;
