@@ -78,8 +78,6 @@
                         .dispatch('session/isFree', { //Запрос состояния сессии
                             phone: this.phone
                         }).then(()=>{
-                            if (!this.$store.state.answerLock) //Если свободна, то проверяем телефон
-                                {
                                     this.$store
                                         .dispatch('user/login', { //Запрос на наличие в базе телефона
                                             phone: this.phone
@@ -99,16 +97,6 @@
                                             console.log(err);
                                             this.error = err.response.data.error
                                         })
-                                }
-                            else //Если сессия занята, то подменяем надпись
-                            {
-                                this.busyFlag=true;
-                                this.message="Sorry, somebody placing a bet"
-                                this.polling = setInterval(() => {
-                                    this.busyFlag = false;
-                                    this.message = "Inter your phone number"
-                                }, 20000)
-                            }
                           })
                         .catch(err => {
                             // eslint-disable-next-line no-console

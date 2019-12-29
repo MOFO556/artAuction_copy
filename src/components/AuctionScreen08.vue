@@ -14,7 +14,7 @@
 
                 <div class="rowB">
                     <div class="block">
-                        <p class="lastbet">$ {{betStepmn}}</p>
+                        <p class="lastbet" :style="{ 'font-size:21px': betStepmn>999 }">$ {{betStepmn}}</p>
                         <p class="totalbettitle">bet step</p>
                     </div>
                     <button class="betMinus" v-on:click="decrementBet">-</button>
@@ -320,7 +320,7 @@
         font-family: Nunito;
         font-style: normal;
         font-weight: normal;
-        font-size: 12px;
+        font-size: 9pt;
         line-height: 160%;
         margin:0px;
         margin-right: 42px;
