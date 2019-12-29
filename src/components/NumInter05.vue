@@ -4,16 +4,19 @@
             <img src="../assets/images/body.png" height="444px" width="360px">
             <div class="inputtextblock">
                 <div class="row">
-                    <div class="smsInterTitle" :class="{busyStyle : busyFlag}">{{message}}</div>
+                    <div :class="{busyStyle : busyFlag}" class="smsInterTitle">{{message}}</div>
                     <img class="pricing" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
                 <div class="row">
-                    <input class="phoneInput" type="text" v-model="phone"
+                    <input  type="text" v-model="phone"
                            :class="{ invalid: $v.phone.$error }"
                            @blur="$v.phone.$touch()"
+                           class="phoneInput"
                     >
-                    <button v-on:click="next" class="startAuction block" :disabled="$v.$anyError"
+                    <button v-on:click="next"
+                            :disabled="$v.$anyError"
                             :class="{ invalidButton: $v.$anyError }"
+                            class="startAuction block"
                     >GO</button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
                 </div>
             </div>
@@ -158,7 +161,6 @@
     .phoneInput{
         -webkit-box-shadow:none;
         -moz-box-shadow:none;
-        border:none;
         box-shadow: none;
         background: #DFDEDE;
         opacity: 0.3;

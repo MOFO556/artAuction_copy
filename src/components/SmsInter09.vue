@@ -8,7 +8,7 @@
                 </div>
                 <div class="row">
 
-                    <div class="smsInterTitleDone">Inter sms verification code</div>
+                    <div :class="{busyStyle : busyFlag}" class="smsInterTitleDone">{{message}}</div>
                     <img class="pricingVerification" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
 
@@ -58,7 +58,9 @@
               price: this.$store.state.currentPrice,
               phone: this.$store.state.userPhone,
               code: null,
-              polling: null
+              polling: null,
+              message: "Inter sms verification code",
+              busyFlag:false
           }
         },
         methods:{
@@ -74,6 +76,15 @@
                             this.error = err.response.data.error
                         })
                     this.$parent.toScreen(4);
+                }
+                else
+                {
+                    this.busyFlag=true;
+                    this.message="Sorry, we're confirming the phone"
+                    this.polling = setInterval(() => {
+                        this.busyFlag = false;
+                        this.message = "Inter sms verification code"
+                    }, 20000)
                 }
             },
             verify(){
@@ -172,10 +183,6 @@
         margin-top: 165px;
 
     }
-
-
-
-
     .smsInputInfo
     {
         font-family: Nunito;
@@ -194,7 +201,6 @@
     .smsCodeInput{
         -webkit-box-shadow:none;
         -moz-box-shadow:none;
-        border:none;
         box-shadow: none;
         background: #DFDEDE;
         opacity: 0.3;
@@ -259,13 +265,9 @@
         line-height: 160%;
         color: #393939;
         margin:0px;
-
-
-
     }
 
     .lastbettitle{
-
         margin:0px;
         color: #999999;
         font-family: Nunito;
