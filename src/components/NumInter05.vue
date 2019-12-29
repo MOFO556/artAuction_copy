@@ -8,13 +8,24 @@
                     <img class="pricing" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
                 <div class="row">
+									<v-popover trigger='click' open :disabled='error_message==""' >
                     <input class="phoneInput" type="text" v-model="phone"
                            :class="{ invalid: $v.phone.$error }"
                            @blur="$v.phone.$touch()"
+													:style="verification_field_error ? field_error_animation : ''"
+													:disabled="verification_active"
                     >
-                    <button v-on:click="next" class="startAuction block" :disabled="$v.$anyError"
+										<template slot="popover">
+												<span>
+													{{error_message}}
+												</span>
+										</template>
+									</v-popover>
+                    <button v-on:click="next" class="startAuction block" :disabled="$v.$anyError || verification_active"
                             :class="{ invalidButton: $v.$anyError }"
-                    >GO</button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
+                    >GO<img height="20px" width="20px" v-show="verification_active"
+														alt="please wait..." src="../assets/images/button_loading.svg" />
+										</button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
                 </div>
             </div>
         </div>
@@ -43,12 +54,19 @@
               changeClass:null,
               polling:null,
               message: "Inter your phone number",
-              busyFlag:false
+              busyFlag:false,
+							error_message: '',
+							field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
+							verification_field_error: false,
+							verification_active: false
           }
         },
         methods:{
             next(){
                 if (!this.$v.$invalid){
+										this.error_message = '';
+										this.verification_field_error = false;
+										this.verification_active = true;
                     this.$store
                         .dispatch('session/isFree', { //Запрос состояния сессии
                             phone: this.phone
@@ -83,7 +101,21 @@
                             }
                           })
                         .catch(err => {
-                            this.errors = err.response.data.errors
+                            this.errors = err.response.data.error
+														switch (err.response.data.error){
+															case 1:
+																this.error_message = "Sorry, somebody is already placing a bet.\n Try again in a few minutes.";
+																this.verification_active = false;
+																setTimeout( ()=> this.error_message='',30000);
+																break;
+															case 2:
+																this.error_message = "Incorect phone number. Make sure you are \nentering it in international formate.";
+																this.verification_field_error = true;
+																this.verification_active = false;
+																break;
+														}
+
+
                         })
                     this.$store.dispatch('setUserPhone', this.phone)
                 }
@@ -172,6 +204,7 @@
         line-height: 22px;
         color: #000000;
         text-align:center;
+				position: relative;
     }
 
 
@@ -232,4 +265,111 @@
         font-size: 12px;
         line-height: 160%;
     }
+</style>
+<style>
+@keyframes fieldErrorAnimation {
+  0%   {
+  left: 0px;}
+  5%  {
+  left: -10px;}
+  10%  {
+  left: 10px;}
+  15% {
+  left: 0px;}
+  100% {
+      border-radius : 2px;
+    border: solid red;}
+}
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+}
+
+.tooltip .tooltip-inner {
+  background: black;
+  color: white;
+  border-radius: 16px;
+  padding: 5px 10px 4px;
+}
+
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 5px;
+  border-color: black;
+}
+
+.tooltip[x-placement^="top"] {
+  margin-bottom: 5px;
+}
+
+.tooltip[x-placement^="top"] .tooltip-arrow {
+  border-width: 5px 5px 0 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="bottom"] {
+  margin-top: 5px;
+}
+
+.tooltip[x-placement^="bottom"] .tooltip-arrow {
+  border-width: 0 5px 5px 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: transparent !important;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="right"] {
+  margin-left: 5px;
+}
+
+.tooltip[x-placement^="right"] .tooltip-arrow {
+  border-width: 5px 5px 5px 0;
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip[x-placement^="left"] {
+  margin-right: 5px;
+}
+
+.tooltip[x-placement^="left"] .tooltip-arrow {
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip[aria-hidden='true'] {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .15s, visibility .15s;
+}
+
+.tooltip[aria-hidden='false'] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .15s;
+}
 </style>
