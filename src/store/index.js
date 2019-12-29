@@ -21,7 +21,6 @@ export default new Vuex.Store({
       betStepMax: null,
       remainTime: [],
       verificationStatus: false,
-      bet: null
   },
   mutations: {
     PHONE_STAT(state, answer){
@@ -55,7 +54,7 @@ export default new Vuex.Store({
         state.verificationStatus = status
       },
       SET_BET(state, bet){
-        state.bet = bet
+        state.bet.bet = bet
       }
   },
   actions: {

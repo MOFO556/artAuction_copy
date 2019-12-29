@@ -29,11 +29,11 @@
         },
         methods: {
             countDown() {
-                if (this.value<=100) {
+                if (this.value<=10) {
                     return setTimeout(() => {
                         ++this.value
                         this.countDown()
-                    }, 10)
+                    }, 100)
                 }
                 this.$parent.nextComp();
             }
@@ -71,7 +71,7 @@
     }
 
     .element {
-        background-image: url("../assets/images/ramka.png");
+        background-image: url("../assets/images/ramka.svg");
         width:292px;
         height:423px;
 

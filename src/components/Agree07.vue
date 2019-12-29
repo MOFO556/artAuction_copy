@@ -25,7 +25,11 @@
         name: "Agree07",
         methods:{
             next(){
-                this.$store.dispatch('user/commit'); //sending user data to the server
+                this.$store
+                    .dispatch('user/register') //Отправляем данные пользователя на сервер
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+                    })
                 this.$parent.nextComp();
             },
             denied(){

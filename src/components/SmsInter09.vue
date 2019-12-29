@@ -11,11 +11,16 @@
                     <div class="smsInterTitleDone">Inter sms verification code</div>
                     <img class="pricingVerification" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
-
                 <div class="row">
-                    <input class="smsCodeInput" type="text" placeholder="code"
-                           v-on:focusout="verify"
-                            v-model="code">
+									<v-popover trigger='click' open :disabled='!verification_field_error' >
+										<input class="smsCodeInput" :style="verification_field_error ? field_error_animation : ''"
+																	:disabled="verification_active" type="text" placeholder="code" v-model="code">
+										<template slot="popover">
+												<span>
+													Введён неверный код
+												</span>
+										</template>
+									</v-popover>
                 </div>
 
 
@@ -23,7 +28,16 @@
                         <div class="totalCost">${{price}} USD</div>
                         <img class="pricingSize" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                     </div>
-                <button v-on:click="createBet" class="completeBet">Complete</button>
+									<v-popover trigger='click' open :disabled='error_message==""' >
+										<button v-on:click="createBet" :disabled="verification_active" class="completeBet">
+												Complete <img height="20px" width="20px" v-show="verification_active"
+																																alt="please wait..." src="../assets/images/button_loading.svg" /></button>
+										<template slot="popover">
+												<span>
+													{{error_message}}
+												</span>
+										</template>
+									</v-popover>
             </div>
         </div>
     </div>
@@ -33,7 +47,7 @@
     export default {
         name: "SmsInter09",
         beforeCreate() {
-            this.price=this.$store.state.currentPrice, //Устанавливаем текущую цену
+            this.price=this.$store.state.currentPrice //Устанавливаем текущую цену
             this.phone=this.$store.state.userPhone      //Устанавливаем номер телефона
             this.$store
                 .dispatch('startVerification', {
@@ -58,23 +72,55 @@
               price: this.$store.state.currentPrice,
               phone: this.$store.state.userPhone,
               code: null,
-              polling: null
+              polling: null,
+							verification_active: false,
+							field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
+							verification_field_error: false,
+							error_message: ''
           }
         },
         methods:{
             createBet () {
-                if (this.$store.state.verificationStatus)
-                {
-                    this.$store
-                        .dispatch('bet/createBet', {
-                            phone: this.phone,
-                            bet: this.$store.state.bet
-                        })
-                        .catch(err => {
-                            this.error = err.response.data.error
-                        })
-                    this.$parent.toScreen(4);
-                }
+							if (this.code){
+								this.verification_active = true;
+								this.verification_field_error = false;
+								this.$store
+                    .dispatch('verify', {
+                        phone: this.phone,
+                        token: this.code,
+										}).then(() => {
+											if (this.$store.state.verificationStatus)
+											{
+													this.verification_active = false;
+													this.$store
+															.dispatch('bet/createBet', {
+																	phone: this.phone,
+																	bet: this.$store.state.bet.bet
+															}).then( ()=>
+																	this.$parent.toScreen(4))
+															.catch(err => {
+																	this.verification_active = false;
+																	switch (err.response.data.error){
+																		case 1:
+																			this.error_message='You are not allowed to bet for now';
+																			setTimeout( ()=> this.$parent.toScreen(4),5000);
+																			break;
+																		case 2:
+																			this.error_message='Your session has expiered';
+																			setTimeout( ()=> this.$parent.toScreen(4),5000);
+																			break;
+																		case 4:
+																			this.error_message='You cant bet two times in a row';
+																			setTimeout( ()=> this.$parent.toScreen(4),5000);
+																	}
+																	this.error = err.response.data.error
+															})
+											}
+										}).catch(() => {
+											this.verification_active = false;
+											this.verification_field_error = true;
+										});
+							}
             },
             verify(){
                 this.$store
@@ -99,9 +145,9 @@
                 }, 300000)
             }
         },
-        mounted() {
+        /*mounted() {
             this.abortSession();
-        }
+        }*/
     }
 </script>
 
@@ -172,10 +218,6 @@
         margin-top: 165px;
 
     }
-
-
-
-
     .smsInputInfo
     {
         font-family: Nunito;
@@ -194,11 +236,10 @@
     .smsCodeInput{
         -webkit-box-shadow:none;
         -moz-box-shadow:none;
-        border:none;
         box-shadow: none;
         background: #DFDEDE;
         opacity: 0.3;
-        border-radius: 10px;
+        border-radius: 2px;
         width:338px;
         /*Меньше чем в макете на 10px*/
         height:40px;
@@ -210,8 +251,9 @@
         color: #000000;
         text-align:center;
         margin-top: 10px;
-    }
+				position: relative;
 
+    }
 
 
     .row
@@ -259,13 +301,9 @@
         line-height: 160%;
         color: #393939;
         margin:0px;
-
-
-
     }
 
     .lastbettitle{
-
         margin:0px;
         color: #999999;
         font-family: Nunito;
@@ -281,3 +319,111 @@
         vertical-align: middle;
     }
 </style>
+<style>
+@keyframes fieldErrorAnimation {
+  0%   {
+  left: 0px;}
+  5%  {
+  left: -10px;}
+  10%  {
+  left: 10px;}
+  15% {
+  left: 0px;}
+  100% {
+      border-radius : 2px;
+    border: solid red;}
+}
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+}
+
+.tooltip .tooltip-inner {
+  background: black;
+  color: white;
+  border-radius: 16px;
+  padding: 5px 10px 4px;
+}
+
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 5px;
+  border-color: black;
+}
+
+.tooltip[x-placement^="top"] {
+  margin-bottom: 5px;
+}
+
+.tooltip[x-placement^="top"] .tooltip-arrow {
+  border-width: 5px 5px 0 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="bottom"] {
+  margin-top: 5px;
+}
+
+.tooltip[x-placement^="bottom"] .tooltip-arrow {
+  border-width: 0 5px 5px 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: transparent !important;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="right"] {
+  margin-left: 5px;
+}
+
+.tooltip[x-placement^="right"] .tooltip-arrow {
+  border-width: 5px 5px 5px 0;
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip[x-placement^="left"] {
+  margin-right: 5px;
+}
+
+.tooltip[x-placement^="left"] .tooltip-arrow {
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip[aria-hidden='true'] {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .15s, visibility .15s;
+}
+
+.tooltip[aria-hidden='false'] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .15s;
+}
+</style>
+

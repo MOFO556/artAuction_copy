@@ -303,7 +303,7 @@
         font-family: Nunito;
         font-style: normal;
         font-weight: 600;
-        font-size: 21px;
+        font-size: 13pt;
         line-height: 160%;
         color: #393939;
         margin:0px;
@@ -335,7 +335,7 @@
         font-family: Nunito;
         font-style: normal;
         font-weight: 600;
-        font-size: 21px;
+        font-size: 14pt;
         line-height: 160%;
         color: #393939;
         /* margin:0px;*/

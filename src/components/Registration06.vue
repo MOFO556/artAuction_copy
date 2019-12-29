@@ -30,10 +30,11 @@
                 </div>
 
                 <div>
-                    <input class="phoneInput" type="text" placeholder="Country"
+                    <input type="text" placeholder="Country"
                            v-model="Country"
                            :class="{ invalid: $v.Country.$error }"
-                           @blur="$v.Country.$touch()">
+                           @blur="$v.Country.$touch()"
+                           class="phoneInput">
                 </div>
                 <div>
                     <input class="phoneInput" type="text" placeholder="Mobile number"
@@ -73,7 +74,7 @@
             register () {
                 if (!this.$v.$invalid) {
                     this.$store
-                        .dispatch('user/register', { //Отправляем заполненные данные и идём вперед
+                        .dispatch('user/addUser', { //Отправляем заполненные данные в хранилище
                             name: this.FirstName,
                             surname: this.SecondName,
                             email: this.Email,
@@ -139,7 +140,6 @@
     .phoneInput{
         -webkit-box-shadow:none;
         -moz-box-shadow:none;
-        border:none;
         box-shadow: none;
         background: #DFDEDE;
         opacity: 0.3;

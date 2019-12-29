@@ -15,9 +15,12 @@ import Agree07 from "./components/Agree07";
 import AuctionScreen08 from "./components/AuctionScreen08";
 import SmsInter09 from "./components/SmsInter09";
 import Vuelidate from "vuelidate/src";
+import VTooltip from 'v-tooltip';
+
 
 
 Vue.use(Vuelidate);
+Vue.use(VTooltip);
 
 Vue.use(ProgressBar);
 Vue.component('Load00',Load00);

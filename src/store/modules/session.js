@@ -13,9 +13,6 @@ export const mutations = {
     FIN_SESSION(state, session) {
         state.sessions.push(session);
     },
-    SWITCH(state) {
-        state.session.expired = true
-    }
 };
 
 export const actions = {
@@ -41,9 +38,9 @@ export const actions = {
     },
     finishSession({ commit, dispatch }, session) {
         return BetService.finishSession(session)
-            .then(() => {
+            .then((res) => {
                 commit("FIN_SESSION", session);
-                dispatch("getLockStat", false, { root: true });
+                dispatch("getLockStat", (!res.data.success), { root: true });
                 const notification = {
                     type: "success",
                     message: "Your session have been successfully finished"
@@ -59,9 +56,6 @@ export const actions = {
                 dispatch("notification/add", notification, { root: true });
                 throw error;
             });
-    },
-    switch({ commit }) {
-        commit("SWITCH");
     },
     isFree({ dispatch }, session) {
         return BetService.checkSession(session)
