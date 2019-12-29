@@ -94,6 +94,9 @@
                                             }
                                         })
                                         .catch(err => {
+
+                                            // eslint-disable-next-line no-console
+                                            console.log(err);
                                             this.error = err.response.data.error
                                         })
                                 }
@@ -108,21 +111,28 @@
                             }
                           })
                         .catch(err => {
-                            this.errors = err.response.data.error
-														switch (err.response.data.error){
-															case 1:
-																this.error_message = "Sorry, somebody is already placing a bet.\n Try again in a few minutes.";
-																this.verification_active = false;
-																setTimeout( ()=> this.error_message='',30000);
-																break;
-															case 2:
-																this.error_message = "Incorect phone number. Make sure you are \nentering it in international formate.";
-																this.verification_field_error = true;
-																this.verification_active = false;
-																break;
-														}
+                            // eslint-disable-next-line no-console
+                            if (err.message === "Network Error"){
+                                this.error_message = "Network Error";
+                                this.verification_active = false;
+                                setTimeout( ()=> this.error_message='',30000);
+                            } else {
 
+                                this.errors = err.response.data.error
+                                switch (err.response.data.error) {
+                                    case 1:
+                                        this.error_message = "Sorry, somebody is already placing a bet.\n Try again in a few minutes.";
+                                        this.verification_active = false;
+                                        setTimeout(() => this.error_message = '', 30000);
+                                        break;
+                                    case 2:
+                                        this.error_message = "Incorect phone number. Make sure you are \nentering it in international formate.";
+                                        this.verification_field_error = true;
+                                        this.verification_active = false;
+                                        break;
+                                }
 
+                            }
                         })
                     this.$store.dispatch('setUserPhone', this.phone)
                 }

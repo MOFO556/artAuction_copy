@@ -95,7 +95,7 @@
 													this.$store
 															.dispatch('bet/createBet', {
 																	phone: this.phone,
-																	bet: this.$store.state.bet
+																	bet: this.$store.state.bet.bet
 															}).then( ()=>
 																	this.$parent.toScreen(4))
 															.catch(err => {
