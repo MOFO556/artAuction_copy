@@ -37,6 +37,8 @@
     methods: {
       nextComp: function () {
         this.currentComp+=1;
+        // eslint-disable-next-line no-console
+        console.log("to component:"+ this.currentComp);
         this.component = this.components[this.currentComp];
       },
       prevComp: function () {

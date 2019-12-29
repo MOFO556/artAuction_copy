@@ -17,7 +17,6 @@ export const actions = {
     register({ dispatch }) {
         return BetService.addUser(state.user)
             .then((res) => {
-                commit("ADD_USER", userData);
                 dispatch("setPrice", res.data.sum, { root: true });
                 const notification = {
                     type: "success",
