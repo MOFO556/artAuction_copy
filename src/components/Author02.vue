@@ -20,7 +20,7 @@
     export default {
         name: "Author02",
         beforeMount() {
-            this.countDown()
+            setTimeout(()=>this.$parent.nextComp(),2000);
         },
         data(){
             return{
@@ -28,15 +28,7 @@
             }
         },
         methods: {
-            countDown() {
-                if (this.value<=10) {
-                    return setTimeout(() => {
-                        ++this.value
-                        this.countDown()
-                    }, 100)
-                }
-                this.$parent.nextComp();
-            }
+
         }
     }
 </script>

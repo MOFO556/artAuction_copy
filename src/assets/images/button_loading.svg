@@ -12,6 +12,6 @@
         stroke-linecap="round" >
   <animate
        attributeName="stroke-dashoffset" from="0" to="56"
-       dur=".5s" repeatCount="indefinite" />
+       dur="0.5s" repeatCount="indefinite" />
   </circle>
  </svg>

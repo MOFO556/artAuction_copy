@@ -13,6 +13,8 @@
                                placement="top">
                         <input class="phoneInput" type="text" v-model="phone"
                                v-on:focus="clearMistakes"
+                               :style="verification_field_error ? field_error_animation : ''"
+                               :disabled="verification_active"
                                :class="{ invalid: $v.phone.$error }"
                                @blur="$v.phone.$touch()"/>
                         <template slot="popover">

@@ -26,7 +26,7 @@
                     <div class="totalCost">${{price}} USD</div>
                     <img class="pricingSize" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
-                <v-popover trigger='click' open :disabled='error_message==""' >
+                <v-popover placement="top" trigger='click' open :disabled='error_message==""' >
                     <button v-on:click="createBet" :disabled="verification_active" class="completeBet">Complete
                         <img height="20px" width="20px" v-show="verification_active"
                              alt="please wait..." src="../assets/images/button_loading.svg" /></button>

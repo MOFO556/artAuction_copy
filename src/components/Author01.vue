@@ -17,26 +17,31 @@
 </template>
 
 <script>
+    import loadImage from 'image-promise';
     export default {
         name: "Author01",
         beforeMount() {
-            this.countDown()
+            //this.countDown()
+            this.time = new Date();
+            let delay = () => {
+                let  elapse = 2000 - (Math.floor(Date.now()-this.time.getTime()));
+                if (elapse>0)
+                    setTimeout(()=>this.$parent.nextComp(),elapse);
+                else
+                    this.$parent.nextComp();
+            };
+            loadImage('../assets/images/body.gif')
+                .then( delay )
+                .catch( delay ) //some browsers throw if image loaded in cache
+                                //and we better proceed any way even with no images
         },
         data(){
             return{
-                value: 0,
+                time: null,
             }
         },
         methods: {
-            countDown() {
-                if (this.value<=10) {
-                    return setTimeout(() => {
-                        ++this.value
-                        this.countDown()
-                    }, 100);
-                }
-                this.$parent.nextComp();
-            }
+
         }
     }
 </script>
