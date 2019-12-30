@@ -7,14 +7,27 @@
 </template>
 
 <script>
+    import loadImage from 'image-promise';
     export default {
         name: "Intro03",
         beforeMount() {
-            this.countDown()
+            this.time = new Date();
+            let delay = () => {
+                let  elapse = 5500 - (Math.floor(Date.now()-this.time.getTime()));
+                if (elapse>0)
+                    setTimeout(()=>this.$parent.nextComp(),elapse);
+                else
+                    this.$parent.nextComp();
+            };
+            loadImage('../assets/images/bodybet.gif')
+                .then( delay )
+                .catch( delay ) //some browsers throw if image loaded in cache
+                                //and we better proceed any way even with no images
         },
         data(){
             return{
                 value: 0,
+                time : null
             }
         },
         methods: {

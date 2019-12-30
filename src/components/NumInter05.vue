@@ -8,17 +8,22 @@
                     <img class="pricing" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
                 <div class="row">
-									<v-popover trigger='click' open :disabled='error_message==""'
-										placement="top"
-									>
-									<input class="phoneInput" type="text" v-model="phone"/>
-
-                                        <template slot="popover">
-												<span>
+                                <v-popover trigger='click' open :disabled='error_message==""'
+                                    placement="top"
+                                >
+									<input
+                                            :style="verification_field_error ? field_error_animation : ''"
+                                            class="phoneInput"
+                                            :disabled="verification_active"
+                                            type="text"
+                                            v-model="phone"
+                                    />
+                                    <template slot="popover">
+                                        <span>
 													{{error_message}}
-												</span>
-                                        </template>
-                                    </v-popover>
+										</span>
+                                    </template>
+                                </v-popover>
 
                     <button v-on:click="next"
                             :disabled="$v.$anyError || verification_active"

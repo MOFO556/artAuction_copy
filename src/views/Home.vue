@@ -158,13 +158,14 @@
   15% {
   left: 0px;}
   100% {
-      border-radius : 2px;
-    border: solid red;}
+  box-shadow: 0px 5px 5px red;}
 }
 .tooltip {
   display: block !important;
   z-index: 10000;
 }
+ 
+
 
 .tooltip .tooltip-inner {
   background-image: linear-gradient(to right, #F8A170 0%, #FFCD61 100%);
@@ -173,6 +174,7 @@
   color: white;
   border-radius: 16px;
   padding: 5px 10px 4px;
+  animation: ease-in ;
 }
 
 .tooltip .tooltip-arrow {
@@ -193,7 +195,7 @@
   border-left-color: transparent !important;
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
-  bottom: -5px;
+  bottom: -4px;
   left: calc(50% - 5px);
   margin-top: 0;
   margin-bottom: 0;
