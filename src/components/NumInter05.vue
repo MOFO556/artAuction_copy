@@ -114,6 +114,12 @@
                                         this.verification_field_error = true;
                                         this.verification_active = false;
                                         break;
+                                    case 3:
+                                        this.error_message = "Sorry, your bet is already the last\n Checkout for updates.";
+                                        this.verification_field_error = true;
+                                        this.verification_active = false;
+                                        setTimeout(() => this.$parent.toScreen(4), 30000);
+                                        break;
                                 }
 
                             }
