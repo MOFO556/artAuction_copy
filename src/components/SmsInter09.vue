@@ -13,32 +13,27 @@
                 </div>
 
                 <div class="row">
-									<v-popover trigger='click' open :disabled='!verification_field_error' >
-										<input class="smsCodeInput" :style="verification_field_error ? field_error_animation : ''"
-																	:disabled="verification_active" type="text" placeholder="code" v-model="code">
-										<template slot="popover">
-												<span>
-													Введён неверный код
-												</span>
-										</template>
-									</v-popover>
+                    <v-popover trigger='click' open :disabled='!verification_field_error' >
+                        <input class="smsCodeInput" :style="verification_field_error ? field_error_animation : ''"
+                               :disabled="verification_active" type="text" placeholder="code" v-model="code">
+                        <template slot="popover">
+                            <span>Введён неверный код</span>
+                        </template>
+                    </v-popover>
                 </div>
 
-
-                    <div class="row">
-                        <div class="totalCost">${{price}} USD</div>
-                        <img class="pricingSize" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
-                    </div>
-									<v-popover trigger='click' open :disabled='error_message==""' >
-										<button v-on:click="createBet" :disabled="verification_active" class="completeBet">
-												Complete <img height="20px" width="20px" v-show="verification_active"
-																																alt="please wait..." src="../assets/images/button_loading.svg" /></button>
-										<template slot="popover">
-												<span>
-													{{error_message}}
-												</span>
-										</template>
-									</v-popover>
+                <div class="row">
+                    <div class="totalCost">${{price}} USD</div>
+                    <img class="pricingSize" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
+                </div>
+                <v-popover trigger='click' open :disabled='error_message==""' >
+                    <button v-on:click="createBet" :disabled="verification_active" class="completeBet">Complete
+                        <img height="20px" width="20px" v-show="verification_active"
+                             alt="please wait..." src="../assets/images/button_loading.svg" /></button>
+                    <template slot="popover">
+                        <span>{{error_message}}</span>
+                    </template>
+                </v-popover>
             </div>
         </div>
     </div>
@@ -74,54 +69,54 @@
               phone: this.$store.state.userPhone,
               code: null,
               polling: null,
-							verification_active: false,
-							field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
-							verification_field_error: false,
-							error_message: ''
+              verification_active: false,
+              field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
+              verification_field_error: false,
+              error_message: ''
           }
         },
         methods:{
             createBet () {
-							if (this.code){
-								this.verification_active = true;
-								this.verification_field_error = false;
-								this.$store
-                    .dispatch('verify', {
-                        phone: this.phone,
-                        token: this.code,
-										}).then(() => {
-											if (this.$store.state.verificationStatus)
-											{
-													this.verification_active = false;
-													this.$store
-															.dispatch('bet/createBet', {
-																	phone: this.phone,
-																	bet: this.$store.state.bet.bet
-															}).then( ()=>
-																	this.$parent.toScreen(4))
-															.catch(err => {
-																	this.verification_active = false;
-																	switch (err.response.data.error){
-																		case 1:
-																			this.error_message='You are not allowed to bet for now';
-																			setTimeout( ()=> this.$parent.toScreen(4),5000);
-																			break;
-																		case 2:
-																			this.error_message='Your session has expiered';
-																			setTimeout( ()=> this.$parent.toScreen(4),5000);
-																			break;
-																		case 4:
-																			this.error_message='You cant bet two times in a row';
-																			setTimeout( ()=> this.$parent.toScreen(4),5000);
-																	}
-																	this.error = err.response.data.error
-															})
-											}
-										}).catch(() => {
-											this.verification_active = false;
-											this.verification_field_error = true;
-										});
-							}
+                if (this.code){
+                    this.verification_active = true;
+                    this.verification_field_error = false;
+                    this.$store
+                        .dispatch('verify', {
+                            phone: this.phone,
+                            token: this.code,
+                        }).then(() => {
+                            if (this.$store.state.verificationStatus)
+                            {
+                                this.verification_active = false;
+                                this.$store
+                                    .dispatch('bet/createBet', {
+                                        phone: this.phone,
+                                        bet: this.$store.state.bet.bet
+                                    }).then( ()=>
+                                    this.$parent.nextComp())
+                                    .catch(err => {
+                                        this.verification_active = false;
+                                        switch (err.response.data.error){
+                                            case 1:
+                                                this.error_message='You are not allowed to bet for now';
+                                                setTimeout( ()=> this.$parent.toScreen(4),5000);
+                                                break;
+                                                case 2:
+                                                    this.error_message='Your session has expiered';
+                                                    setTimeout( ()=> this.$parent.toScreen(4),5000);
+                                                    break;
+                                                    case 4:
+                                                        this.error_message='You cant bet two times in a row';
+                                                        setTimeout( ()=> this.$parent.toScreen(4),5000);
+                                        }
+                                        this.error = err.response.data.error
+                                    })
+                            }
+                        }).catch(() => {
+                            this.verification_active = false;
+                            this.verification_field_error = true;
+                        });
+                }
             },
             verify(){
                 this.$store
@@ -142,7 +137,7 @@
                         .catch(err => {
                             this.error = err.response.data.error
                         })
-                    this.$parent.toScreen(5);
+                    this.$parent.toScreen(4);
                 }, 300000)
             }
         },

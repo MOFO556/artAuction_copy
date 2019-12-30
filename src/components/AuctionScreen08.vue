@@ -2,14 +2,10 @@
 <template>
     <div class="outer">
         <div class="inner">
-
-
             <div class="inputtextblock">
-
                 <div class="row">
                     <div class="title">Make Bet</div>
                 </div>
-
                 <img src="../assets/images/bodyBet2.gif" height="381px" width="360px">
 
                 <div class="rowB">
@@ -27,9 +23,6 @@
                     </div>
                     <button v-on:click="next" class="makeBet">Bet</button>
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -40,28 +33,19 @@
         name: "AuctionScreen08",
         beforeCreate() {
             this.$store
-                .dispatch('getPrice') //Отправляем запрос на получение цены
-                .then(() => {
-                    this.price = this.$store.state.currentPrice
-                })
-                .catch(err => {
-                    this.errors = err.response.data.errors
-                })
-            this.$store
                 .dispatch('getBetStep') //Отправляем запрос на шаг ставки
                 .then(() => {
                     this.betStepmn = this.$store.state.betStepMin,
                     this.betStepmx = this.$store.state.betStepMax,
                     this.bet = this.betStepmn
-
-                })
-                .catch(err => {
-                    this.errors = err.response.data.errors
-                })
-            this.$store
-                .dispatch('getPrice') //Отправляем запрос на получение цены и сразу плюсуем ставку
-                .then(() => {
-                    this.price = (this.$store.state.currentPrice + this.$store.state.betStepMin)
+                    this.$store
+                        .dispatch('getPrice') //Отправляем запрос на получение цены
+                        .then(() => {
+                            this.price = (this.$store.state.currentPrice + this.$store.state.betStepMin)
+                        })
+                        .catch(err => {
+                            this.errors = err.response.data.errors
+                        })
                 })
                 .catch(err => {
                     this.errors = err.response.data.errors

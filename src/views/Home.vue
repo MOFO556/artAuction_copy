@@ -28,6 +28,7 @@
                   'Agree07',
                   'AuctionScreen08',
                   'SmsInter09',
+                  'SuccessBet10',
                 ],
 
       }
@@ -48,32 +49,7 @@
       toScreen:function (screenNum) {
         this.currentComp=screenNum;
         this.component = this.components[screenNum]
-      },
-      register () {
-        this.$store
-                .dispatch('/user/register', {
-                  name: this.name,
-                  surname: this.surname,
-                  patronymic: this.patronymic,
-                  email: this.email,
-                  phone: this.name,
-                  addedAt: this.addedAt,
-                  password: this.password /* должен же быть пароль????*/
-                })
-                .catch(err => {
-                  this.errors = err.response.data.errors
-                })
-      },
-      login () {
-        this.$store
-                .dispatch('/user/login', {
-                  phone: this.phone,
-                  password: this.password
-                })
-                .catch(err => {
-                  this.error = err.response.data.error
-                })
-      },
+      }
     }
   }
 </script>
