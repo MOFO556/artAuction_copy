@@ -86,8 +86,19 @@
                                 })
                                 .catch(err => {
                                     // eslint-disable-next-line no-console
-                                    console.log(err);
-                                    this.error = err.response.data.error
+                                    if (err.message === "Network Error"){
+                                        this.error_message = "Network Error";
+                                        this.verification_active = false;
+                                        setTimeout( ()=> this.error_message='',30000);
+                                    } else {
+                                        this.errors = err.response.data.error
+                                        if (err.response.data.error==3){
+                                            this.error_message = "Sorry, your bet is already the last\n Checkout for updates.";
+                                            this.verification_active =false;
+                                            setTimeout(() => this.$parent.toScreen(4), 30000);
+                                        }
+
+                                    }
                                 })
                         })
                         .catch(err => {
@@ -109,11 +120,6 @@
                                         this.error_message = "Incorrect phone number. Make sure you are \nentering it in international format.";
                                         this.verification_field_error = true;
                                         this.verification_active = false;
-                                        break;
-                                    case 3:
-                                        this.error_message = "Sorry, your bet is already the last\n Checkout for updates.";
-                                        this.verification_field_error = true;
-                                        setTimeout(() => this.$parent.toScreen(4), 30000);
                                         break;
                                 }
 

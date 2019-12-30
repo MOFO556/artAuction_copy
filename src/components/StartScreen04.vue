@@ -36,8 +36,6 @@
                     this.setTime = true
                 })
                 .catch(err => {
-                    // eslint-disable-next-line no-console
-                    console.log(err.response.data.error)
                     if(err.response.data.error == 1){
                         this.pState = "Auction time is up"
                         this.setTime = false
@@ -89,7 +87,7 @@
                 this.getCountdown()
             },
             pollData () {
-                if (this.setTime){
+                //if (this.setTime){
                     this.polling = setInterval(() => {
                         if(this.hours<10 && this.minutes<10){
                             this.pState= "remain : "+this.days+" - 0"+this.hours+":0"+this.minutes
@@ -104,7 +102,7 @@
                             this.pState= "remain : "+this.days+" - "+this.hours+":"+this.minutes
                         }
                     }, 100)
-                }
+                //}
             }
         },
         beforeMount() {
@@ -115,7 +113,7 @@
         },
         beforeDestroy () {
             clearInterval(this.polling)
-        }
+        },
     }
 </script>
 
