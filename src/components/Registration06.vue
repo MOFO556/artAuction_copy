@@ -1,41 +1,38 @@
-
-
 <template>
     <div class="outer">
         <div class="inner">
-
-
             <div class="inputtextblock">
                 <div class="row">
                     <div class="smsInterTitle">Registration</div>
                 </div>
                 <div >
                     <input class="phoneInput" type="text" placeholder="First Name"
-                           v-model="FirstName"
-                           :class="{ invalid: $v.FirstName.$error }"
-                           @blur="$v.FirstName.$touch()">
+                               v-model="FirstName"
+                               :class="{ invalid: $v.FirstName.$error }"
+                               @blur="$v.FirstName.$touch()">
                 </div>
+
                 <div>
                     <input class="phoneInput" type="text" placeholder="Last Name"
-                           v-model="SecondName"
-                           :class="{ invalid: $v.SecondName.$error }"
-                           @blur="$v.SecondName.$touch()">
+                               v-model="SecondName"
+                               :class="{ invalid: $v.SecondName.$error }"
+                               @blur="$v.SecondName.$touch()">
                 </div>
 
                 <div>
                     <input class="phoneInput" type="email" placeholder="Email Address"
-                           v-model="Email"
-                           :class="{ invalid: $v.Email.$error }"
-                           @blur="$v.Email.$touch()">
+                               v-model="Email"
+                               :class="{ invalid: $v.Email.$error }"
+                               @blur="$v.Email.$touch()">
                 </div>
 
                 <div>
-                    <input type="text" placeholder="Country"
-                           v-model="Country"
-                           :class="{ invalid: $v.Country.$error }"
-                           @blur="$v.Country.$touch()"
-                           class="phoneInput">
+                    <input class="phoneInput" type="text" placeholder="Country"
+                               v-model="Country"
+                               :class="{ invalid: $v.Country.$error }"
+                               @blur="$v.Country.$touch()">
                 </div>
+
                 <div>
                     <input class="phoneInput" type="text" placeholder="Mobile number"
                            v-model="Phone" disabled="true">
@@ -67,7 +64,12 @@
                 SecondName: null,
                 Email: null,
                 Country: null,
-                Phone: this.$store.state.userPhone
+                Phone: this.$store.state.userPhone,
+                error_message_fn: '',
+                error_message_sn: '',
+                error_message_em: '',
+                error_message_co: '',
+                field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
             }
         },
         methods:{
@@ -86,10 +88,8 @@
                         })
                     this.$parent.nextComp();
                 }
-            },
-
-        }
-
+            }
+        },
     }
 </script>
 

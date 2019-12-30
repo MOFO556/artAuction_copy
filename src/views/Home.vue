@@ -61,13 +61,8 @@
     }
   .invalid
   {
-    border-color: #FF0000;
-    border-width: 5px;
-    border-style: inset;
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
+    animation: fieldErrorAnimation 3s;
+    animation-fill-mode: forwards;
   }
   .modal {
     width: 250px;

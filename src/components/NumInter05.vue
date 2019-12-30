@@ -4,32 +4,28 @@
             <img src="../assets/images/bodybet.gif" height="444px" width="360px">
             <div class="inputtextblock">
                 <div class="row">
-                    <div :class="{busyStyle : busyFlag}" class="smsInterTitle">{{message}}</div>
+                    <div class="smsInterTitle">Inter your phone number</div>
                     <img class="pricing" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
+
                 <div class="row">
-									<v-popover trigger='click' open :disabled='error_message==""'
-										placement="top"
-									>
-									<input class="phoneInput" type="text" v-model="phone"/>
-
-                                        <template slot="popover">
-												<span>
-													{{error_message}}
-												</span>
-                                        </template>
-                                    </v-popover>
-
+                    <v-popover trigger='click' open :disabled='error_message==""'
+                               placement="top">
+                        <input class="phoneInput" type="text" v-model="phone"
+                               v-on:focus="clearMistakes"
+                               :class="{ invalid: $v.phone.$error }"
+                               @blur="$v.phone.$touch()"/>
+                        <template slot="popover">
+                            <span>{{error_message}}</span>
+                        </template>
+                    </v-popover>
                     <button v-on:click="next"
                             :disabled="$v.$anyError || verification_active"
                             :class="{ invalidButton: $v.$anyError }"
-                            class="startAuction block"
-                    >GO <img height="20px" width="20px" v-show="verification_active"
-                            alt="please wait..." src="../assets/images/button_loading.svg" />
-                    </button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
-
-
-                </div>
+                            class="startAuction block">GO
+                        <img height="20px" width="20px" v-show="verification_active"
+                             alt="please wait..." src="../assets/images/button_loading.svg" />
+                    </button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue--></div>
             </div>
         </div>
     </div>
@@ -56,20 +52,19 @@
               phone:null,
               changeClass:null,
               polling:null,
-              message: "Inter your phone number",
               busyFlag:false,
-							error_message: '',
-							field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
-							verification_field_error: false,
-							verification_active: false
+              error_message: '',
+              field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
+              verification_field_error: false,
+              verification_active: false
           }
         },
         methods:{
             next(){
                 if (!this.$v.$invalid){
-										this.error_message = '';
-										this.verification_field_error = false;
-										this.verification_active = true;
+                    this.error_message = '';
+                    this.verification_field_error = false;
+                    this.verification_active = true;
                     this.$store
                         .dispatch('session/isFree', { //Запрос состояния сессии
                             phone: this.phone
@@ -110,9 +105,15 @@
                                         setTimeout(() => this.error_message = '', 30000);
                                         break;
                                     case 2:
-                                        this.error_message = "Incorect phone number. Make sure you are \nentering it in international formate.";
+                                        this.error_message = "Incorrect phone number. Make sure you are \nentering it in international format.";
                                         this.verification_field_error = true;
                                         this.verification_active = false;
+                                        break;
+                                    case 3:
+                                        this.error_message = "Sorry, your bet is already the last\n Checkout for updates.";
+                                        this.verification_field_error = true;
+                                        this.verification_active = false;
+                                        setTimeout(() => this.$parent.toScreen(4), 30000);
                                         break;
                                 }
 
@@ -120,7 +121,19 @@
                         })
                     this.$store.dispatch('setUserPhone', this.phone)
                 }
+                else {
+                    this.error_message = "Incorrect phone number.\nCheck out you enter it right";
+                    this.verification_field_error = true;
+                    this.verification_active = false;
+                    setTimeout(() => this.error_message = '', 10000);
+                    setTimeout(() => this.verification_field_error = false, 10000);
+                }
             },
+            clearMistakes(){
+                this.error_message = "";
+                this.verification_field_error = false;
+                this.verification_active = false;
+            }
         },
         beforeDestroy () {
             clearInterval(this.polling)//
