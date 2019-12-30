@@ -49,6 +49,15 @@
       toScreen:function (screenNum) {
         this.currentComp=screenNum;
         this.component = this.components[screenNum]
+      },
+      clearSession(){
+        this.$store
+                .dispatch('session/finishSession', {
+                  phone: this.$store.state.userPhone
+                })
+                .catch(err => {
+                  this.error = err.response.data.error
+                })
       }
     }
   }

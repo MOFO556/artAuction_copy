@@ -77,10 +77,12 @@
                                 }).then(()=>{
                                     if (this.$store.state.answerPhone) //Если есть, то идём делать ставку
                                         {
+                                            this.openSession();
                                             this.$parent.toScreen(8);
                                         }
                                     else //Если нет, то идём регистрироваться
                                     {
+                                        this.openSession();
                                         this.$parent.toScreen(6);
                                     }
                                 })
@@ -139,19 +141,20 @@
                 this.error_message = "";
                 this.verification_field_error = false;
                 this.verification_active = false;
+            },
+            openSession(){
+                this.$store
+                    .dispatch('session/addSession', { // Добавили сессию покинув экран
+                        phone: this.phone,
+                        bet: this.price
+                    })
+                    .catch(err => {
+                        this.error = err.response.data.error
+                    })
             }
         },
         beforeDestroy () {
-            clearInterval(this.polling)//
-
-            this.$store
-                .dispatch('session/addSession', { // Добавили сессию покинув экран
-                    phone: this.phone,
-                    bet: this.price
-                })
-                .catch(err => {
-                    this.error = err.response.data.error
-                })
+            clearInterval(this.polling)
             this.$store
                 .dispatch('setPrice', this.price)
                 .catch(err => {
