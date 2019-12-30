@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="block">
                     <p class="lastbet">$ {{price}}</p>
-                    <p class="lastbettitle">{{pState}} </p>
+                    <p class="lastbettitle">{{pState}}</p>
 
                 </div>
-                <button v-on:click="start" class="startAuction">Bet</button>
+                <button v-on:click="start" class="startAuction" :disabled="!setTime">Bet</button>
             </div>
         </div>
     </div>
@@ -33,9 +33,15 @@
                     this.days = this.$store.state.remainTime[0].days    // Установка дней из хранилища
                     this.hours = this.$store.state.remainTime[0].hours// Установка часов из хранилища
                     this.minutes = this.$store.state.remainTime[0].minutes // Установка минут из хранилища
-                    //this.sec = this.$store.state.remainTime[3]      // Установка секунд из хранилища
+                    this.setTime = true
                 })
                 .catch(err => {
+                    // eslint-disable-next-line no-console
+                    console.log(err.response.data.error)
+                    if(err.response.data.error == 1){
+                        this.pState = "Auction time is up"
+                        this.setTime = false
+                    }
                     this.errors = err.response.data.errors
                 })
 
@@ -49,7 +55,8 @@
                 minutes: null,
                 sec: 0,
                 polling: null,
-                pState: null
+                pState: null,
+                setTime: null,
             }
         },
         methods:{
@@ -82,20 +89,22 @@
                 this.getCountdown()
             },
             pollData () {
-                this.polling = setInterval(() => {
-                    if(this.hours<10 && this.minutes<10){
-                        this.pState= "remain : "+this.days+" - 0"+this.hours+":0"+this.minutes
-                    }
-                    if(this.hours<10 && this.minutes>=10){
-                        this.pState= "remain : "+this.days+" - 0"+this.hours+":"+this.minutes
-                    }
-                    if(this.hours>=10 && this.minutes<10){
-                        this.pState= "remain : "+this.days+" - "+this.hours+":0"+this.minutes
-                    }
-                    if(this.hours>=10 && this.minutes>=10){
-                        this.pState= "remain : "+this.days+" - "+this.hours+":"+this.minutes
-                    }
-                }, 100)
+                if (this.setTime){
+                    this.polling = setInterval(() => {
+                        if(this.hours<10 && this.minutes<10){
+                            this.pState= "remain : "+this.days+" - 0"+this.hours+":0"+this.minutes
+                        }
+                        if(this.hours<10 && this.minutes>=10){
+                            this.pState= "remain : "+this.days+" - 0"+this.hours+":"+this.minutes
+                        }
+                        if(this.hours>=10 && this.minutes<10){
+                            this.pState= "remain : "+this.days+" - "+this.hours+":0"+this.minutes
+                        }
+                        if(this.hours>=10 && this.minutes>=10){
+                            this.pState= "remain : "+this.days+" - "+this.hours+":"+this.minutes
+                        }
+                    }, 100)
+                }
             }
         },
         beforeMount() {

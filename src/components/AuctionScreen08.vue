@@ -69,7 +69,7 @@
                 this.$parent.nextComp();
             },
             incrementBet(){
-                if (this.bet <= this.betStepmx)
+                if (this.bet < this.betStepmx)
                 {
                     this.price += this.betStepmn
                     this.bet += this.betStepmn

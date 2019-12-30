@@ -3,8 +3,8 @@
         <div class="inner">
             <div class="row">
                 <div class="block">
-                    <h3>Вы успешно разместили ставку</h3>
-                    <p>Сумма вашей ставки составляет: ${{price}} USD</p>
+                    <h3>You've successfully placed a bet</h3>
+                    <p>Your bet amount is: ${{price}} USD</p>
                 </div>
             </div>
             <button v-on:click="fin" class="finAuction">ОК</button>

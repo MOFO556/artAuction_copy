@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="row">
-                    <v-popover trigger='click' open :disabled='error_message==""'
+                    <v-popover trigger='click' open :disabled='error_message===""'
                                placement="top">
                         <input class="phoneInput" type="text" v-model="phone"
                                v-on:focus="clearMistakes"
@@ -27,7 +27,8 @@
                             class="startAuction block">GO
                         <img height="20px" width="20px" v-show="verification_active"
                              alt="please wait..." src="../assets/images/button_loading.svg" />
-                    </button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue--></div>
+                    </button><!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
+                </div>
             </div>
         </div>
     </div>
@@ -54,7 +55,6 @@
               phone:null,
               changeClass:null,
               polling:null,
-              busyFlag:false,
               error_message: '',
               field_error_animation:{animation: 'fieldErrorAnimation 3s', animationFillMode: "forwards"},
               verification_field_error: false,
@@ -71,26 +71,25 @@
                         .dispatch('session/isFree', { //Запрос состояния сессии
                             phone: this.phone
                         }).then(()=>{
-                                    this.$store
-                                        .dispatch('user/login', { //Запрос на наличие в базе телефона
-                                            phone: this.phone
-                                        }).then(()=>{
-                                            if (this.$store.state.answerPhone) //Если есть, то идём делать ставку
-                                                {
-                                                    this.$parent.toScreen(8);
-                                                }
-                                            else //Если нет, то идём регистрироваться
-                                            {
-                                                this.$parent.nextComp();
-                                            }
-                                        })
-                                        .catch(err => {
-
-                                            // eslint-disable-next-line no-console
-                                            console.log(err);
-                                            this.error = err.response.data.error
-                                        })
-                          })
+                            this.$store
+                                .dispatch('user/login', { //Запрос на наличие в базе телефона
+                                    phone: this.phone
+                                }).then(()=>{
+                                    if (this.$store.state.answerPhone) //Если есть, то идём делать ставку
+                                        {
+                                            this.$parent.toScreen(8);
+                                        }
+                                    else //Если нет, то идём регистрироваться
+                                    {
+                                        this.$parent.nextComp();
+                                    }
+                                })
+                                .catch(err => {
+                                    // eslint-disable-next-line no-console
+                                    console.log(err);
+                                    this.error = err.response.data.error
+                                })
+                        })
                         .catch(err => {
                             // eslint-disable-next-line no-console
                             if (err.message === "Network Error"){
@@ -114,7 +113,6 @@
                                     case 3:
                                         this.error_message = "Sorry, your bet is already the last\n Checkout for updates.";
                                         this.verification_field_error = true;
-                                        this.verification_active = false;
                                         setTimeout(() => this.$parent.toScreen(4), 30000);
                                         break;
                                 }
