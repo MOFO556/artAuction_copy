@@ -66,7 +66,7 @@
         },
         methods:{
             next(){
-                this.$parent.nextComp();
+                this.$parent.toScreen(9);
             },
             incrementBet(){
                 if (this.bet < this.betStepmx)

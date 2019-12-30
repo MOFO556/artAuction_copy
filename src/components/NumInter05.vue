@@ -81,7 +81,7 @@
                                         }
                                     else //Если нет, то идём регистрироваться
                                     {
-                                        this.$parent.nextComp();
+                                        this.$parent.toScreen(6);
                                     }
                                 })
                                 .catch(err => {

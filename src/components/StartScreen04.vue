@@ -61,7 +61,7 @@
         },
         methods:{
             start(){
-                this.$parent.nextComp();
+                this.$parent.toScreen(5);
             },
             getCountdown(){
                if (this.sec<60 && !(this.days<0)) {

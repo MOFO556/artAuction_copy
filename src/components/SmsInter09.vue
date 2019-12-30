@@ -93,7 +93,7 @@
                                         phone: this.phone,
                                         bet: this.$store.state.bet.bet
                                     }).then( ()=>
-                                    this.$parent.nextComp())
+                                    this.$parent.toScreen(10))
                                     .catch(err => {
                                         this.verification_active = false;
                                         switch (err.response.data.error){

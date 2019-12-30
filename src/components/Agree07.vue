@@ -30,7 +30,7 @@
                     .catch(err => {
                         this.errors = err.response.data.errors
                     })
-                this.$parent.nextComp();
+                this.$parent.toScreen(8);
             },
             denied(){
                 this.$parent.toScreen(4);

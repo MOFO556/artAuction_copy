@@ -34,7 +34,7 @@
             countDown() {
 
                     return setTimeout(() => {
-                        this.$parent.nextComp();
+                        this.$parent.toScreen(4);
                     }, 10000);
 
 

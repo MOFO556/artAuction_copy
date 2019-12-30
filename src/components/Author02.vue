@@ -20,7 +20,7 @@
     export default {
         name: "Author02",
         beforeMount() {
-            setTimeout(()=>this.$parent.nextComp(),2000);
+            setTimeout(()=>this.$parent.toScreen(3),2000);
         },
         data(){
             return{

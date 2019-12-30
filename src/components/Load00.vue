@@ -98,7 +98,7 @@
                         this.countDown()
                     }, 10)
                 }
-                this.$parent.nextComp();
+                this.$parent.toScreen(1);
             }
         },
     }

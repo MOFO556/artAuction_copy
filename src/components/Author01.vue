@@ -28,7 +28,7 @@
                 if (elapse>0)
                     setTimeout(()=>this.$parent.nextComp(),elapse);
                 else
-                    this.$parent.nextComp();
+                    this.$parent.toScreen(2);
             };
             loadImage('../assets/images/body.gif')
                 .then( delay )

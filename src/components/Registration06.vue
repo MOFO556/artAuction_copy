@@ -86,7 +86,7 @@
                         .catch(err => {
                             this.errors = err.response.data.errors
                         })
-                    this.$parent.nextComp();
+                    this.$parent.toScreen(7);
                 }
             }
         },
