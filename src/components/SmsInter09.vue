@@ -15,7 +15,8 @@
                 <div class="row">
                     <v-popover trigger='click' open :disabled='!verification_field_error' >
                         <input class="smsCodeInput" :style="verification_field_error ? field_error_animation : ''"
-                               :disabled="verification_active" type="text" placeholder="code" v-model="code">
+                               v-on:keyup.enter="createBet" :disabled="verification_active"
+                               type="text" placeholder="code" v-model="code">
                         <template slot="popover">
                             <span>Введён неверный код</span>
                         </template>

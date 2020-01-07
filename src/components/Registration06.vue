@@ -9,28 +9,32 @@
                     <input class="phoneInput" type="text" placeholder="First Name"
                                v-model="FirstName"
                                :class="{ invalid: $v.FirstName.$error }"
-                               @blur="$v.FirstName.$touch()">
+                               @blur="$v.FirstName.$touch()"
+                               v-on:keyup.enter="register">
                 </div>
 
                 <div>
                     <input class="phoneInput" type="text" placeholder="Last Name"
                                v-model="SecondName"
                                :class="{ invalid: $v.SecondName.$error }"
-                               @blur="$v.SecondName.$touch()">
+                               @blur="$v.SecondName.$touch()"
+                               v-on:keyup.enter="register">
                 </div>
 
                 <div>
                     <input class="phoneInput" type="email" placeholder="Email Address"
                                v-model="Email"
                                :class="{ invalid: $v.Email.$error }"
-                               @blur="$v.Email.$touch()">
+                               @blur="$v.Email.$touch()"
+                               v-on:keyup.enter="register">
                 </div>
 
                 <div>
                     <input class="phoneInput" type="text" placeholder="Country"
                                v-model="Country"
                                :class="{ invalid: $v.Country.$error }"
-                               @blur="$v.Country.$touch()">
+                               @blur="$v.Country.$touch()"
+                               v-on:keyup.enter="register">
                 </div>
 
                 <div>

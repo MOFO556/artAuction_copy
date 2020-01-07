@@ -16,7 +16,9 @@
                                :style="verification_field_error ? field_error_animation : ''"
                                :disabled="verification_active"
                                :class="{ invalid: $v.phone.$error }"
-                               @blur="$v.phone.$touch()"/>
+                               @blur="$v.phone.$touch()"
+                               v-on:keyup.enter="next"
+                        />
                         <template slot="popover">
                             <span>{{error_message}}</span>
                         </template>
