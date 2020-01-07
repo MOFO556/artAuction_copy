@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-    baseURL: ` http://192.168.0.15:8000`,
+    baseURL: ` http://192.168.0.13:8000`,
     withCredentials: false, // This is the default
     headers: {
         Accept: "application/json",
@@ -42,5 +42,5 @@ export default {
     },
     getRemainedTime(){
         return apiClient.post("/expirationDate");
-    },
+    }
 };

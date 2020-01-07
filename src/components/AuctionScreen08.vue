@@ -50,8 +50,6 @@
                 .catch(err => {
                     this.errors = err.response.data.errors
                 })
-            window.onbeforeunload= ()=> this.$parent.clearSession();
-            window.onunload= ()=> this.$parent.clearSession();
         },
         beforeDestroy(){
             this.$store.dispatch('setBet', this.bet)

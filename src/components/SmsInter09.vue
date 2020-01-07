@@ -55,15 +55,7 @@
         },
         beforeDestroy(){
             clearInterval(this.polling)
-            this.$store
-                .dispatch('session/finishSession', {
-                   phone: this.phone
-                })
-                .catch(err => {
-                    this.error = err.response.data.error
-                })
-            window.onbeforeunload= ()=> this.$parent.clearSession();
-            window.onunload= ()=> this.$parent.clearSession();
+            this.$parent.clearSession();
         },
         data(){
           return{

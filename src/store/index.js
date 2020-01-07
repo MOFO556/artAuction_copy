@@ -21,6 +21,8 @@ export default new Vuex.Store({
       betStepMax: null,
       remainTime: [],
       verificationStatus: false,
+      theWinnerName: null,
+      theWinnerSurname: null,
   },
   mutations: {
     PHONE_STAT(state, answer){
@@ -55,7 +57,13 @@ export default new Vuex.Store({
       },
       SET_BET(state, bet){
         state.bet.bet = bet
-      }
+      },
+      SET_WINNER_NAME(state, theWinnerName){
+        state.theWinnerName = theWinnerName;
+      },
+      SET_WINNER_SURNAME(state, theWinnerSurname){
+          state.theWinnerSurname = theWinnerSurname
+      },
   },
   actions: {
       getPhoneStat({ commit }, ans) {
@@ -142,10 +150,23 @@ export default new Vuex.Store({
           return BetService.getRemainedTime()
               .then((res) => {
                   commit("SET_REMAIN_TIME", res.data);
-        })
+              })
+              .catch(err => {
+                  if(err.response.data.error === 1){
+                      commit('SET_WINNER_NAME', err.response.data.name)
+                      commit('SET_WINNER_SURNAME', err.response.data.surname)
+                  }
+                  throw err;
+              })
       },
       setBet({commit}, bet){
           commit("SET_BET", bet)
+      },
+      setWinner({commit}){
+          return BetService.getTheWinner()
+              .then((res) => {
+                  commit("SET_WINNER", res.data);
+              })
       }
   },
   modules: {

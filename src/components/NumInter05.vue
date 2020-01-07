@@ -151,6 +151,8 @@
                     .catch(err => {
                         this.error = err.response.data.error
                     })
+                window.onbeforeunload= ()=> this.$parent.clearSession();
+                window.onunload= ()=> this.$parent.clearSession();
             }
         },
         beforeDestroy () {

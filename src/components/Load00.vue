@@ -19,6 +19,14 @@
     import loadImage from 'image-promise';
     export default {
         name: "Load",
+        beforeDestroy(){
+            this.$store.dispatch('getRemainTime') //Отправляем запрос на оставшееся время
+                .catch(err => {
+                    if(err.response.data.error === 1){
+                        this.$parent.toScreen(11);
+                    }
+                })
+        },
        beforeMount() {
             this.countDown()
            //preload images

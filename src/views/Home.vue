@@ -11,7 +11,6 @@
   // @ is an alias to /src
   export default {
     name: "home",
-
     data(){
       return{
         component:'Load00',
@@ -29,12 +28,10 @@
                   'AuctionScreen08',
                   'SmsInter09',
                   'SuccessBet10',
+                  'FinalScreen11',
                 ],
-
       }
-
-
-    },
+      },
     methods: {
       nextComp: function () {
         this.currentComp+=1;
