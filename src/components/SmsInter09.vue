@@ -55,7 +55,6 @@
                 })
             window.onbeforeunload= ()=> this.$parent.clearSession();
             window.onunload= ()=> this.$parent.clearSession();
-            }
         },
         beforeDestroy(){
             clearInterval(this.polling)
