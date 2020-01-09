@@ -33,7 +33,7 @@
       }
       },
     methods: {
-      nextComp: function () {
+     /* nextComp: function () {
         this.currentComp+=1;
         // eslint-disable-next-line no-console
         console.log("to component:"+ this.currentComp);
@@ -42,12 +42,14 @@
       prevComp: function () {
         this.currentComp-=1;
         this.component =this.components[this.currentComp]
-      },
+      },*/
       toScreen:function (screenNum) {
         this.currentComp=screenNum;
         this.component = this.components[screenNum]
       },
-      clearSession(){
+      clearSession() {
+        // eslint-disable-next-line no-console
+        console.log(this.$store.state.userPhone);
         this.$store
                 .dispatch('session/finishSession', {
                   phone: this.$store.state.userPhone
@@ -55,7 +57,21 @@
                 .catch(err => {
                   this.error = err.response.data.error
                 })
-      }
+      },
+
+    },
+    beforeCreate() {
+      // eslint-disable-next-line no-console
+      console.log("setunload");
+      let myEvent = window.attachEvent || window.addEventListener;
+      let chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compitable
+
+      myEvent(chkevent, function(e) { // For >=IE7, Chrome, Firefox
+        var confirmationMessage = 'Are you sure to leave the page?';  // a space
+        (e || window.event).returnValue = confirmationMessage;
+        return confirmationMessage;
+      });
+      //window.unload = this.clearSession;
     }
   }
 </script>

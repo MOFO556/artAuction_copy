@@ -26,7 +26,7 @@
             let delay = () => {
                 let  elapse = 2000 - (Math.floor(Date.now()-this.time.getTime()));
                 if (elapse>0)
-                    setTimeout(()=>this.$parent.nextComp(),elapse);
+                    setTimeout(()=>this.$parent.toScreen(2),elapse);
                 else
                     this.$parent.toScreen(2);
             };

@@ -15,9 +15,9 @@
             let delay = () => {
                 let  elapse = 5500 - (Math.floor(Date.now()-this.time.getTime()));
                 if (elapse>0)
-                    setTimeout(()=>this.$parent.nextComp(),elapse);
+                    setTimeout(()=>this.$parent.toScreen(4),elapse);
                 else
-                    this.$parent.nextComp();
+                    this.$parent.toScreen(4)
             };
             loadImage('../assets/images/bodybet.gif')
                 .then( delay )
@@ -31,15 +31,7 @@
             }
         },
         methods: {
-            countDown() {
 
-                    return setTimeout(() => {
-                        this.$parent.toScreen(4);
-                    }, 10000);
-
-
-
-            }
         }
     }
 </script>
