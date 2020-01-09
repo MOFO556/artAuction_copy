@@ -1,5 +1,3 @@
-
-
 <template>
     <div class="outer">
         <div class="inner">
@@ -53,7 +51,9 @@
             }
         },
         methods: {
-
+            next(){
+                this.$parent.toScreen(2)
+            }
         }
     }
 </script>

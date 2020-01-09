@@ -35,6 +35,10 @@
             denied(){
                 this.$parent.toScreen(4);
             },
+        },
+        beforeCreate() {
+            window.onbeforeunload= ()=> this.$parent.clearSession();
+            window.onunload= ()=> this.$parent.clearSession();
         }
     }
 </script>
