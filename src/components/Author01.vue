@@ -23,12 +23,24 @@
         beforeMount() {
             //this.countDown()
             this.time = new Date();
+            let timer;
             let delay = () => {
                 let  elapse = 2000 - (Math.floor(Date.now()-this.time.getTime()));
                 if (elapse>0)
-                    setTimeout(()=>this.$parent.toScreen(2),elapse);
-                else
+                    timer = setTimeout(()=>{
+                            document.body.onclick = null;
+                            this.$parent.toScreen(2)
+                        },
+                        elapse);
+                else {
+                    document.body.onclick = null;
                     this.$parent.toScreen(2);
+                }
+            };
+            document.body.onclick =  () => {
+                clearTimeout(timer);
+                this.$parent.toScreen(2);
+                document.body.onclick = null;
             };
             loadImage('../assets/images/body.gif')
                 .then( delay )

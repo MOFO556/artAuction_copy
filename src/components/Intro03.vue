@@ -12,12 +12,23 @@
         name: "Intro03",
         beforeMount() {
             this.time = new Date();
+            let timer;
             let delay = () => {
                 let  elapse = 5500 - (Math.floor(Date.now()-this.time.getTime()));
                 if (elapse>0)
-                    setTimeout(()=>this.$parent.toScreen(4),elapse);
-                else
+                    timer = setTimeout(()=> {
+                        document.body.onclick = null;
+                        this.$parent.toScreen(4)
+                    },elapse);
+                else {
+                    document.body.onclick = null;
                     this.$parent.toScreen(4)
+                }
+            };
+            document.body.onclick =  () => {
+                clearTimeout(timer);
+                this.$parent.toScreen(4);
+                document.body.onclick = null;
             };
             loadImage('../assets/images/bodybet.gif')
                 .then( delay )

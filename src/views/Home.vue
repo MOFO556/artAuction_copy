@@ -61,15 +61,12 @@
 
     },
     beforeCreate() {
-      // eslint-disable-next-line no-console
-      console.log("setunload");
       let myEvent = window.attachEvent || window.addEventListener;
-      let chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compitable
+      let checkEvent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compitable
 
-      myEvent(chkevent, function(e) { // For >=IE7, Chrome, Firefox
-        var confirmationMessage = 'Are you sure to leave the page?';  // a space
-        (e || window.event).returnValue = confirmationMessage;
-        return confirmationMessage;
+      myEvent(checkEvent, ()=> { // For >=IE7, Chrome, Firefox
+       this.clearSession();
+       return undefined;
       });
       //window.unload = this.clearSession;
     }

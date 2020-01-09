@@ -20,7 +20,15 @@
     export default {
         name: "Author02",
         beforeMount() {
-            setTimeout(()=>this.$parent.toScreen(3),2000);
+            let timer = setTimeout(()=>{
+                document.body.onclick = null;
+                this.$parent.toScreen(3)
+            },2000);
+            document.body.onclick =  () => {
+                clearTimeout(timer);
+                this.$parent.toScreen(3);
+                document.body.onclick = null;
+            };
         },
         data(){
             return{
