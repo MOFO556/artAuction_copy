@@ -4,7 +4,7 @@
             <img src="../assets/images/bodybet.gif" height="444px" width="360px">
             <div class="inputtextblock">
                 <div class="row">
-                    <div class="smsInterTitle">Inter your phone number</div>
+                    <div class="smsInterTitle">Enter your phone number</div>
                     <img class="pricing" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
 

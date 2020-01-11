@@ -93,6 +93,10 @@
                     this.$parent.toScreen(7);
                 }
             }
+        },
+        beforeCreate() {
+            window.onbeforeunload= ()=> this.$parent.clearSession();
+            window.onunload= ()=> this.$parent.clearSession();
         }
     }
 </script>

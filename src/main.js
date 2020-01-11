@@ -19,8 +19,6 @@ import FinalScreen11 from "./components/FinalScreen11";
 import Vuelidate from "vuelidate/src";
 import VTooltip from 'v-tooltip';
 
-
-
 Vue.use(Vuelidate);
 Vue.use(VTooltip);
 

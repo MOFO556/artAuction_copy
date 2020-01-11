@@ -8,7 +8,7 @@
                 </div>
                 <div class="row">
 
-                    <div class="smsInterTitleDone">Inter sms verification code</div>
+                    <div class="smsInterTitleDone">Enter sms verification code</div>
                     <img class="pricingVerification" src="../assets/images/Pricing.svg" height="19.4px" width="19.4px">
                 </div>
 
