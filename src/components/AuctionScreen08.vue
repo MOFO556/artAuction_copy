@@ -33,6 +33,8 @@
     export default {
         name: "AuctionScreen08",
         beforeCreate() {
+            window.onbeforeunload= ()=> this.$parent.clearSession();
+            window.onunload= ()=> this.$parent.clearSession();
             this.$store
                 .dispatch('getBetStep') //Отправляем запрос на шаг ставки
                 .then(() => {
@@ -51,8 +53,6 @@
                 .catch(err => {
                     this.errors = err.response.data.errors
                 })
-             window.onbeforeunload= ()=> this.$parent.clearSession();
-             window.onunload= ()=> this.$parent.clearSession();
         },
         beforeDestroy(){
             this.$store.dispatch('setBet', this.bet)
