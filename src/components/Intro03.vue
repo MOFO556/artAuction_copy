@@ -15,24 +15,29 @@
             let timer;
             let delay = () => {
                 let  elapse = 5500 - (Math.floor(Date.now()-this.time.getTime()));
+                let click = () => {
+                    clearTimeout(timer);
+                    this.$parent.toScreen(4);
+                    document.body.removeEventListener('click',click);
+                };
                 if (elapse>0)
                     timer = setTimeout(()=> {
-                        document.body.onclick = null;
+                        document.body.removeEventListener('click',click);
                         this.$parent.toScreen(4)
                     },elapse);
                 else {
-                    document.body.onclick = null;
+                    document.body.removeEventListener('click',click);
                     this.$parent.toScreen(4)
                 }
+                document.body.addEventListener('click', click)
             };
-            document.body.onclick =  () => {
-                clearTimeout(timer);
-                this.$parent.toScreen(4);
-                document.body.onclick = null;
-            };
+            Promise.all( [this.$store.dispatch('getRemainTime'),
+                this.$store.dispatch('getPrice')]).then( delay )
+            // eslint-disable-next-line no-console
+                .catch( () => this.$parent.toScreen(12));
             loadImage('../assets/images/bodybet.gif')
-                .then( delay )
-                .catch( delay ) //some browsers throw if image loaded in cache
+                /*.then( delay )
+                .catch( delay )*/ //some browsers throw if image loaded in cache
                                 //and we better proceed any way even with no images
         },
         data(){

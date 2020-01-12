@@ -20,15 +20,16 @@
     export default {
         name: "Author02",
         beforeMount() {
-            let timer = setTimeout(()=>{
-                document.body.onclick = null;
-                this.$parent.toScreen(3)
-            },2000);
-            document.body.onclick =  () => {
+            let click = () => {
                 clearTimeout(timer);
                 this.$parent.toScreen(3);
-                document.body.onclick = null;
+                document.body.removeEventListener('click',click);
             };
+            let timer = setTimeout(()=>{
+                document.body.removeEventListener('click',click);
+                this.$parent.toScreen(3)
+            },2000);
+            document.body.addEventListener('click', click);
         },
         data(){
             return{

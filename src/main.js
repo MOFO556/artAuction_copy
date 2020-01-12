@@ -15,7 +15,8 @@ import Agree07 from "./components/Agree07";
 import AuctionScreen08 from "./components/AuctionScreen08";
 import SmsInter09 from "./components/SmsInter09";
 import SuccessBet10 from "./components/SuccessBet10";
-import FinalScreen11 from "./components/FinalScreen11";
+import FinalScreen11 from "./components/FinalScreen11"
+import Error12 from "./components/Error12";
 import Vuelidate from "vuelidate/src";
 import VTooltip from 'v-tooltip';
 
@@ -38,6 +39,7 @@ Vue.component('AuctionScreen08',AuctionScreen08);
 Vue.component('SmsInter09',SmsInter09);
 Vue.component('SuccessBet10',SuccessBet10);
 Vue.component('FinalScreen11', FinalScreen11);
+Vue.component('Error12', Error12);
 
 
 

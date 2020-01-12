@@ -1,7 +1,8 @@
 export const namespaced = true;
 
 export const state = {
-    notifications: []
+    notifications: [],
+    last: null
 };
 
 let nextId = 1;
@@ -17,8 +18,12 @@ export const mutations = {
         state.notifications = state.notifications.filter(
             notification => notification.id != notificationToRemove.id
         );
+    },
+    POP(state){
+        state.last = state.notifications.pop()
     }
 };
+
 
 export const actions = {
     add({ commit }, notification) {
@@ -26,5 +31,13 @@ export const actions = {
     },
     remove({ commit }, notificationToRemove) {
         commit("DELETE", notificationToRemove);
+    },
+    pop( { commit, state }) {
+        // eslint-disable-next-line no-console
+        console.log(state.notifications);
+        commit("POP");
+        // eslint-disable-next-line no-console
+        console.log(state.last);
+        return state.last;
     }
 };

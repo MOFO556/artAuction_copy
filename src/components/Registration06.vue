@@ -42,24 +42,30 @@
                            v-model="Phone" disabled="true">
                 </div>
 
+                <v-popover trigger='manual' open :autoHide="false" :disabled='(!$v.$anyError || !error_message)' placement="top">
+                    <button v-on:click="register" :disabled="$v.$anyError" class="startAuction block"
+                            :class="{ invalidButton: $v.$anyError }"
+                    >Go to Agreement</button> <!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
 
-                <button v-on:click="register" :disabled="$v.$anyError" class="startAuction block"
-                        :class="{ invalidButton: $v.$anyError }"
-                >Go to Agreement</button> <!--ЗАПОЛНИТЬ СТИЛЬ invalidButton в Home.vue-->
-               </div>
+                    <template slot="popover">
+                        <span>{{error_message}}</span>
+                    </template>
+                </v-popover>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import {required,email} from "vuelidate/lib/validators";
+    import {required} from "vuelidate/lib/validators";
+    import {validateString, validateEmail} from '../services/validationService';
     export default {
         name: "Registration06",
         validations: {
-            FirstName: {required},
-            SecondName: {required},
-            Email: {required,email},
-            Country: {required},
+            FirstName: {required, correct: validateString},
+            SecondName: {required, correct: validateString},
+            Email: {required, correct: validateEmail},
+            Country: {required, correct: validateString},
             Phone: {required},
         },
         data(){
@@ -78,20 +84,29 @@
         },
         methods:{
             register () {
-                if (!this.$v.$invalid) {
-                    this.$store
-                        .dispatch('user/addUser', { //Отправляем заполненные данные в хранилище
-                            name: this.FirstName,
-                            surname: this.SecondName,
-                            email: this.Email,
-                            country: this.Country,
-                            phone: this.Phone
-                        })
-                        .catch(err => {
-                            this.errors = err.response.data.errors
-                        })
-                    this.$parent.toScreen(7);
-                }
+                if (!this.$v.$invalid)
+                     this.$parent.toScreen(7)
+            }
+        },
+        computed:{
+            error_message () {
+                let name = this.$v.FirstName;
+                let secondName = this.$v.SecondName;
+                let country = this.$v.Country;
+                let email = this.$v.Email;
+                let string_incorect = ''
+                if ((!name.required && name.$dirty) ||
+                    (!secondName.required && secondName.$dirty)||
+                    (!country.required && country.$dirty)||
+                    (!email.required  && email.$dirty))
+                    string_incorect += "Please fill marked fields. "
+                if (!name.correct ||
+                    !secondName.correct ||
+                    !country.correct)
+                    string_incorect += 'Fields should not contain numbers and punctuation marks. ';
+                if (!email.correct && email.required)
+                    string_incorect += 'You should enter a correct email.'
+                return string_incorect;
             }
         }
     }

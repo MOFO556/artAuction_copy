@@ -152,7 +152,10 @@ export default new Vuex.Store({
                   commit("SET_REMAIN_TIME", res.data);
               })
               .catch(err => {
-                  if(err.response.data.error === 1){
+                  // eslint-disable-next-line no-console
+                  if(typeof err.response !== 'undefined'
+                      && err.response.data.error === 1
+                  ){
                       commit('SET_WINNER_NAME', err.response.data.name)
                       commit('SET_WINNER_SURNAME', err.response.data.surname)
                   }

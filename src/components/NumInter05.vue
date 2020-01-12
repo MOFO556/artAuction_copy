@@ -106,7 +106,6 @@
                                 })
                         })
                         .catch(err => {
-                            // eslint-disable-next-line no-console
                             if (err.message === "Network Error"){
                                 this.error_message = "Network Error";
                                 this.verification_active = false;
@@ -126,9 +125,8 @@
                                         this.verification_active = false;
                                         break;
                                 }
-
                             }
-                        })
+                        });
                     this.$store.dispatch('setUserPhone', this.phone)
                 }
                 else {

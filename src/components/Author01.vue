@@ -22,23 +22,24 @@
             //this.countDown()
             this.time = new Date();
             let timer;
+            let click = () => {
+                clearTimeout(timer);
+                this.$parent.toScreen(2);
+                document.body.removeEventListener('click',click);
+            };
+            document.body.addEventListener('click', click);
             let delay = () => {
                 let  elapse = 2000 - (Math.floor(Date.now()-this.time.getTime()));
                 if (elapse>0)
                     timer = setTimeout(()=>{
-                            document.body.onclick = null;
+                            document.body.removeEventListener('click',click);
                             this.$parent.toScreen(2)
                         },
                         elapse);
                 else {
-                    document.body.onclick = null;
+                    document.body.removeEventListener('click', click);
                     this.$parent.toScreen(2);
                 }
-            };
-            document.body.onclick =  () => {
-                clearTimeout(timer);
-                this.$parent.toScreen(2);
-                document.body.onclick = null;
             };
             loadImage('../assets/images/body.gif')
                 .then( delay )

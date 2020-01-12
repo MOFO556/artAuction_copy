@@ -6,10 +6,11 @@
             <div class="row">
                 <div class="block">
                     <p class="lastbet">$ {{price}}</p>
-                    <p class="lastbettitle">{{pState}}</p>
+                    <p class="lastbettitle" >{{pState}}</p>
 
                 </div>
                 <button v-on:click="start" class="startAuction" :disabled="!setTime">Bet</button>
+
             </div>
         </div>
     </div>
@@ -19,15 +20,16 @@
     export default {
         name: "StartScreen04",
         beforeCreate(){
-            this.$store
+            /*this.$store
                 .dispatch('getPrice') //Отправляем запрос на получение цены
                 .then(()=>{
                     this.price = this.$store.state.currentPrice
                 })
                 .catch(err => {
-                    this.errors = err.response.data.errors
-                })
-            this.$store
+                    if (typeof err.response !== 'undefined')
+                        this.errors =  err.response.data.errors
+                })*/
+            /*this.$store
                 .dispatch('getRemainTime') //Отправляем запрос на оставшееся время
                 .then(()=>{
                     this.days = this.$store.state.remainTime[0].days    // Установка дней из хранилища
@@ -36,12 +38,14 @@
                     this.setTime = true
                 })
                 .catch(err => {
-                    if(err.response.data.error == 1){
-                        this.pState = "Auction time is up"
-                        this.setTime = false
+                    if(typeof err.response !== 'undefined'
+                        && err.response.data.error === 1
+                    ){
+                        this.pState = "Auction time is up";
+                        this.setTime = false;
+                        this.errors = err.response.data.errors;
                     }
-                    this.errors = err.response.data.errors
-                })
+                })*/
 
         },
         data(){
@@ -54,7 +58,7 @@
                 sec: 0,
                 polling: null,
                 pState: null,
-                setTime: null,
+                setTime: false,
             }
         },
         methods:{
@@ -82,30 +86,24 @@
                 }
                 if (this.days<0){
                     this.days=0
-                   /* this.$parent.nextComp();*/
                 }
                 this.getCountdown()
             },
             pollData () {
-                //if (this.setTime){
-                    this.polling = setInterval(() => {
-                        if(this.hours<10 && this.minutes<10){
-                            this.pState= "remain : "+this.days+" - 0"+this.hours+":0"+this.minutes
-                        }
-                        if(this.hours<10 && this.minutes>=10){
-                            this.pState= "remain : "+this.days+" - 0"+this.hours+":"+this.minutes
-                        }
-                        if(this.hours>=10 && this.minutes<10){
-                            this.pState= "remain : "+this.days+" - "+this.hours+":0"+this.minutes
-                        }
-                        if(this.hours>=10 && this.minutes>=10){
-                            this.pState= "remain : "+this.days+" - "+this.hours+":"+this.minutes
-                        }
+                 this.polling = setInterval(() => {
+                        this.pState = (this.days > 0 ? this.days + " days " : "") +
+                            (this.hours < 10 ? '0' + this.hours : this.hours) + ":" +
+                            (this.minutes < 10 ? '0' +this.minutes : this.minutes) +
+                            " remains";
                     }, 100)
-                //}
             }
         },
         beforeMount() {
+            this.price = this.$store.state.currentPrice
+            this.days = this.$store.state.remainTime[0].days    // Установка дней из хранилища
+            this.hours = this.$store.state.remainTime[0].hours// Установка часов из хранилища
+            this.minutes = this.$store.state.remainTime[0].minutes // Установка минут из хранилища
+            this.setTime = true
             this.getCountdown();
         },
         created() {
