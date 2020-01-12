@@ -12,9 +12,15 @@
                     <textarea class="agreementText" type="text" readonly>
                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ex elit, imperdiet at dapibus vel, consequat eu erat. Cras odio ipsum, malesuada vel est nec, cursus scelerisque mi. Nunc quam elit, iaculis sit amet facilisis et, auctor et tellus. Nunc a felis vitae nulla egestas varius. Praesent quis tortor consectetur est laoreet finibus. Praesent suscipit, augue sit amet eleifend maximus, dolor nibh blandit nunc, vel tincidunt quam massa sit amet velit. In sem diam, vulputate in purus a, dictum posuere felis. Quisque vehicula commodo magna vel
                     </textarea>
+
                 </div>
-                    <button v-on:click="next" class="startAuction block">Agree</button>
+                <v-popover trigger='click' open :autoHide="false" :disabled='(!error_message)' placement="top">
+                    <button v-on:click="next" :disabled="error" class="startAuction block">Agree</button>
                     <button v-on:click="denied" class="startAuction block  rightDisagree">Disagree</button>
+                <template slot="popover">
+                    <span>{{error_message}}</span>
+                </template>
+                </v-popover>
                  </div>
         </div>
     </div>
@@ -23,22 +29,37 @@
 <script>
     export default {
         name: "Agree07",
+        data(){
+          return {
+              error_message: '',
+              error: false
+          }
+        },
         methods:{
             next(){
                 this.$store
-                    .dispatch('user/register') //Отправляем данные пользователя на сервер
+                    .dispatch('user/register')//Отправляем данные пользователя на сервер
+                    .then( () => this.$parent.toScreen(8))
                     .catch(err => {
-                        this.errors = err.response.data.errors
+                        if (err.message === "Network Error") {
+                            this.error_message = "Network Error";
+                            setTimeout(() => this.error_message = '', 30000);
+                        } else if (typeof err.response !== 'undefined' &&
+                                err.response.data.error !== 0){
+                            this.error_message = "User data is incorrect.";
+                            setTimeout(() => {
+                                this.$parent.toScreen(6)
+                            }, 3000);
+                        } else {
+                            this.error_message = "Sorry, something went wrong.";
+                            this.error = true;
+                            setTimeout(() => this.$parent.toScreen(4), 3000)
+                        }
                     })
-                this.$parent.toScreen(8);
             },
             denied(){
                 this.$parent.toScreen(4);
             },
-        },
-        beforeCreate() {
-            window.onbeforeunload= ()=> this.$parent.clearSession();
-            window.onunload= ()=> this.$parent.clearSession();
         }
     }
 </script>

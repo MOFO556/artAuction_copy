@@ -84,8 +84,17 @@
         },
         methods:{
             register () {
-                if (!this.$v.$invalid)
-                     this.$parent.toScreen(7)
+                if (!this.$v.$invalid) {
+                    this.$store
+                        .dispatch('user/addUser', { //Отправляем заполненные данные в хранилище
+                            name: this.FirstName,
+                            surname: this.SecondName,
+                            email: this.Email,
+                            country: this.Country,
+                            phone: this.Phone
+                        })
+                    this.$parent.toScreen(7)
+                }
             }
         },
         computed:{
@@ -108,10 +117,6 @@
                     string_incorect += 'You should enter a correct email.'
                 return string_incorect;
             }
-        },
-        beforeCreate() {
-            window.onbeforeunload= ()=> this.$parent.clearSession();
-            window.onunload= ()=> this.$parent.clearSession();
         }
     }
 </script>

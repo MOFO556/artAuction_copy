@@ -8,21 +8,32 @@
                 </div>
                 <img src="../assets/images/bodyBet2.gif" height="381px" width="360px">
 
-                <div class="rowB">
-                    <div class="block">
-                        <p class="lastbet" v-bind:class="{ 'lastbetmrgn': betStepmn>999 }">$ {{betStepmn}}</p>
-                        <p class="totalbettitle">bet step</p>
+                <v-popover trigger='manual' open  :disabled='!error_message' placement="top">
+                    <div class="rowB">
+                        <div class="block">
+                            <p class="lastbet" v-if="!loading" v-bind:class="{ 'lastbetmrgn': betStepmn>999 }">$ {{betStepmn}}</p>
+                            <p v-if="!loading" class="totalbettitle">bet step</p>
+                            <img height="20px" width="20px" v-if="loading"
+                                 alt="please wait..." src="../assets/images/button_loading.svg" />
+                        </div>
+                        <button class="betMinus" :disable="loading || sending" v-on:click="decrementBet">-</button>
+                        <button class="betPlus" :disable="loading || sending" v-on:click="incrementBet">+</button>
                     </div>
-                    <button class="betMinus" v-on:click="decrementBet">-</button>
-                    <button class="betPlus" v-on:click="incrementBet">+</button>
-                </div>
-                <div class="rowC">
-                    <div class="block">
-                        <p class="lastPrise" v-bind:class="{ 'lastpricemrgn': animatedNumber>999 }">$ {{animatedNumber}}</p>
-                        <p class="totalPrisetitle">total bet size</p>
+                    <div class="rowC">
+                        <div class="block">
+                            <p class="lastPrise" v-show="!loading" v-bind:class="{ 'lastpricemrgn': animatedNumber>999 }">$ {{animatedNumber}}</p>
+                            <p v-show="!loading" class="totalPrisetitle">total bet size</p>
+                        </div>
+                        <button v-on:click="next" :disable="loading || error || sending" class="makeBet">Bet
+                            <img height="20px" width="20px" v-if="sending"
+                                 alt="please wait..." src="../assets/images/button_loading.svg" />
+                        </button>
                     </div>
-                    <button v-on:click="next" class="makeBet">Bet</button>
-                </div>
+                    <template slot="popover">
+                        <span>{{error_message}}</span>
+                    </template>
+                </v-popover>
+
             </div>
         </div>
     </div>
@@ -32,31 +43,8 @@
     import {TweenLite} from "gsap";
     export default {
         name: "AuctionScreen08",
-        beforeCreate() {
-            this.$store
-                .dispatch('getBetStep') //Отправляем запрос на шаг ставки
-                .then(() => {
-                    this.betStepmn = this.$store.state.betStepMin,
-                    this.betStepmx = this.$store.state.betStepMax,
-                    this.bet = this.betStepmn
-                    this.$store
-                        .dispatch('getPrice') //Отправляем запрос на получение цены
-                        .then(() => {
-                            this.price = (this.$store.state.currentPrice + this.$store.state.betStepMin)
-                        })
-                        .catch(err => {
-                            this.errors = err.response.data.errors
-                        })
-                })
-                .catch(err => {
-                    this.errors = err.response.data.errors
-                })
-             window.onbeforeunload= ()=> this.$parent.clearSession();
-             window.onunload= ()=> this.$parent.clearSession();
-        },
-        beforeDestroy(){
-            this.$store.dispatch('setBet', this.bet)
-            this.$store.dispatch('setPrice', this.price)
+        beforeMount() {
+            this.getBetData();
         },
         data(){
             return {
@@ -65,12 +53,38 @@
                 betStepmn: null,
                 betStepmx: null,
                 bet: null,
-                tweenNumber: 0
+                tweenNumber: 0,
+                error_message: '',
+                error: false,
+                loading: true,
+                sending: false
             }
         },
         methods:{
             next(){
-                this.$parent.toScreen(9);
+                this.$store.dispatch('setBet', this.bet);
+                this.$store.dispatch('setPrice', this.price);
+                this.sending = true;
+                this.$store
+                    .dispatch('startVerification', {
+                        phone: this.phone
+                    }).then( ()=> this.$parent.toScreen(9))
+                    .catch(err => {
+                        if (err.message === "Network Error") {
+                            this.error_message = "Network Error";
+                            this.sending = false;
+                            setTimeout(() => this.error_message = '', 30000);
+                        } else if (typeof err.response !== 'undefined' &&
+                            err.response.data.error !== 0){
+                            this.sending = false;
+                            this.error_message = "Server error";
+                        } else {
+                            this.error_message = "Sorry, something went wrong.";
+                            this.sending = false;
+                            this.error = true;
+                            setTimeout(() => this.$parent.toScreen(4), 3000)
+                        }
+                    });
             },
             incrementBet(){
                 if (this.bet < this.betStepmx)
@@ -85,6 +99,44 @@
                     this.price -= this.betStepmn
                     this.bet -= this.betStepmn
                 }
+            },
+            getBetData(){
+                this.loading = true;
+                Promise.all([
+                    this.$store.dispatch('getBetStep'), //Отправляем запрос на шаг ставки
+                    this.$store.dispatch('getPrice') //Отправляем запрос на получение цены
+                ])
+                .then(() => {
+                    this.betStepmn = this.$store.state.betStepMin;
+                    this.betStepmx = this.$store.state.betStepMax;
+                    this.bet = this.betStepmn;
+                    this.price = (this.$store.state.currentPrice +
+                        this.$store.state.betStepMin)
+                    this.loading = false;
+                    this.error_message='';
+                    this.error=false;
+                }).catch(err => {
+                    this.error = true;
+                    this.loading = true;
+                    if (err.message === "Network Error") {
+                        this.error_message = "Network Error";
+                        setTimeout(() => { //fetch data again in 5 seconds
+                            this.error_message = ''
+                            this.getBetData();
+                            }, 5000);
+                    } else if (typeof err.response !== 'undefined' &&
+                        err.response.data.error !== 0){
+                        this.error_message = "Server error";
+                        setTimeout(() => {
+                            this.$parent.toScreen(4)
+                        }, 3000);
+                    } else {
+                        this.error_message = "Sorry, something went wrong.";
+                        this.error = true;
+                        setTimeout(() => this.$parent.toScreen(4), 3000)
+                    }
+
+                })
             }
         },
         computed: {

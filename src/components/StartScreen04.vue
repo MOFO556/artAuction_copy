@@ -19,35 +19,7 @@
 <script>
     export default {
         name: "StartScreen04",
-        beforeCreate(){
-            /*this.$store
-                .dispatch('getPrice') //Отправляем запрос на получение цены
-                .then(()=>{
-                    this.price = this.$store.state.currentPrice
-                })
-                .catch(err => {
-                    if (typeof err.response !== 'undefined')
-                        this.errors =  err.response.data.errors
-                })*/
-            /*this.$store
-                .dispatch('getRemainTime') //Отправляем запрос на оставшееся время
-                .then(()=>{
-                    this.days = this.$store.state.remainTime[0].days    // Установка дней из хранилища
-                    this.hours = this.$store.state.remainTime[0].hours// Установка часов из хранилища
-                    this.minutes = this.$store.state.remainTime[0].minutes // Установка минут из хранилища
-                    this.setTime = true
-                })
-                .catch(err => {
-                    if(typeof err.response !== 'undefined'
-                        && err.response.data.error === 1
-                    ){
-                        this.pState = "Auction time is up";
-                        this.setTime = false;
-                        this.errors = err.response.data.errors;
-                    }
-                })*/
 
-        },
         data(){
             return {
                 price: null,

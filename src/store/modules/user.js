@@ -35,8 +35,7 @@ export const actions = {
             });
     },
     addUser({ commit }, userData) {
-        return BetService.checkFields(userData)
-            .then(()=>commit("ADD_USER", userData));
+        commit("ADD_USER", userData);
     },
     login ({ commit, dispatch }, userPhone) {
         return BetService.checkPhone(userPhone)

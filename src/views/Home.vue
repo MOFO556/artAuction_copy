@@ -40,14 +40,15 @@
       },
       clearSession() {
         // eslint-disable-next-line no-console
-        console.log(this.$store.state.userPhone);
-        this.$store
-                .dispatch('session/finishSession', {
-                  phone: this.$store.state.userPhone
-                })
-                .catch(err => {
-                  this.error = err.response.data.error
-                })
+        console.log("closing session");
+        if (this.$store.state.userPhone)
+          this.$store
+            .dispatch('session/finishSession', {
+              phone: this.$store.state.userPhone
+            })
+            .catch(err => {
+              this.error = err.response.data.error
+            })
       },
 
     },

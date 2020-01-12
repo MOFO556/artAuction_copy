@@ -46,15 +46,6 @@
         beforeCreate() {
             this.price=this.$store.state.currentPrice //Устанавливаем текущую цену
             this.phone=this.$store.state.userPhone      //Устанавливаем номер телефона
-            this.$store
-                .dispatch('startVerification', {
-                    phone: this.phone
-                })
-                .catch(err => {
-                    this.errors = err.response.data.errors
-                })
-            window.onbeforeunload= ()=> this.$parent.clearSession();
-            window.onunload= ()=> this.$parent.clearSession();
         },
         beforeDestroy(){
             clearInterval(this.polling)

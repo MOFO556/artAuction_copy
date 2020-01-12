@@ -7,7 +7,7 @@
                 <div class="text">
                     <h2>last name</h2>
                     <h1>ANASTASIA</h1>
-                    <h3>shibari artist</h3>
+                    <h3>shibari model</h3>
                 </div>
             </div>
         </div>
