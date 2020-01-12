@@ -4,13 +4,13 @@
         <div class="inner">
             <div class="inputtextblock">
                 <div class="row">
-                    <div class="title">Make Bet</div>
+                    <div class="title">Place your bet</div>
                 </div>
                 <img src="../assets/images/bodyBet2.gif" height="381px" width="360px">
 
                 <div class="rowB">
                     <div class="block">
-                        <p class="lastbet" :style="{ 'font-size:21px': betStepmn>999 }">$ {{betStepmn}}</p>
+                        <p class="lastbet" v-bind:class="{ 'lastbetmrgn': betStepmn>999 }">$ {{betStepmn}}</p>
                         <p class="totalbettitle">bet step</p>
                     </div>
                     <button class="betMinus" v-on:click="decrementBet">-</button>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="rowC">
                     <div class="block">
-                        <p class="lastPrise">$ {{price}}</p>
+                        <p class="lastPrise" v-bind:class="{ 'lastpricemrgn': animatedNumber>999 }">$ {{animatedNumber}}</p>
                         <p class="totalPrisetitle">total bet size</p>
                     </div>
                     <button v-on:click="next" class="makeBet">Bet</button>
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+    import {TweenLite} from "gsap";
     export default {
         name: "AuctionScreen08",
         beforeCreate() {
@@ -63,7 +64,8 @@
                 phone: this.$store.state.userPhone,
                 betStepmn: null,
                 betStepmx: null,
-                bet: null
+                bet: null,
+                tweenNumber: 0
             }
         },
         methods:{
@@ -84,8 +86,17 @@
                     this.bet -= this.betStepmn
                 }
             }
-        }
-
+        },
+        computed: {
+            animatedNumber: function() {
+                return this.tweenNumber.toFixed(0);
+            }
+        },
+        watch: {
+            price: function(newValue) {
+                TweenLite.to(this.$data, 0.5, { tweenNumber: newValue });
+            }
+        },
     }
 </script>
 
@@ -196,10 +207,6 @@
         margin-top: 97px;
 
     }
-
-
-
-
     .smsInputInfo
     {
         font-family: Nunito;
@@ -213,7 +220,6 @@
         color: #FD5656;
         margin-top:8px;
     }
-
 
     .smsCodeInput{
         background: #DFDEDE;
@@ -302,14 +308,14 @@
         color: #393939;
         margin:0px;
         margin-right: 42px;
-        margin-top: -2px
-
+        margin-top: -2px;
+        margin-left: -12px;
+    }
+    .lastbetmrgn{
+        margin-left: -2px;
     }
 
-
     .totalbettitle{
-
-       /* margin-top:-5px;*/
         color: #999999;
         font-family: Nunito;
         font-style: normal;
@@ -318,12 +324,9 @@
         line-height: 160%;
         margin:0px;
         margin-right: 42px;
-        margin-left: -13px;
-        margin-top: -10px;
-
+        margin-top: -8px;
+        margin-left: -12px;
     }
-
-
 
     .lastPrise{
         font-family: Nunito;
@@ -332,11 +335,13 @@
         font-size: 14pt;
         line-height: 160%;
         color: #393939;
-        /* margin:0px;*/
         margin:0px;
         margin-right: 27px;
+        margin-left: -22px;
+    }
 
-
+    .lastpricemrgn{
+        margin-left: -10px;
     }
 
     .totalPrisetitle{
@@ -350,13 +355,31 @@
         line-height: 160%;
 
         margin-right: 0px;
-        margin-left: -31px;
+        margin-left: -25px;
         margin-top: -6px;
     }
-
 
     .inputs {
         display: table-cell;
         vertical-align: middle;
+    }
+
+    /*Third transition*/
+    .slide-up-enter {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    .slide-up-enter-active,
+    .slide-up-leave-active {
+        transition: all 0.2s ease;
+    }
+
+    .slide-up-leave-to {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    .slide-up-move {
+        transition: transform .5s ease-out;
     }
 </style>

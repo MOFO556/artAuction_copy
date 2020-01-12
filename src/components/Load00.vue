@@ -1,4 +1,3 @@
-
 <template>
     <div class="outer" v-on:loadeddata="countDown">
         <div class="inner">

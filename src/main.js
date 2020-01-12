@@ -20,8 +20,6 @@ import Error12 from "./components/Error12";
 import Vuelidate from "vuelidate/src";
 import VTooltip from 'v-tooltip';
 
-
-
 Vue.use(Vuelidate);
 Vue.use(VTooltip);
 
