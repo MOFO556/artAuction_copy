@@ -89,33 +89,49 @@
                                                 this.error_message='You are not allowed to bet for now';
                                                 setTimeout( ()=> this.$parent.toScreen(4),5000);
                                                 break;
-                                                case 2:
-                                                    this.error_message='Your session has expiered';
-                                                    setTimeout( ()=> this.$parent.toScreen(4),5000);
-                                                    break;
-                                                    case 4:
-                                                        this.error_message='You cant bet two times in a row';
-                                                        setTimeout( ()=> this.$parent.toScreen(4),5000);
+                                            case 2:
+                                                this.error_message='Your session has expiered';
+                                                setTimeout( ()=> this.$parent.toScreen(4),5000);
+                                                break;
+                                            case 4:
+                                                this.error_message='You cant bet two times in a row';
+                                                setTimeout( ()=> this.$parent.toScreen(4),5000);
                                         }
                                         this.error = err.response.data.error
                                     })
                             }
-                        }).catch(() => {
+                        }).catch(err => {
                             this.verification_active = false;
                             this.verification_field_error = true;
+                            if (typeof err.response !== 'undefined'
+                                && err.response.data.error) {
+                                this.error = err.response.data.error;
+                                if (err.response.data.error == 1) {
+                                    this.$store.dispatch('notification/add', {
+                                        message: "SMS verification went wrong"
+                                    });
+                                    this.$parent.toScreen(12);
+                                }
+                            }
                         });
                 }
             },
-            verify(){
+            /*verify(){
                 this.$store
                     .dispatch('verify', {
                         phone: this.phone,
                         token: this.code,
                     })
                     .catch(err => {
-                        this.error = err.response.data.error
+                        if (typeof err.response !== 'undefined'
+                            && err.response.data.error) {
+                            this.error = err.response.data.error
+                            if (err.response.data.error == 1)
+
+                                this.$parent.toScreen(4);
+                        }
                     })
-            },
+            },*/
             abortSession(){
                 this.polling = setInterval(() => {
                     this.$store

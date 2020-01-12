@@ -33,11 +33,7 @@ export const actions = {
         commit("DELETE", notificationToRemove);
     },
     pop( { commit, state }) {
-        // eslint-disable-next-line no-console
-        console.log(state.notifications);
         commit("POP");
-        // eslint-disable-next-line no-console
-        console.log(state.last);
         return state.last;
     }
 };

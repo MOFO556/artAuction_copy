@@ -41,11 +41,11 @@ export const actions = {
             .then((res) => {
                 commit("FIN_SESSION", session);
                 dispatch("getLockStat", (!res.data.success), { root: true });
-                const notification = {
+                /*const notification = {
                     type: "success",
                     message: "Your session have been successfully finished"
                 };
-                dispatch("notification/add", notification, { root: true });
+                dispatch("notification/add", notification, { root: true });*/
             })
             .catch(error => {
                 const notification = {
