@@ -15,7 +15,10 @@
 
                 </div>
                 <v-popover trigger='click' open :autoHide="false" :disabled='(!error_message)' placement="top">
-                    <button v-on:click="next" :disabled="error" class="startAuction block">Agree</button>
+                    <button v-on:click="next" :disabled="error || sending" class="startAuction block">Agree
+                        <img height="20px" width="20px" v-show="sending"
+                             alt="please wait..." src="../assets/images/button_loading.svg" />
+                    </button>
                     <button v-on:click="denied" class="startAuction block  rightDisagree">Disagree</button>
                 <template slot="popover">
                     <span>{{error_message}}</span>
@@ -32,30 +35,35 @@
         data(){
           return {
               error_message: '',
-              error: false
+              error: false,
+              sending: false
           }
         },
         methods:{
             next(){
-                this.$store
-                    .dispatch('user/register')//Отправляем данные пользователя на сервер
-                    .then( () => this.$parent.toScreen(8))
-                    .catch(err => {
-                        if (err.message === "Network Error") {
-                            this.error_message = "Network Error";
-                            setTimeout(() => this.error_message = '', 30000);
-                        } else if (typeof err.response !== 'undefined' &&
-                                err.response.data.error !== 0){
-                            this.error_message = "User data is incorrect.";
-                            setTimeout(() => {
-                                this.$parent.toScreen(6)
-                            }, 3000);
-                        } else {
-                            this.error_message = "Sorry, something went wrong.";
-                            this.error = true;
-                            setTimeout(() => this.$parent.toScreen(4), 3000)
-                        }
-                    })
+                if (!this.sending) {
+                    this.sending = true;
+                    this.$store
+                        .dispatch('user/register')//Отправляем данные пользователя на сервер
+                        .then(() => this.$parent.toScreen(8))
+                        .catch(err => {
+                            if (err.message === "Network Error") {
+                                this.error_message = "Network Error";
+                                this.sending = false;
+                                setTimeout(() => this.error_message = '', 30000);
+                            } else if (typeof err.response !== 'undefined' &&
+                                err.response.data.error !== 0) {
+                                this.error_message = "User data is incorrect.";
+                                setTimeout(() => {
+                                    this.$parent.toScreen(6)
+                                }, 3000);
+                            } else {
+                                this.error_message = "Sorry, something went wrong.";
+                                this.error = true;
+                                setTimeout(() => this.$parent.toScreen(4), 3000)
+                            }
+                        })
+                }
             },
             denied(){
                 this.$parent.toScreen(4);
