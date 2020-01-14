@@ -117,6 +117,10 @@
                     string_incorect += 'You should enter a correct email.'
                 return string_incorect;
             }
+        },
+        mounted() {
+            window.onbeforeunload= ()=> this.$parent.clearSession();
+            window.onunload= ()=> this.$parent.clearSession();
         }
     }
 </script>

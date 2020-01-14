@@ -149,6 +149,10 @@
                 TweenLite.to(this.$data, 0.5, { tweenNumber: newValue });
             }
         },
+        mounted() {
+            window.onbeforeunload= ()=> this.$parent.clearSession();
+            window.onunload= ()=> this.$parent.clearSession();
+        }
     }
 </script>
 
