@@ -145,9 +145,11 @@
                 }, 300000)
             }
         },
-        /*mounted() {
+        mounted() {
+            window.onbeforeunload= ()=> this.$parent.clearSession();
+            window.onunload= ()=> this.$parent.clearSession();
             this.abortSession();
-        }*/
+        }
     }
 </script>
 
