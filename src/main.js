@@ -17,11 +17,21 @@ import SmsInter09 from "./components/SmsInter09";
 import SuccessBet10 from "./components/SuccessBet10";
 import FinalScreen11 from "./components/FinalScreen11"
 import Error12 from "./components/Error12";
+import Teaser13 from "./components/Teaser13";
+
 import Vuelidate from "vuelidate/src";
 import VTooltip from 'v-tooltip';
+import VueAnalytics from 'vue-analytics'
 
 Vue.use(Vuelidate);
 Vue.use(VTooltip);
+Vue.use(VueAnalytics, {
+  id: 'UA-156343958-1',
+  router,
+  autoTracking: {
+    screenview: true
+  }
+})
 
 Vue.use(ProgressBar);
 Vue.component('Load00',Load00);
@@ -38,7 +48,7 @@ Vue.component('SmsInter09',SmsInter09);
 Vue.component('SuccessBet10',SuccessBet10);
 Vue.component('FinalScreen11', FinalScreen11);
 Vue.component('Error12', Error12);
-
+Vue.component('Teaser13', Teaser13);
 
 
 Vue.config.productionTip = false;

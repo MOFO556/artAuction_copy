@@ -27,7 +27,7 @@
                 days: null,
                 hours: null,
                 minutes: null,
-                sec: 0,
+                sec: null,
                 polling: null,
                 pState: null,
                 setTime: false,
@@ -37,49 +37,40 @@
             start(){
                 this.$parent.toScreen(5);
             },
-            getCountdown(){
-               if (this.sec<60 && !(this.days<0)) {
-                   return setTimeout(() => {
-                       ++this.sec
-                       this.getCountdown()
-                   }, 1000)
-               }
-               this.sec=0;
-               this.minutes-=1;
-                if (this.minutes< 0)
-                {
-                    this.minutes=60
-                    this.hours-=1
+            time () {
+                if (this.days === 0 &&
+                    this.minutes === 0 &&
+                    this.hours === 0 &&
+                    this.sec === 0)
+                    this.$parent.toScreen(0)
+                else
+                    if ((--this.sec) < 0) {
+                        this.sec = 59;
+                        if ((--this.minutes) < 0) {
+                            this.minutes = 59;
+                            if ((--this.hours) < 0) {
+                                this.hours = 23;
+                                if ((--this.days) < 0)
+                                    this.days = 0;
+                            }
+                        }
                 }
-                if (this.hours< 0)
-                {
-                    this.hours=24
-                    this.days-=1
-                }
-                if (this.days<0){
-                    this.days=0
-                }
-                this.getCountdown()
-            },
-            pollData () {
-                 this.polling = setInterval(() => {
-                        this.pState = (this.days > 0 ? this.days + " days " : "") +
-                            (this.hours < 10 ? '0' + this.hours : this.hours) + ":" +
-                            (this.minutes < 10 ? '0' +this.minutes : this.minutes) +
-                            " remains";
-                    }, 100)
+                this.pState = (this.days > 0 ? this.days + " day" +
+                    (this.days === 1 ? ' ' : 's ') : "") +
+                    (this.hours < 10 ? '0' + this.hours : this.hours) + ":" +
+                    (this.minutes < 10 ? '0' + this.minutes : this.minutes) +
+                    ":" + (this.sec < 10 ? '0' + this.sec : this.sec);
             }
         },
         beforeMount() {
-            this.price = this.$store.state.currentPrice
-            this.days = this.$store.state.remainTime[0].days    // Установка дней из хранилища
-            this.hours = this.$store.state.remainTime[0].hours// Установка часов из хранилища
-            this.minutes = this.$store.state.remainTime[0].minutes // Установка минут из хранилища
+            this.price = this.$store.state.currentPrice;
+            this.days = this.$store.state.remainTime.days;    // Установка дней из хранилища
+            this.hours = this.$store.state.remainTime.hours;// Установка часов из хранилища
+            this.minutes = this.$store.state.remainTime.minutes; // Установка минут из хранилища
+            this.sec = this.$store.state.remainTime.seconds;
             this.setTime = true
-            this.getCountdown();
-        },
-        created() {
-            this.pollData();
+            this.time();
+            this.polling = setInterval( this.time, 1000);
         },
         beforeDestroy () {
             clearInterval(this.polling)

@@ -9,6 +9,7 @@
 </template>
 <script>
   // @ is an alias to /src
+
   export default {
     name: "home",
     data(){
@@ -29,7 +30,8 @@
                   'SmsInter09',
                   'SuccessBet10',
                   'FinalScreen11',
-                  'Error12'
+                  'Error12',
+                  'Teaser13'
                 ],
       }
       },
@@ -49,8 +51,7 @@
             .catch(err => {
               this.error = err.response.data.error
             })
-      },
-
+      }
     },
     beforeCreate() {
       let myEvent = window.attachEvent || window.addEventListener;

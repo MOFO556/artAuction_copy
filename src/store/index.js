@@ -19,7 +19,7 @@ export default new Vuex.Store({
       userPhone: null,
       betStepMin: null,
       betStepMax: null,
-      remainTime: [],
+      remainTime: null,
       verificationStatus: false,
       theWinnerName: null,
       theWinnerSurname: null,
@@ -50,7 +50,7 @@ export default new Vuex.Store({
           state.betStepMax = betStep
       },
       SET_REMAIN_TIME(state, time){
-        state.remainTime.push(time);
+        state.remainTime = time;
     },
       SET_VERIFICATION_STATUS(state, status){
         state.verificationStatus = status
@@ -158,6 +158,9 @@ export default new Vuex.Store({
                   ){
                       commit('SET_WINNER_NAME', err.response.data.name)
                       commit('SET_WINNER_SURNAME', err.response.data.surname)
+                  } else if (typeof err.response !== 'undefined'
+                      && err.response.data.error === 2){
+                      commit("SET_REMAIN_TIME", err.response.data); //set time till auction start
                   }
                   throw err;
               })

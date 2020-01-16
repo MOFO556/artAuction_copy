@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import loadImage from 'image-promise';
+    //import loadImage from 'image-promise';
     export default {
         name: "Intro03",
         beforeMount() {
@@ -33,9 +33,9 @@
             };
             Promise.all( [this.$store.dispatch('getRemainTime'),
                 this.$store.dispatch('getPrice')]).then( delay )
-            // eslint-disable-next-line no-console
                 .catch( () => this.$parent.toScreen(12));
-            loadImage('../assets/images/bodybet.gif')
+            let img = new Image();
+            img.src = '../assets/images/bodybet.gif';
                 /*.then( delay )
                 .catch( delay )*/ //some browsers throw if image loaded in cache
                                 //and we better proceed any way even with no images

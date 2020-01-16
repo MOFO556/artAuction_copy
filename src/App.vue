@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <link rel="stylesheet" href="animate.min.css">
-  <!--  <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>-->
+    <!--  <link rel="stylesheet" href="animate.min.css">
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>-->
     <transition name="slide-fade" mode="out-in">
       <router-view />
     </transition>

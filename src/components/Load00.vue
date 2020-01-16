@@ -22,7 +22,9 @@
             this.$store.dispatch('getRemainTime') //Отправляем запрос на оставшееся время
                 .catch(err => {
                     if(err.response.data.error === 1){
-                        this.$parent.toScreen(11);
+                        this.$parent.toScreen(11); //экран победителя
+                    } else if (err.response.data.error === 2){
+                        this.$parent.toScreen(13); //экран тизира
                     }
                 })
         },
