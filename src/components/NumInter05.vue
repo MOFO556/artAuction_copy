@@ -133,8 +133,10 @@
                     this.error_message = "Incorrect phone number.\nCheck out you enter it right";
                     this.verification_field_error = true;
                     this.verification_active = false;
-                    setTimeout(() => this.error_message = '', 10000);
-                    setTimeout(() => this.verification_field_error = false, 10000);
+                    setTimeout(() => {
+                        this.error_message = '';
+                        this.verification_field_error = false
+                    }, 10000);
                 }
             },
             clearMistakes(){
@@ -151,8 +153,6 @@
                     .catch(err => {
                         this.error = err.response.data.error
                     })
-                window.onbeforeunload= ()=> this.$parent.clearSession();
-                window.onunload= ()=> this.$parent.clearSession();
             }
         },
         beforeDestroy () {

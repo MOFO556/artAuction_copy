@@ -146,8 +146,7 @@
             }
         },
         mounted() {
-            window.onbeforeunload= ()=> this.$parent.clearSession();
-            window.onunload= ()=> this.$parent.clearSession();
+            this.$ga.page('/sms');
             this.abortSession();
         }
     }

@@ -32,6 +32,7 @@
             this.sec = this.$store.state.remainTime.seconds;
             this.time();
             this.polling = setInterval( this.time, 1000);
+            this.$ga.page('/teaser');
         },
         beforeDestroy(){
           clearInterval(this.polling)

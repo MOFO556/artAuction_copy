@@ -62,6 +62,7 @@
        return undefined;
       });
       //window.unload = this.clearSession;
+      this.$ga.page('/');
     }
   }
 </script>

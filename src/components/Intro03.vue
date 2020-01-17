@@ -14,7 +14,7 @@
             this.time = new Date();
             let timer;
             let delay = () => {
-                let  elapse = 5500 - (Math.floor(Date.now()-this.time.getTime()));
+                let  elapse = 10000 - (Math.floor(Date.now()-this.time.getTime()));
                 let click = () => {
                     clearTimeout(timer);
                     this.$parent.toScreen(4);

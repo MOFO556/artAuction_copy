@@ -20,6 +20,9 @@
                 theWinnerName: this.$store.state.theWinnerName,
                 theWinnerSurname: this.$store.state.theWinnerSurname
             }
+        },
+        mounted(){
+            this.$ga.page('/finalScreen');
         }
     }
 </script>

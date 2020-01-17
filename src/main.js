@@ -26,12 +26,9 @@ import VueAnalytics from 'vue-analytics'
 Vue.use(Vuelidate);
 Vue.use(VTooltip);
 Vue.use(VueAnalytics, {
-  id: 'UA-156343958-1',
-  router,
-  autoTracking: {
-    screenview: true
-  }
-})
+  id: 'UA-156343958-1'
+});
+
 
 Vue.use(ProgressBar);
 Vue.component('Load00',Load00);

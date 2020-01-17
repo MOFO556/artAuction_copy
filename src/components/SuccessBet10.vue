@@ -32,6 +32,7 @@
         }
         },
         mounted() {
+            this.$ga.page('/successfulBet');
             this.forcedLeft();
         },
         beforeDestroy() {
